@@ -5,11 +5,11 @@ import { IoCloseSharp } from 'react-icons/io5';
 function Home() {
   const tables = [
     { id: 1, name: 'TABLE 1', price: 'Rs.8/min', occupied: true },
-    { id: 2, name: 'TABLE 2', price: '2', occupied: false },
-    { id: 3, name: 'TABLE 3', price: '3', occupied: false },
-    { id: 4, name: 'TABLE 4', price: '4', occupied: true },
-    { id: 5, name: 'TABLE 5', price: '5', occupied: true },
-    { id: 6, name: 'TABLE 6', price: '6', occupied: false },
+    { id: 2, name: 'TABLE 2', price: 'Rs.8/min', occupied: false },
+    { id: 3, name: 'TABLE 3', price: 'Rs.5/min', occupied: false },
+    { id: 4, name: 'TABLE 4', price: 'Rs.8/min', occupied: true },
+    { id: 5, name: 'TABLE 5', price: 'Rs.11/min', occupied: true },
+    { id: 6, name: 'TABLE 6', price: 'Rs.15/min', occupied: false },
   ];
 
   return (

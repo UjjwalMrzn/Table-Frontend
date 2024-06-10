@@ -141,6 +141,7 @@ body {
   justify-content: space-around;
   padding: 8px 15px;
   border-radius: 5px;
+  cursor: pointer;
 }
 
 .card.occupied {
