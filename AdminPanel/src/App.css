@@ -143,28 +143,16 @@ body {
   border-radius: 5px;
 }
 
-.card:first-child {
-  background-color: #2e7d32;
+.card.occupied {
+  background-color: transparent; /* Red background for occupied */
+  border-radius: 8px;
+  border: 5px solid #d50000; /* Red border for occupied */
 }
 
-.card:nth-child(2) {
-  background-color: #2e7d32;
-}
-
-.card:nth-child(3) {
-  background-color: #2e7d32;
-}
-
-.card:nth-child(4) {
-  background-color: #d50000;
-}
-
-.card:nth-child(5) {
-  background-color: #2e7d32;
-}
-
-.card:nth-child(6) {
-  background-color: #d50000;
+.card.not-occupied {
+  background-color: transparent; /* Green background for not occupied */
+  border-radius: 8px;
+  border: 5px solid #2e7d32; /* Green border for not occupied */
 }
 
 .card-inner {
@@ -173,10 +161,17 @@ body {
   justify-content: space-between;
 }
 
-.card-inner > .card_icon {
+.card_icon {
   font-size: 25px;
 }
 
+.card.occupied .card_icon {
+  color: #d50000; /* Red icon color for occupied */
+}
+
+.card.not-occupied .card_icon {
+  color: #2e7d32; /* Green icon color for not occupied */
+}
 /* End Main  */
 
 
