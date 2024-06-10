@@ -17,14 +17,6 @@ function home() {
                 <h3>TABLE 1</h3>
                 <BsFillArchiveFill className='card_icon'/>
             </div>
-            <h1>300</h1>
-        </div>
-
-        <div className='card'>
-            <div className='card-inner'>
-                <h3>TABLE 1</h3>
-                <BsFillArchiveFill className='card_icon'/>
-            </div>
             <h1>1</h1>
         </div>
 
