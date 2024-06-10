@@ -144,11 +144,11 @@ body {
 }
 
 .card:first-child {
-  background-color: #2962ff;
+  background-color: #2e7d32;
 }
 
 .card:nth-child(2) {
-  background-color: #ff6d00;
+  background-color: #2e7d32;
 }
 
 .card:nth-child(3) {
@@ -160,11 +160,11 @@ body {
 }
 
 .card:nth-child(5) {
-  background-color: #88982f;
+  background-color: #2e7d32;
 }
 
 .card:nth-child(6) {
-  background-color: #7846b0;
+  background-color: #d50000;
 }
 
 .card-inner {
@@ -175,14 +175,6 @@ body {
 
 .card-inner > .card_icon {
   font-size: 25px;
-}
-
-.charts {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 20px;
-  margin-top: 60px;
-  height: 300px;
 }
 
 /* End Main  */

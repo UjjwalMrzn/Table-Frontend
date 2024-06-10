@@ -4,12 +4,15 @@ import
   BsListCheck, BsMenuButtonWideFill, BsFillGearFill}
  from 'react-icons/bs'
 
+ import { GiBallPyramid } from "react-icons/gi";
+
+
 function Sidebar() {
   return (
     <aside id="sidebar">
         <div className='sidebar-title'>
             <div className='sidebar-brand'>
-                <BsCart3  className='icon_header'/> SNOOKER
+                <GiBallPyramid  className='icon_header'/> SNOOKER
             </div>
             <span className='icon close_icon'>X</span>
         </div>
@@ -35,7 +38,7 @@ function Sidebar() {
       
             <li className='sidebar-list-item'>
                 <a href="">
-                    <BsFillGearFill className='icon'/> Setting
+                    <BsFillGearFill className='icon'/> Settings
                 </a>
             </li>
         </ul>
