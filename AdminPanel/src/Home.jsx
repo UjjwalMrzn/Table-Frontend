@@ -4,6 +4,7 @@ import { IoCloseSharp } from 'react-icons/io5';
 import { Link } from 'wouter';
 
 function Home() {
+    
   const tables = [
     { id: 1, name: 'TABLE 1', price: 'Rs.8/min', occupied: true },
     { id: 2, name: 'TABLE 2', price: 'Rs.8/min', occupied: false },
@@ -18,14 +19,10 @@ function Home() {
       <div className='main-title'>
         <h3>DASHBOARD</h3>
       </div>
-      <Link to={'/screens'}>
-      <h3>hello</h3>
-
-      </Link>
 
       <div className='main-cards'>
         {tables.map(table => (
-          <Link to={"/User"}>
+          <Link to={"/User"}  style={{textDecoration:'none',color:'white'}} >
             <div className={`card ${table.occupied ? 'occupied' : 'not-occupied'}`}>
               <div className='card-inner'>
                 <h3>{table.name}</h3>
