@@ -1,6 +1,7 @@
 import React from 'react';
 import { TiTick } from 'react-icons/ti';
 import { IoCloseSharp } from 'react-icons/io5';
+import { Link } from 'wouter';
 
 function Home() {
   const tables = [
@@ -17,20 +18,29 @@ function Home() {
       <div className='main-title'>
         <h3>DASHBOARD</h3>
       </div>
+      <Link to={'/screens'}>
+      <h3>hello</h3>
+
+      </Link>
 
       <div className='main-cards'>
         {tables.map(table => (
-          <div key={table.id} className={`card ${table.occupied ? 'occupied' : 'not-occupied'}`}>
-            <div className='card-inner'>
-              <h3>{table.name}</h3>
-              {table.occupied ? (
-                <IoCloseSharp className='card_icon' />
-              ) : (
-                <TiTick className='card_icon' />
-              )}
+          <Link to={"/User"}>
+            <div className={`card ${table.occupied ? 'occupied' : 'not-occupied'}`}>
+              <div className='card-inner'>
+                <h3>{table.name}</h3>
+                {table.occupied ? (
+                  <IoCloseSharp className='card_icon' />
+                ) : (
+                  <TiTick className='card_icon' />
+                )}
+              </div>
+              <h1>{table.price}</h1>
             </div>
-            <h1>{table.price}</h1>
-          </div>
+          </Link>
+
+
+
         ))}
       </div>
     </main>
