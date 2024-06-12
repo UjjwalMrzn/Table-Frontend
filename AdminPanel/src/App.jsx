@@ -2,13 +2,10 @@ import { useState } from 'react';
 import './App.css';
 import {BrowserRouter} from 'react-router-dom'
 import User from './User';
-
 import Header from './Header';
 import Sidebar from './Sidebar';
 import Home from './Home';
-// import User from './User';
-import { Route } from 'wouter';
-import screen from './screen'
+import { Route, Switch } from 'wouter';
 
 function App() {
   const [openSidebarToggle, setOpenSidebarToggle ] = useState(false)
@@ -24,11 +21,11 @@ function App() {
     
       <main>
         <BrowserRouter>
+        <Switch>
           <Route path="/home" component={Home}/>
 
           <Route path="/User" component={User}/>
-          <Route path="/screens" component={screen}/>
-
+        </Switch>
         </BrowserRouter>
       </main>
     </div>
