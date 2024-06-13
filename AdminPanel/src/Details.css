@@ -1,0 +1,55 @@
+.booking-details {
+  margin: 20px auto;
+  padding: 20px;
+  width: 215%; /* Set fixed width */
+  height: 91%;
+  /* max-width: 1000px; Maximum width for large screens */
+  background-color: transparent;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.booking-details h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.booking-details table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.booking-details table td {
+  padding: 10px 15px;
+  border: 1px solid #ddd;
+  vertical-align: top;
+  padding-left: 15px; /* Adjust padding as needed */
+}
+
+.booking-details table td:first-child {
+  font-weight: bold;
+  width: 25%;
+}
+
+.booking-details table td:nth-child(even) {
+  width: 25%;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  .booking-details {
+    padding: 10px;
+    width: 100%; /* Ensure it takes full width on smaller screens */
+  }
+
+  .booking-details h2 {
+    font-size: 20px;
+  }
+
+  .booking-details table td {
+    padding: 8px;
+  }
+}

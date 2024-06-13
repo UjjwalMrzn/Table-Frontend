@@ -142,7 +142,7 @@ body {
   padding: 8px 15px;
   border-radius: 5px;
   cursor: pointer;
-  width: 700px;
+  width: 500px;
 
 }
 
@@ -253,3 +253,5 @@ form-group label {
   padding: 8px;
   box-sizing: border-box;
 }
+
+
