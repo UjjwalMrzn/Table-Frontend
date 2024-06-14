@@ -1,4 +1,6 @@
 body {
+  width: 100vw;
+  height: 100vh;
   margin: 0;
   padding: 0;
   background-color: #1d2634;
@@ -11,12 +13,15 @@ body {
   line-height: 1px;
   font-size: 20px;
 }
+
 .icon_header {
   vertical-align: middle;
   line-height: 1px;
   font-size: 26px;
 }
-.icon, .icon_header {
+
+.icon,
+.icon_header {
   margin-right: 5px;
 }
 
@@ -29,7 +34,7 @@ body {
 
 .grid-container {
   display: grid;
-  grid-template-columns: 260px 1fr 1fr 1fr;
+  grid-template-columns: 260px 1fr;
   grid-template-rows: 0.2fr 3fr;
   grid-template-areas:
     'sidebar header header header'
@@ -104,22 +109,15 @@ body {
 .sidebar-responsive {
   display: inline !important;
   position: absolute;
-  /*
-    we want the z-index of the sidebar higher so that
-    the charts are not showing over the sidebar 
-    on small screens
-  */
   z-index: 12 !important;
 }
-
 /* End Sidebar  */
 
-
-/* Main  */  
+/* Main  */
 .main-container {
   grid-area: main;
   overflow-y: auto;
-  padding: 20px 20px;
+  padding: 20px;
   color: rgba(255, 255, 255, 0.95);
 }
 
@@ -142,8 +140,6 @@ body {
   padding: 8px 15px;
   border-radius: 5px;
   cursor: pointer;
-  width: 500px;
-
 }
 
 .card.occupied {
@@ -177,9 +173,7 @@ body {
 }
 /* End Main  */
 
-
-/* Medium <= 992px */
-  
+/* Media Queries */
 @media screen and (max-width: 992px) {
   .grid-container {
     grid-template-columns: 1fr;
@@ -201,57 +195,70 @@ body {
     display: inline;
   }
 }
-/* Small <= 768px */
-  
-@media screen and (max-width: 768px) {
-  .main-cards {
-    grid-template-columns: 1fr;
-    gap: 10px;
-    margin-bottom: 0;
-  }
-
-  .charts {
-    grid-template-columns: 1fr;
-    margin-top: 30px;
-  }
-}
-
-/* Extra Small <= 576px */
 
 @media screen and (max-width: 576px) {
-  .hedaer-left {
-    display: none;
+  .header {
+    padding: 0 15px; /* Adjust padding for smaller screens */
   }
 }
 
-
-/* form */
-.main-container {
-  padding: 20px;
-}
-
-.main-title {
-  margin-bottom: 20px;
+/* Form Styling */
+.form-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80vh; /* Vertically center the form */
 }
 
 .form-container {
-  max-width: 400px;
-  margin: 0 auto;
+  width: 450px;
+  padding: 28px;
+  border-radius: 10px;
+  overflow: hidden;
+  background: transparent;
+  border: 1px solid white; /* White border */
+  margin-top: 10px; /* Spacing from the top */
+  backdrop-filter: blur(5px) saturate(90%);
+}
+
+h2 {
+  font-size: 26px;
+  font-weight: bold;
+  text-align: center;
+  color: floralwhite;
+  padding-bottom: 8px;
+  border-bottom: 1px solid silver;
 }
 
 .form-group {
   margin-bottom: 15px;
 }
 
-form-group label {
+.form-group label {
   display: block;
   margin-bottom: 5px;
+  color: white; /* Label color */
 }
 
 .form-group input {
   width: 100%;
   padding: 8px;
   box-sizing: border-box;
+  background: rgba(255, 255, 255, 0.1); /* Input background with transparency */
+  border: 1px solid white; /* White border for input */
+  color: white; /* Input text color */
 }
 
+button[type='submit'] {
+  width: 100%;
+  padding: 10px;
+  background-color: #4caf50; /* Green submit button */
+  border: none;
+  color: white;
+  cursor: pointer;
+  margin-top: 10px;
+}
 
+button[type='submit']:hover {
+  background-color: #45a049; /* Darker green on hover */
+}

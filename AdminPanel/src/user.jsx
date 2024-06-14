@@ -38,7 +38,7 @@ function User() {
   };
 
   return (
-    <main className='main-container'>
+    <div className='form-box'>
       <div className='form-container'>
         <h2>New Booking Form</h2>
         <form onSubmit={handleSubmit}>
@@ -62,7 +62,8 @@ function User() {
           <button type='submit'>Submit</button>
         </form>
       </div>
-    </main>
+    </div>
+      
   );
 }
 

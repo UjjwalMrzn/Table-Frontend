@@ -1,16 +1,15 @@
 .booking-details {
   margin: 20px auto;
   padding: 20px;
-  width: 215%; /* Set fixed width */
+  width: 90%; /* Ensures it takes up full width up to max-width */
   height: 91%;
-  /* max-width: 1000px; Maximum width for large screens */
   background-color: transparent;
-  border: 1px solid #ddd;
+  /* border: 1px solid #ddd;
   border-radius: 4px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
 }
 
-.booking-details h2 {
+.booking-details h1 {
   font-size: 24px;
   margin-bottom: 20px;
   text-align: center;
@@ -42,7 +41,6 @@
 @media (max-width: 600px) {
   .booking-details {
     padding: 10px;
-    width: 100%; /* Ensure it takes full width on smaller screens */
   }
 
   .booking-details h2 {
