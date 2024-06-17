@@ -352,6 +352,7 @@ button[type='submit']:hover {
   background-color: #3a3939; /* Background color on focus */
 }
 
+
 /* Styling the arrow */
 .select-box::after {
   content: '\25BC'; /* Unicode character for down arrow */

@@ -11,7 +11,7 @@ function Details() {
     name: 'Ujjwal Maharjan',
     email: 'ujjwal.mrzn@gmail.com',
     phone: '9840209417',
-    noOfAdults: 4,
+    noOfPeople: 4,
     bookingDate: '2024-06-10 14:10:00',
     postingDate: '2024-05-27 10:05:04',
     bookingStatus: 'Accepted',
@@ -34,7 +34,7 @@ function Details() {
           </tr>
 
           <tr>
-            <td>Mobile No</td>
+            <td>Mobile No.</td>
             <td colspan="3">{bookingDetails.phone}</td>
           </tr>
 
@@ -44,8 +44,8 @@ function Details() {
           </tr>
 
           <tr>
-          <td>No of Adults</td>
-          <td colspan="3">{bookingDetails.noOfAdults}</td>
+          <td>No. of People</td>
+          <td colspan="3">{bookingDetails.noOfPeople}</td>
            
           </tr>
          

@@ -3,18 +3,6 @@ import { useRoute } from 'wouter';
 
 function User() {
   const [match, params] = useRoute('/user/:id');
-  const tableId = params?.id;
-
-  const tables = [
-    { id: 1, name: 'TABLE 1', price: 'Rs.8/min' },
-    { id: 2, name: 'TABLE 2', price: 'Rs.8/min' },
-    { id: 3, name: 'TABLE 3', price: 'Rs.5/min' },
-    { id: 4, name: 'TABLE 4', price: 'Rs.8/min' },
-    { id: 5, name: 'TABLE 5', price: 'Rs.11/min' },
-    { id: 6, name: 'TABLE 6', price: 'Rs.15/min' },
-  ];
-
-  const table = tables.find(t => t.id === parseInt(tableId));
 
   const [formData, setFormData] = useState({
     name: '',
@@ -67,7 +55,6 @@ function User() {
               <option value="Time">Time-Based</option>
             </select>
           </div>
-          <div><p>Price: {table ? table.price : 'N/A'}</p></div>
           <button type='submit'>Submit</button>
         </form>
       </div>
