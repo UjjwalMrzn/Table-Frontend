@@ -166,7 +166,7 @@ body {
 .card.occupied:hover {
   background-color: rgba(213, 0, 0, 0.1); /* Semi-transparent red background for occupied */
   transform: translateY(-5px); /* Move the card up slightly on hover */
-  border-radius: 30px;
+  border-radius: 50px;
 }
 
 
@@ -188,9 +188,7 @@ body {
   color: #2e7d32; /* Green icon color for not occupied */
 }
 
-.price {
-  position: relative;
-}
+
 
 .frame-price,
 .time-price {
@@ -198,6 +196,26 @@ body {
   width: 100%;
   text-align: right;
 }
+
+
+.price-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.ac {
+  flex: 1;
+  text-align: left;
+  font-size: 11px;
+  color: #9e9ea4;
+}
+
+.price {
+  flex: 2;
+  text-align: right;
+}
+
 /* End Main  */
 
 
