@@ -57,7 +57,6 @@ body {
   display: none;
 }
 /* End Header  */
-
 /* Sidebar  */
 #sidebar {
   grid-area: sidebar;
@@ -92,8 +91,11 @@ body {
 }
 
 .sidebar-list-item {
-  padding: 20px 20px 20px 20px;
   font-size: 18px;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  transition: background-color 0.3s ease; /* Smooth transition for background color */
 }
 
 .sidebar-list-item:hover {
@@ -102,8 +104,18 @@ body {
 }
 
 .sidebar-list-item > a {
+  display: flex;
+  align-items: center;
   text-decoration: none;
   color: #9e9ea4;
+  width: 100%;
+  height: 100%;
+  padding: 10px; /* Adjust padding as needed */
+  box-sizing: border-box; /* Ensure padding is included in the element's total width and height */
+}
+
+.sidebar-list-item > a:hover {
+  color: white; /* Example: Change text color on hover */
 }
 
 .sidebar-responsive {
@@ -111,6 +123,8 @@ body {
   position: absolute;
   z-index: 12 !important;
 }
+/* End Sidebar  */
+
 /* End Sidebar  */
 
 /* Main  */
