@@ -326,11 +326,11 @@ button[type='submit']:hover {
 }
 
 
+
 .select-box {
   position: relative; /* Ensure relative positioning for dropdown arrow */
   width: 100%; /* Full width */
   max-width: 300px; /* Adjust max-width as per your design */
-  /* background-color: rgba(255, 255, 255, 0.1); */
 }
 
 .select-box select {
@@ -342,7 +342,7 @@ button[type='submit']:hover {
   appearance: none; /* Remove default arrow */
   -webkit-appearance: none; /* Remove default arrow for WebKit browsers */
   -moz-appearance: none; /* Remove default arrow for Firefox */
-  background-color: rgba(255, 255, 255, 0.1); /* Transparent background */
+  background-color: transparent; /* Transparent background */
   color: #fff; /* Text color */
 }
 
@@ -351,7 +351,6 @@ button[type='submit']:hover {
   border-color: #66afe9; /* Border color on focus (optional) */
   background-color: #3a3939; /* Background color on focus */
 }
-
 
 /* Styling the arrow */
 .select-box::after {
@@ -363,11 +362,20 @@ button[type='submit']:hover {
   right: 10px; /* Adjust horizontal alignment */
   transform: translateY(-50%); /* Center vertically */
   pointer-events: none; /* Ensure the arrow does not intercept clicks */
-
 }
 
+/* Styling the dropdown options */
+.select-box select option {
+  background-color: transparent; /* Transparent background */
+  color: #fff; /* Text color */
+}
+
+/* When an option is hovered */
+.select-box select option:hover {
+  background-color: rgba(255, 255, 255, 0.2); /* Lighter transparent background when hovered */
+}
 
 /* When an option is selected */
 .select-box select option:checked {
-  color: #fff; /* Change text color to black */
+  background-color: #3a3939; /* Darker background color when selected */
 }

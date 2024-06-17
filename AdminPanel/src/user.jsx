@@ -48,10 +48,10 @@ function User() {
           </div>
   
           <div class="select-box">
-            <select id="Number_type" name="ntype" required>
+            <select required>
               
-              <option value="">Options</option>
-              <option value="Frame">Frame-Based</option>
+            <option disabled selected hidden>Select an option</option>
+            <option value="Frame">Frame-Based</option>
               <option value="Time">Time-Based</option>
             </select>
           </div>
