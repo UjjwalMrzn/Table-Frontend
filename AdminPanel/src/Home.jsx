@@ -38,7 +38,7 @@ function Home() {
                   </div>
                 )}
                 <div className='price'>
-                  <h1 className='frame-price'>Frame Price: {table.framePrice}</h1>
+                  <h1 className='frame-price'>table Price: {table.framePrice}</h1>
                   <h1 className='time-price'>Time Price: {table.timePrice}</h1>
                 </div>
               </div>
