@@ -6,6 +6,7 @@ import Header from './Header';
 import Sidebar from './Sidebar';
 import Home from './Home';
 import Details from './Details';
+import { BrowserRouter } from 'react-router-dom'
 
 function App() {
   const [openSidebarToggle, setOpenSidebarToggle] = useState(false);
@@ -20,13 +21,12 @@ function App() {
       <Sidebar openSidebarToggle={openSidebarToggle} OpenSidebar={OpenSidebar} />
     
       <main>
-        <Switch>
+        <BrowserRouter>
           <Route path="/" component={Home} />
-          <Route path="/home" component={Home} />
           <Route path="/user/:id" component={User} />
           <Route path="/details/:id" component={Details} />
-          <Redirect from="/" to="/home" />
-        </Switch>
+          
+        </BrowserRouter>
       </main>
     </div>
   );
