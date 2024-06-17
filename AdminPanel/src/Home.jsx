@@ -19,7 +19,7 @@ function Home() {
 
   useEffect(()=>{
     dispatch(ListTable())
-  },)
+  },[dispatch])
 
   return (
     // <main className='main-container'>
