@@ -58,6 +58,15 @@ function User() {
             <label>Email</label>
             <input type='email' name='email' value={formData.email} onChange={handleChange} required />
           </div>
+  
+          <div class="select-box">
+            <select id="Number_type" name="ntype" required>
+              
+              <option value="">Options</option>
+              <option value="Frame">Frame-Based</option>
+              <option value="Time">Time-Based</option>
+            </select>
+          </div>
           <div><p>Price: {table ? table.price : 'N/A'}</p></div>
           <button type='submit'>Submit</button>
         </form>
@@ -66,5 +75,9 @@ function User() {
       
   );
 }
+
+
+
+
 
 export default User;
