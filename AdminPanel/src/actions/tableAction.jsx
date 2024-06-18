@@ -17,7 +17,6 @@ export const ListTable=()=>async(dispatch)=>{
             type:TABLE_ADD_REQUEST
         })
         const{data}=await axios.get('/api/getalltable')
-        console.log('yiiiiiiiiiii',data)
         dispatch({
             type:TABLE_ADD_SUCCESS,    
             payload:data
@@ -41,7 +40,7 @@ export const ListTableDetail=(id)=>async(dispatch)=>{
             type:TABLE_DETAIL_REQUEST
         })
         const{data}=await axios.get(`/api/gettable/${id}`)
-        console.log('detail: ',data)
+        console.log('------detail------: ')
         dispatch({
             type:TABLE_DETAIL_SUCCESS,    
             payload:data

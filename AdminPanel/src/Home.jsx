@@ -8,7 +8,7 @@ import Errormsg from './components/Errormsg'
 import Spinner from './components/Spinner'
 function Home() {
   // const tables = [
-  //   { id: 1, name: 'TABLE 1', framePrice: 'Rs.500', timePrice: 'Rs.8/min', occupied: true, ac: true },
+  //   { id: 1, name: 'TABLE 1', framePrice: 'Rs.500', timePrice: 'Rs.8/min', occupied: true, ac: false },
   //   { id: 2, name: 'TABLE 2', framePrice: 'Rs.500', timePrice: 'Rs.8/min', occupied: false, ac: true },
   //   { id: 3, name: 'TABLE 3', framePrice: 'Rs.300', timePrice: 'Rs.5/min', occupied: false, ac: true },
   //   { id: 4, name: 'TABLE 4', framePrice: 'Rs.500', timePrice: 'Rs.8/min', occupied: true, ac: false },
@@ -26,14 +26,13 @@ function Home() {
   return (
 
     <div>
-      <h1>
-        List of Tables
-      </h1>
+      
       {loading ? <Spinner/>
                :error? <Errormsg>{error}</Errormsg>  
-               :
-                      <main className='main-container'>
-          
+               :<main className='main-container'>
+                <h1>
+        List of Tables
+      </h1>
             <div className='main-cards'>
               {table.map(table => (
                 console.log('boolean',table.is_running),
@@ -54,7 +53,7 @@ function Home() {
                         </div>
                       )}
                       <div className='price'>
-                        <h1 className='frame-price'>table Price: {table.price}</h1>
+                        <h1 className='frame-price'>Frame Price: {table.price}</h1>
                         <h1 className='time-price'>Time Price: {table.rate}</h1>
                       </div>
                     </div>

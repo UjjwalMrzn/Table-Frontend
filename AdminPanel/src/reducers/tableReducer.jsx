@@ -35,7 +35,7 @@ export const TableDetailReducer=(state={detail:[]},action)=>{
                 return {loading:true, detail:[]}
 
             case TABLE_DETAIL_SUCCESS:
-                return {loading:false, table:action.payload} 
+                return {loading:false, detail:action.payload} 
 
             case TABLE_DETAIL_FAIL:
                 return {loading:false, error:action.payload}    
