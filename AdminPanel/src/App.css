@@ -1,3 +1,5 @@
+/* App.css */
+
 body {
   width: 100vw;
   height: 100vh;
@@ -42,22 +44,33 @@ body {
   height: 100vh;
 }
 
-/* Header  */
+/* Header */
 .header {
   grid-area: header;
   height: 60px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 30px 0 30px;
+  padding: 0 30px;
   box-shadow: 0 6px 7px -3px rgba(0, 0, 0, 0.35);
 }
 
 .menu-icon {
   display: none;
+  cursor: pointer;
 }
-/* End Header  */
-/* Sidebar  */
+
+.header-left,
+.header-right {
+  display: flex;
+  align-items: center;
+}
+
+.header-right .icon {
+  margin-left: 15px;
+}
+
+/* Sidebar */
 #sidebar {
   grid-area: sidebar;
   height: 100%;
@@ -95,7 +108,7 @@ body {
   padding: 10px;
   display: flex;
   align-items: center;
-  transition: background-color 0.3s ease; /* Smooth transition for background color */
+  transition: background-color 0.3s ease;
 }
 
 .sidebar-list-item:hover {
@@ -110,12 +123,12 @@ body {
   color: #9e9ea4;
   width: 100%;
   height: 100%;
-  padding: 10px; /* Adjust padding as needed */
-  box-sizing: border-box; /* Ensure padding is included in the element's total width and height */
+  padding: 10px;
+  box-sizing: border-box;
 }
 
 .sidebar-list-item > a:hover {
-  color: white; /* Example: Change text color on hover */
+  color: white;
 }
 
 .sidebar-responsive {
@@ -123,12 +136,8 @@ body {
   position: absolute;
   z-index: 12 !important;
 }
-/* End Sidebar  */
 
-/* End Sidebar  */
-
-/* Main  */
-/* Main  */
+/* Main */
 .main-container {
   grid-area: main;
   overflow-y: auto;
@@ -144,8 +153,8 @@ body {
 .main-cards {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 20px;
-  margin: 15px 0;
+  gap: 15px;
+  margin: 15px 10px;
 }
 
 .card {
@@ -157,32 +166,31 @@ body {
   cursor: pointer;
   transition: all 0.3s ease-in-out;
   position: relative;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adding box shadow */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   background-color: transparent;
 }
 
 .card.occupied {
-  background-color: rgba(213, 0, 0, 0.1); /* Semi-transparent red background for occupied */
-  border: 5px solid #d50000; /* Red border for occupied */
+  background-color: rgba(213, 0, 0, 0.1);
+  border: 5px solid #d50000;
 }
 
 .card.not-occupied {
-  background-color: rgba(46, 125, 50, 0.1); /* Semi-transparent green background for not occupied */
-  border: 5px solid #2e7d32; /* Green border for not occupied */
+  background-color: rgba(46, 125, 50, 0.1);
+  border: 5px solid #2e7d32;
 }
 
 .card.not-occupied:hover {
-  background-color: rgba(46, 125, 50, 0.1); /* Semi-transparent green background for not occupied */
-  transform: translateY(-5px); /* Move the card up slightly on hover */
+  background-color: rgba(46, 125, 50, 0.1);
+  transform: translateY(-5px);
   border-radius: 50px;
 }
 
 .card.occupied:hover {
-  background-color: rgba(213, 0, 0, 0.1); /* Semi-transparent red background for occupied */
-  transform: translateY(-5px); /* Move the card up slightly on hover */
+  background-color: rgba(213, 0, 0, 0.1);
+  transform: translateY(-5px);
   border-radius: 50px;
 }
-
 
 .card-inner {
   display: flex;
@@ -196,14 +204,12 @@ body {
 }
 
 .card.occupied .card_icon {
-  color: #d50000; /* Red icon color for occupied */
+  color: #d50000;
 }
 
 .card.not-occupied .card_icon {
-  color: #2e7d32; /* Green icon color for not occupied */
+  color: #2e7d32;
 }
-
-
 
 .frame-price,
 .time-price {
@@ -212,7 +218,6 @@ body {
   text-align: right;
   color: #ccc;
 }
-
 
 .price-container {
   display: flex;
@@ -223,7 +228,7 @@ body {
 .ac {
   flex: 1;
   text-align: left;
-  font-size: 11px;
+  font-size: xx-small;
   color: #ccc;
 }
 
@@ -231,9 +236,6 @@ body {
   flex: 2;
   text-align: right;
 }
-
-/* End Main  */
-
 
 /* Media Queries */
 @media screen and (max-width: 992px) {
@@ -258,126 +260,28 @@ body {
   }
 }
 
-@media screen and (max-width: 576px) {
-  .header {
-    padding: 0 15px; /* Adjust padding for smaller screens */
+@media screen and (min-width: 993px) {
+  .grid-container {
+    grid-template-columns: 260px 1fr;
+    grid-template-rows: 0.2fr 3fr;
+    grid-template-areas:
+      'sidebar header header header'
+      'sidebar main main main';
+  }
+
+  #sidebar {
+    display: block;
+  }
+
+  .menu-icon {
+    display: none;
+  }
+
+  .sidebar-title > span {
+    display: none;
+  }
+
+  .sidebar-responsive {
+    display: block !important;
   }
 }
-
-/* Form Styling */
-.form-box {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 80vh; /* Vertically center the form */
-}
-
-.form-container {
-  width: 450px;
-  padding: 28px;
-  border-radius: 10px;
-  overflow: hidden;
-  background: transparent;
-  border: 1px solid white; /* White border */
-  margin-top: 10px; /* Spacing from the top */
-  backdrop-filter: blur(5px) saturate(90%);
-}
-
-h2 {
-  font-size: 26px;
-  font-weight: bold;
-  text-align: center;
-  color: floralwhite;
-  padding-bottom: 8px;
-  border-bottom: 1px solid silver;
-}
-
-.form-group {
-  margin-bottom: 15px;
-}
-
-.form-group label {
-  display: block;
-  margin-bottom: 5px;
-  color: white; /* Label color */
-}
-
-.form-group input {
-  width: 100%;
-  padding: 8px;
-  box-sizing: border-box;
-  background: rgba(255, 255, 255, 0.1); /* Input background with transparency */
-  border: 1px solid white; /* White border for input */
-  color: white; /* Input text color */
-}
-
-button[type='submit'] {
-  width: 100%;
-  padding: 10px;
-  background-color: #4caf50; /* Green submit button */
-  border: none;
-  color: white;
-  cursor: pointer;
-  margin-top: 10px;
-}
-
-button[type='submit']:hover {
-  background-color: #45a049; /* Darker green on hover */
-}
-
-
-
-.select-box {
-  position: relative; /* Ensure relative positioning for dropdown arrow */
-  width: 100%; /* Full width */
-  max-width: 300px; /* Adjust max-width as per your design */
-}
-
-.select-box select {
-  width: 100%; /* Full width of parent */
-  padding: 10px; /* Padding for select box */
-  font-size: 16px; /* Font size for select box */
-  border: 1px solid #ccc; /* Border style */
-  border-radius: 5px; /* Rounded corners */
-  appearance: none; /* Remove default arrow */
-  -webkit-appearance: none; /* Remove default arrow for WebKit browsers */
-  -moz-appearance: none; /* Remove default arrow for Firefox */
-  background-color: transparent; /* Transparent background */
-  color: #fff; /* Text color */
-}
-
-.select-box select:focus {
-  outline: none; /* Remove outline on focus */
-  border-color: #66afe9; /* Border color on focus (optional) */
-  background-color: #3a3939; /* Background color on focus */
-}
-
-/* Styling the arrow */
-.select-box::after {
-  content: '\25BC'; /* Unicode character for down arrow */
-  font-size: 14px; /* Adjust arrow size */
-  color: #fff; /* Arrow color */
-  position: absolute; /* Position relative to parent */
-  top: 50%; /* Adjust vertical alignment */
-  right: 10px; /* Adjust horizontal alignment */
-  transform: translateY(-50%); /* Center vertically */
-  pointer-events: none; /* Ensure the arrow does not intercept clicks */
-}
-
-/* Styling the dropdown options */
-.select-box select option {
-  background-color: transparent; /* Transparent background */
-  color: #fff; /* Text color */
-}
-
-/* When an option is hovered */
-.select-box select option:hover {
-  background-color: rgba(255, 255, 255, 0.2); /* Lighter transparent background when hovered */
-}
-
-/* When an option is selected */
-.select-box select option:checked {
-  background-color: #3a3939; /* Darker background color when selected */
-}
-
-

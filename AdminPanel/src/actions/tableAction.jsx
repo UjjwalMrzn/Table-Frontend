@@ -6,9 +6,10 @@ export const ListTable=()=>async(dispatch)=>{
         dispatch({
             type:TABLE_ADD_REQUEST
         })
-        const {data}=await axios.get('/api/getalltable')
+        const{data}=await axios.get('/api/getalltable')
+        console.log('yiiiiiiiiiii',data)
         dispatch({
-            type:TABLE_ADD_SUCCESS,
+            type:TABLE_ADD_SUCCESS,    
             payload:data
         })
     }catch(error){

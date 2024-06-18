@@ -4,7 +4,7 @@ import { TABLE_ADD_REQUEST ,TABLE_ADD_SUCCESS,TABLE_ADD_FAIL} from '../constants
 export const TableReducer=(state={table:[]},action)=>{
     switch(action.type){
         case TABLE_ADD_REQUEST:
-            return {loading:true, ...state}
+            return {loading:true, table:[]}
 
             case TABLE_ADD_SUCCESS:
                 return {loading:false, table:action.payload} 
