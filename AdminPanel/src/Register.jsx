@@ -2,17 +2,22 @@
 
 import React from 'react';
 import './Login.css';
-import { FaUser, FaLock } from "react-icons/fa";  
+import { FaUser, FaLock, FaEnvelope } from "react-icons/fa";  
 
-const Login = () => {
+const Register = () => {
   return (
     <div className='wrapper'>
       <div className='container'>
         <form action=''>
-          <h2>Login</h2>
+          <h2>Register</h2>
           <div className='input-box'>
             <input type='text' placeholder='Username' required />
             <FaUser className='icon' />
+          </div>
+
+          <div className='input-box'>
+            <input type='email' placeholder='Email' required />
+            <FaEnvelope className='icon' />
           </div>
 
           <div className='input-box'>
@@ -21,19 +26,18 @@ const Login = () => {
           </div>
 
           <div className='remember-forget'>
-            <label><input type='checkbox' required />Remember me
+            <label><input type='checkbox' required />I agree to the terms & conditions
             </label>
-            <a href=''>Forget Password?</a>
           </div>
 
          
 
           <div className='btn_container'>
-            <button type='submit'>Login</button>
+            <button type='submit'>Register</button>
           </div>
 
           <div className='register-link'>
-            <p>Don't have an account? <a href='/register'>Register</a></p>
+            <p>Already have an account? <a href='/login'>Login</a></p>
           </div>
         </form>
       </div>
@@ -41,4 +45,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default Register;

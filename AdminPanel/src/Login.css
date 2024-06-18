@@ -1,20 +1,22 @@
-/* register.css */
+/* Login.css */
 
 .wrapper {
   display: flex;
   justify-content: center;
   align-items: center;
-
+  margin: 10%;
+  /* height: 100vh; Ensure full viewport height */
+  /* background-color: #222; Example background color */
 }
 
 .container {
-  max-width: 650px;
-  padding: 28px;
-  border-radius: 10px;
-  overflow: hidden;
-  background: transparent;
+  width: 320px;
+  padding: 40px;
+  background: rgba(255, 255, 255, 0.1); /* Use rgba for transparency */
   border: 1px solid white;
   backdrop-filter: blur(3px);
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Optional: Add shadow for better visibility */
 }
 
 .container h2 {
@@ -27,39 +29,53 @@
 }
 
 .input-box {
-position: relative;
-width: 93%;
-height: 50px;
-margin: 30px 0;
+  position: relative;
+  width: 100%;
+  height: 40px;
+  margin: 20px 0;
 }
 
 .input-box input {
-  height: 40px;
-  width: 100%;
+  height: 100%;
+  width: calc(100% - 30px); /* Adjust for icon width */
   padding: 0 10px;
-  border-radius: 5px;
+  border-radius: 10px;
   border: 1px solid #ccc;
+  outline: none;
 }
 
-.input-box .icon{
+.input-box .icon {
   position: absolute;
-  right: -15px;
+  right: 10px;
   top: 50%;
-  translate: 0 -56%;
+  transform: translateY(-50%);
   font-size: 16px;
+  color: #ccc;
 }
 
-
-.remember-forget{
+.remember-forget {
   display: flex;
   justify-content: space-between;
   font-size: 14.5px;
-  margin: -15px 0 15px ;
+  margin: 15px 0;
+}
 
+.remember-forget label {
+  display: flex;
+  align-items: center;
+}
+
+.remember-forget a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.remember-forget a:hover {
+  text-decoration: underline;
 }
 
 .btn_container {
-  margin-top: 8px;
+  margin-top: 15px;
   text-align: center;
 }
 
@@ -67,10 +83,11 @@ margin: 30px 0;
   width: 100%;
   background-color: #5fa7d5;
   font-size: 15px;
+  font-weight: 600;
   color: white;
   padding: 8px 12px;
   border: 2px solid #5fa7d5;
-  border-radius: 4px;
+  border-radius: 10px;
   cursor: pointer;
   transition: background-color 0.3s, color 0.3s;
 }
@@ -78,4 +95,20 @@ margin: 30px 0;
 .btn_container button:hover {
   background-color: transparent;
   backdrop-filter: blur(1px);
+}
+
+.register-link {
+  font-size: 14px;
+  text-align: center;
+  margin-top: 15px;
+}
+
+.register-link p a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.register-link p a:hover {
+  text-decoration: underline;
 }

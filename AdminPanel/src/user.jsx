@@ -55,7 +55,10 @@ function User() {
               <option value="Time">Time-Based</option>
             </select>
           </div>
-          <button type='submit'>Submit</button>
+          <div className='submit-btn'>
+            <button type='submit'>Submit</button>
+            </div>
+         
         </form>
       </div>
     </div>

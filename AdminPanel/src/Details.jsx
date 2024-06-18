@@ -10,6 +10,7 @@ function Details() {
     bookingNumber: '323168839',
     name: 'Ujjwal Maharjan',
     email: 'ujjwal.mrzn@gmail.com',
+    address: 'Naikap, Kathmandu',
     phone: '9840209417',
     noOfPeople: 4,
     bookingDate: '2024-06-10 14:10:00',
@@ -39,20 +40,13 @@ function Details() {
           </tr>
 
           <tr>
-          <td>Email Id</td>
-          <td colspan="3">{bookingDetails.email}</td> 
+            <td>Address</td>
+            <td colspan="3">{bookingDetails.address}</td>
           </tr>
 
           <tr>
-          <td>No. of People</td>
-          <td colspan="3">{bookingDetails.noOfPeople}</td>
-           
-          </tr>
-         
-          <tr>
-          <td>Booking Status</td>
-          <td  colspan="3">{bookingDetails.bookingStatus}</td>
-          
+          <td>Email Id</td>
+          <td colspan="3">{bookingDetails.email}</td> 
           </tr>
           <tr>
             <td>Posting Date</td>
@@ -66,6 +60,9 @@ function Details() {
           </tr>
         </tbody>
       </table>
+      <div className='table-btn'>
+        <button type='submit'>View Table</button>
+      </div>
     </div>
   );
 }

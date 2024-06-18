@@ -8,6 +8,7 @@ import Sidebar from './Sidebar';
 import Home from './Home';
 import Details from './Details';
 import Login from './Login';
+import Register from './Register';
 
 function App() {
   const [openSidebarToggle, setOpenSidebarToggle] = useState(false);
@@ -40,6 +41,7 @@ function App() {
           <Route path="/user/:id" component={User} />
           <Route path="/details/:id" component={Details} />
           <Route path="/login" component={Login} />
+          <Route path="/register" component={Register} />
         </BrowserRouter>
       </main>
     </div>

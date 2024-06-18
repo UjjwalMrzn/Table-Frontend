@@ -51,3 +51,25 @@
     padding: 8px;
   }
 }
+
+.table-btn {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 10px; /* Adjust margin as needed */
+}
+
+.table-btn button{
+  background-color: transparent;
+  font-size: 15px;
+  color: white;
+  padding: 8px 12px;
+  border: 2px solid #45a049;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+
+}
+
+.table-btn button:hover{
+  background-color: #45a049;
+}
