@@ -37,7 +37,7 @@ function Home() {
             <div className='main-cards'>
               {table.map(table => (
                 console.log('boolean',table.is_running),
-                <Link to={table.is_running ? `/gettable/${table.id}` : `/registerTable/${table.id}`} style={{ textDecoration: 'none', color: 'white' }} key={table.id}>
+                <Link to={table.is_running ? `/Details/${table.id}` : `/User/${table.id}`} style={{ textDecoration: 'none', color: 'white' }} key={table.id}>
                   <div className={`card ${table.is_running ? 'occupied' : 'not-occupied'}`}>
                     <div className='card-inner'>
                       <h3>{`Table${table.table_type}`}</h3>

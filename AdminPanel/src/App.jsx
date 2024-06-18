@@ -8,6 +8,7 @@ import Home from './Home';
 import Details from './Details';
 import { BrowserRouter } from 'react-router-dom'
 
+
 function App() {
   const [openSidebarToggle, setOpenSidebarToggle] = useState(false);
 
@@ -25,7 +26,8 @@ function App() {
           <Route path="/" component={Home} />
           <Route path="/user/:id" component={User} />
           <Route path="/details/:id" component={Details} />
-          
+         
+
         </BrowserRouter>
       </main>
     </div>
