@@ -1,11 +1,12 @@
 import {combineReducers} from 'redux'
 import {configureStore} from '@reduxjs/toolkit'
-import { TableReducer } from './reducers/tableReducer'
+import { TableReducer,TableDetailReducer } from './reducers/tableReducer'
 
 
 const reducer=combineReducers({
 
     tablelist:TableReducer,
+    tabledetaillist:TableDetailReducer
 })
 
 

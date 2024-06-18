@@ -2,13 +2,14 @@ import React, { useState, useEffect } from 'react';
 import './App.css';
 import { Switch, Route, Redirect } from 'wouter';
 import { BrowserRouter } from 'react-router-dom';
-import User from './User';
+import User from './user';
 import Header from './Header';
 import Sidebar from './Sidebar';
 import Home from './Home';
 import Details from './Details';
 import Login from './Login';
 import Register from './Register';
+
 
 function App() {
   const [openSidebarToggle, setOpenSidebarToggle] = useState(false);

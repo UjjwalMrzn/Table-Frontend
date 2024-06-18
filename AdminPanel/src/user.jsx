@@ -1,9 +1,23 @@
-import React, { useState } from 'react';
+import React, { useState,useEffect } from 'react';
 import { useRoute } from 'wouter';
+import { useDispatch,useSelector } from 'react-redux'
 
+import { ListTableDetail } from './actions/tableAction'
 function User() {
+
+
+  // const dispatch=useDispatch()
   const [match, params] = useRoute('/user/:id');
 
+
+  // const tabledetaillist =useSelector(state=>state.tabledetaillist)
+  // const {error, loading , table}=tabledetaillist
+
+  // useEffect(()=>{
+  //   dispatch(ListTableDetail())
+
+
+  // },[dispatch])
   const [formData, setFormData] = useState({
     name: '',
     phone: '',
