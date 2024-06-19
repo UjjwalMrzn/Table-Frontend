@@ -19,8 +19,11 @@ export const ListTable=()=>async(dispatch)=>{
         const{data}=await axios.get('/api/getalltable')
         dispatch({
             type:TABLE_ADD_SUCCESS,    
-            payload:data
+            payload:data,
+
         })
+        console.log('------table------: ',data)
+
     }catch(error){
         dispatch({
             type:TABLE_ADD_FAIL,
@@ -40,7 +43,7 @@ export const ListTableDetail=(id)=>async(dispatch)=>{
             type:TABLE_DETAIL_REQUEST
         })
         const{data}=await axios.get(`/api/gettable/${id}`)
-        console.log('------detail------: ')
+        console.log('------detail------: ',data)
         dispatch({
             type:TABLE_DETAIL_SUCCESS,    
             payload:data

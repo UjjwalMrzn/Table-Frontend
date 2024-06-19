@@ -9,6 +9,8 @@ import Home from './Home';
 import Details from './Details';
 import Login from './Login';
 import Register from './Register';
+import video from './video';
+
 
 
 function App() {
@@ -43,6 +45,8 @@ function App() {
           <Route path="/details/:id" component={Details} />
           <Route path="/login" component={Login} />
           <Route path="/register" component={Register} />
+          <Route path="/video/:id" component={video} />
+
         </BrowserRouter>
       </main>
     </div>

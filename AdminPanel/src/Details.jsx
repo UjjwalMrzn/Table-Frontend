@@ -74,7 +74,14 @@ function Details() {
                           <td colSpan="2">No person details available</td>
                         </tr>
                       )}
+                      {/* <div className='main-cards'>
+                      {detail.map(item=>(
+                        <div key={item.id}>
+                          {item.persondetail.Name}
 
+                        </div>
+                      ))}
+                    </div> */}
                       
                   
                   </tbody>
@@ -82,7 +89,7 @@ function Details() {
               
       }
         <div className='table-btn'>
-             <a href='/'><button type='submit'>Table View</button></a> 
+             <Link to ={ `/video/${id}`}> Table View </Link>
         </div>
     </div>
        
