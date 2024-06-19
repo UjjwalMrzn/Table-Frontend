@@ -1,6 +1,8 @@
 import React,{useEffect} from 'react';
 import { TiTick } from 'react-icons/ti';
 import { IoCloseSharp } from 'react-icons/io5';
+import Button from 'react-bootstrap/Button';
+
 import { Link } from 'wouter';
 import { useDispatch,useSelector } from 'react-redux'
 import { ListTable } from './actions/tableAction'
@@ -33,9 +35,13 @@ function Home() {
                 <h1>
         List of Tables
       </h1>
+      <div className='table-btn'>
+             <Link to ={ `/addTable`}> 
+             <Button variant="outline-success" className='my-2'>View Table</Button>
+             </Link>
+        </div>
             <div className='main-cards'>
               {table.map(table => (
-                console.log('boolean',table.is_running),
                 <Link to={table.is_running ? `/Details/${table.id}` : `/User/${table.id}`} style={{ textDecoration: 'none', color: 'white' }} key={table.id}>
                   <div className={`card ${table.is_running ? 'occupied' : 'not-occupied'}`}>
                     <div className='card-inner'>

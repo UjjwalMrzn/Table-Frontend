@@ -10,6 +10,7 @@ import Details from './Details';
 import Login from './Login';
 import Register from './Register';
 import video from './video';
+import addTable from './addTable'
 
 
 
@@ -46,6 +47,8 @@ function App() {
           <Route path="/login" component={Login} />
           <Route path="/register" component={Register} />
           <Route path="/video/:id" component={video} />
+          <Route path="/addTable" component={addTable} />
+
 
         </BrowserRouter>
       </main>
