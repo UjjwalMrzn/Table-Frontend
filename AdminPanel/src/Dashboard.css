@@ -79,12 +79,12 @@
   font-size: 1rem;
 }
 
-.status.open {
+.status.true {
   background-color: #e0f7fa;
   color: #00796b;
 }
 
-.status.close {
+.status.false {
   background-color: #fff9c4;
   color: #f57f17;
 }
@@ -97,12 +97,12 @@
   font-size: 1rem;
 }
 
-.AC.Available {
+.AC.true {
   background-color: #e0f7fa;
   color: #00796b;
 }
 
-.AC.Not-Available {
+.AC.false {
   background-color: #fff9c4;
   color: #f57f17;
 }
@@ -149,7 +149,7 @@
   }
 
 
-.book-btn.disabled {
+.book-btn.false {
   background-color: #9e9e9e;
   cursor: not-allowed;
   border: none;

@@ -1,7 +1,8 @@
 import React,{useEffect} from 'react';
-import { TiTick } from 'react-icons/ti';
+import {   } from 'react-icons/ti';
 import { IoCloseSharp } from 'react-icons/io5';
 import Button from 'react-bootstrap/Button';
+import { TiTick } from 'react-icons/ti';
 
 import { Link } from 'wouter';
 import { useDispatch,useSelector } from 'react-redux'
