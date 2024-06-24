@@ -91,10 +91,9 @@ const Dashboard = () => {
                 <td>{table.framerate}</td>
                 <td>{table.timerate}</td>
                 <td>
-                  <span className={`status ${table.status.toLowerCase()}`}>
-                    {table.status}
-                  </span>
-                </td>
+  <span className={`status-dot ${table.status === 'Open' ? 'open' : 'close'}`} />
+</td>
+
                     <td>
                   <span className={`AC ${table.AC}`}>
                     {table.AC}
@@ -106,7 +105,7 @@ const Dashboard = () => {
                       View Details
                     </button>
                   </Link>
-                  <Link to={`/User/${table.id}`}>
+                  <Link to={`/user/${table.id}`}>
                     <button
                       className={`book-btn ${table.status === 'Close' ? 'disabled' : ''}`}
                       disabled={table.status === 'Close'}

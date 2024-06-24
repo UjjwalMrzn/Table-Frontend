@@ -45,7 +45,7 @@ function App() {
       <main className='main-container'>
         <BrowserRouter>
           <Route path="/" component={Home} />
-          <Route path="/User/:id" component={User} />
+          <Route path="/user/:id" component={User} />
           <Route path="/details/:id" component={Details} />
           <Route path="/login" component={Login} />
           <Route path="/register" component={Register} />
