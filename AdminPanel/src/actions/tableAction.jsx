@@ -11,6 +11,8 @@ import {
     TABLE_LOGIN_REQUEST,
     TABLE_LOGIN_SUCCESS,
     TABLE_LOGIN_FAIL,
+    REMOVE_INFO,
+    // DETAIL_RESET
 
 
 } from '../constants/tableConstant'
@@ -30,8 +32,8 @@ export const ListTable=()=>async(dispatch)=>{
     }catch(error){
         dispatch({
             type:TABLE_ADD_FAIL,
-            payload:error.response && error.resonse.data.message
-                ?error.resonse.data.message
+            payload:error.response && error.resonse.data.detail
+                ?error.resonse.data.detail
                 :error.message
     
         })
@@ -50,11 +52,12 @@ export const ListTableDetail=(id)=>async(dispatch)=>{
             type:TABLE_DETAIL_SUCCESS,    
             payload:data
         })
+        
     }catch(error){
         dispatch({
             type:TABLE_DETAIL_FAIL,
-            payload:error.response && error.response.data.message
-                ?error.response.data.message
+            payload:error.response && error.response.data.detail
+                ?error.response.data.detail
                 :error.message
     
         })
@@ -63,7 +66,7 @@ export const ListTableDetail=(id)=>async(dispatch)=>{
 }
 
 
-export const TableRegister=(name,address,phonenumber,email,table_type,frame,frame_time_limit )=>async(dispatch)=>{
+export const TableRegister=(name,address,phonenumber,email,table_type,rate,price,frame,frame_time_limit,ac )=>async(dispatch)=>{
     try{
         dispatch({
             type:TABLE_LOGIN_REQUEST
@@ -81,14 +84,16 @@ export const TableRegister=(name,address,phonenumber,email,table_type,frame,fram
         const{data}=await axios.post(
             '/api/registerTable/',
             {
-            'table_type':table_type,
             'name':name,
             'address':address,
             'phonenumber':phonenumber,
             'email':email,
+            'table_type':table_type,
             'frame':frame,
             'frame_time_limit':frame_time_limit,
-            
+            'rate':rate,
+            'price':price,
+            'ac':ac,
         },
             config)
             console.log(data),
@@ -99,14 +104,32 @@ export const TableRegister=(name,address,phonenumber,email,table_type,frame,fram
             payload:data
         })
         localStorage.setItem('Info',JSON.stringify(data))
-    }catch(error){
+    }
+    
+    catch(error){
         dispatch({
             type:TABLE_LOGIN_FAIL,
-            payload:error.response && error.response.data.message
-                ?error.response.data.message
+            payload:error.response && error.response.data.detail
+                ?error.response.data.detail
                 :error.message
     
         })
       
     }
 }
+
+
+
+
+
+export const RemoveInfo=()=>async(dispatch)=>{
+        localStorage.removeItem('Info')
+
+        dispatch({
+            type:REMOVE_INFO
+        })
+        // dispatch({
+        //     type:DETAIL_RESET
+        // })
+    }
+    

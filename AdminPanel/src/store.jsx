@@ -7,7 +7,7 @@ const reducer=combineReducers({
 
     tablelist:TableReducer,
     tabledetaillist:TableDetailReducer,
-    tableRegister:TableRegisterReducer,
+    tableRegisterstore:TableRegisterReducer,
 })
 
 

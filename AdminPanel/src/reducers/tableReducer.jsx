@@ -9,7 +9,8 @@ import {
     TABLE_LOGIN_REQUEST,
     TABLE_LOGIN_SUCCESS,
     TABLE_LOGIN_FAIL,
-
+    REMOVE_INFO,
+    // DETAIL_RESET
 
 } from '../constants/tableConstant'
 
@@ -41,7 +42,9 @@ export const TableRegisterReducer=(state={},action)=>{
 
             case TABLE_LOGIN_FAIL:
                 return {loading:false, error:action.payload}    
-
+            case REMOVE_INFO:
+                return{}
+                
             default:
                 return state
 
@@ -57,7 +60,24 @@ export const TableDetailReducer=(state={detail:[]},action)=>{
                 return {loading:false, detail:action.payload} 
 
             case TABLE_DETAIL_FAIL:
-                return {loading:false, error:action.payload}    
+                return {loading:false, error:action.payload}  
+            // case  DETAIL_RESET:
+            //     return {detail:{}}
+
+            default:
+                return state
+
+    }
+}
+
+export const GetTableReducer=(state={gettable:[]},action)=>{
+    switch(action.type){
+             case GET_TABLE:
+                const item=action.payload
+                return {
+                    ...state,
+                    gettable:[...state.gettable,item]}
+
 
             default:
                 return state

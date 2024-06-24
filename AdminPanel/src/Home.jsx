@@ -5,7 +5,7 @@ import Button from 'react-bootstrap/Button';
 
 import { Link } from 'wouter';
 import { useDispatch,useSelector } from 'react-redux'
-import { ListTable } from './actions/tableAction'
+import { ListTable ,RemoveInfo} from './actions/tableAction'
 import Errormsg from './components/Errormsg'
 import Spinner from './components/Spinner'
 function Home() {
@@ -22,7 +22,9 @@ function Home() {
   const {error,loading ,table}=tablelist
 
   useEffect(()=>{
-    dispatch(ListTable())
+    dispatch(ListTable());
+    dispatch(RemoveInfo());
+    
   },[dispatch])
 
   return (
