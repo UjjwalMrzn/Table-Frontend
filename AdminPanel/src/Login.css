@@ -1,5 +1,3 @@
-/* Login.css */
-
 .wrapper {
   display: flex;
   justify-content: center;
@@ -9,8 +7,18 @@
   /* background-color: #222; Example background color */
 }
 
-.container {
-  width: 320px;
+.wrapper1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 7%;
+  /* height: 100vh; Ensure full viewport height */
+  /* background-color: #222; Example background color */
+}
+
+.container1 {
+  width: 100%;
+  max-width: 380px; /* Set max-width */
   padding: 40px;
   background: rgba(255, 255, 255, 0.1); /* Use rgba for transparency */
   border: 1px solid white;
@@ -19,7 +27,7 @@
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Optional: Add shadow for better visibility */
 }
 
-.container h2 {
+.container1 h2 {
   font-size: 26px;
   font-weight: bold;
   text-align: center;
@@ -37,19 +45,36 @@
 
 .input-box input {
   height: 100%;
-  width: calc(100% - 30px); /* Adjust for icon width */
-  padding: 0 10px;
+  width: 100%;
+  padding: 0 40px;
   border-radius: 10px;
   border: 1px solid #ccc;
   outline: none;
+  box-sizing: border-box; /* Add this to include padding and border in element's total width and height */
+}
+
+/* Hide default password view eye icon in various browsers */
+input[type="password"]::-ms-reveal,
+input[type="password"]::-webkit-reveal {
+  display: none;
 }
 
 .input-box .icon {
   position: absolute;
-  right: 10px;
+  left: 10px;
   top: 50%;
   transform: translateY(-50%);
   font-size: 16px;
+  color: #ccc;
+}
+
+.input-box .toggle-password {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 16px;  
+  cursor: pointer;
   color: #ccc;
 }
 
@@ -65,14 +90,14 @@
   align-items: center;
 }
 
-.remember-forget a {
+/* .remember-forget a {
   color: #fff;
   text-decoration: none;
 }
 
 .remember-forget a:hover {
   text-decoration: underline;
-}
+} */
 
 .btn_container {
   margin-top: 15px;

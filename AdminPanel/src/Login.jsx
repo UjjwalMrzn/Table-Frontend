@@ -1,13 +1,17 @@
-// Login.jsx
-
-import React from 'react';
+import React, { useState } from 'react';
 import './Login.css';
-import { FaUser, FaLock } from "react-icons/fa";  
+import { FaUser, FaLock, FaEye, FaEyeSlash } from "react-icons/fa";  
 
 const Login = () => {
+  const [passwordVisible, setPasswordVisible] = useState(false);
+
+  const togglePasswordVisibility = () => {
+    setPasswordVisible(!passwordVisible);
+  };
+
   return (
     <div className='wrapper'>
-      <div className='container'>
+      <div className='container1'>
         <form action=''>
           <h2>Login</h2>
           <div className='input-box'>
@@ -16,17 +20,19 @@ const Login = () => {
           </div>
 
           <div className='input-box'>
-            <input type='password' placeholder='Password' required />
+            <input type={passwordVisible ? 'text' : 'password'} placeholder='Password' required />
             <FaLock className='icon' />
+            {passwordVisible ? (
+              <FaEyeSlash className='toggle-password' onClick={togglePasswordVisibility} />
+            ) : (
+              <FaEye className='toggle-password' onClick={togglePasswordVisibility} />
+            )}
           </div>
 
           <div className='remember-forget'>
-            <label><input type='checkbox' required />Remember me
-            </label>
-            <a href=''>Forget Password?</a>
+            <label><input type='checkbox' />Remember me</label>
+            {/* <a href=''>Forget Password?</a> */}
           </div>
-
-         
 
           <div className='btn_container'>
             <button type='submit'>Login</button>
