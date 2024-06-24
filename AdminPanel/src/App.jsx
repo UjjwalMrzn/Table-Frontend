@@ -2,14 +2,15 @@ import React, { useState, useEffect } from 'react';
 import './App.css';
 import { Switch, Route, Redirect } from 'wouter';
 import { BrowserRouter } from 'react-router-dom';
-import User from './User';
+import User from './user';
 import Header from './Header';
 import Sidebar from './Sidebar';
 import Home from './Home';
 import Details from './Details';
 import Login from './Login';
 import Register from './Register';
-import video from './Video';
+import video from './video';
+import addTable from './addTable'
 import Dashboard from './Dashboard';
 
 
@@ -47,8 +48,8 @@ function App() {
           <Route path="/details/:id" component={Details} />
           <Route path="/login" component={Login} />
           <Route path="/register" component={Register} />
-          <Route path="/Video/:id" component={video} />
-          <Route path="/Dashboard" component={Dashboard} />
+          <Route path="/video/:id" component={video} />
+          <Route path="/dashboard" component={Dashboard} />
 
         </BrowserRouter>
       </main>

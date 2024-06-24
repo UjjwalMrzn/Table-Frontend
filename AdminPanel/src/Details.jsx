@@ -1,5 +1,7 @@
 import React ,{useEffect} from 'react';
 import { useParams,Link } from 'wouter'
+import Button from 'react-bootstrap/Button';
+
 import './Details.css'; // Import CSS file
 import { useDispatch,useSelector } from 'react-redux'
 import { ListTableDetail } from './actions/tableAction'
@@ -89,7 +91,9 @@ function Details() {
               
       }
         <div className='table-btn'>
-             <Link to ={ `/video/${id}`}> Table View </Link>
+             <Link to ={ `/video/${id}`}> 
+             <Button variant="outline-success" className='my-2'>View Table</Button>
+             </Link>
         </div>
     </div>
        
