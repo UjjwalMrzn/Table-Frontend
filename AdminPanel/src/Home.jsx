@@ -46,6 +46,9 @@ function Home() {
               {table.map(table => (
                 <Link to={table.is_running ? `/Details/${table.id}` : `/User/${table.id}`} style={{ textDecoration: 'none', color: 'white' }} key={table.id}>
                   <div className={`card ${table.is_running ? 'occupied' : 'not-occupied'}`}>
+                  
+                  
+                  
                     <div className='card-inner'>
                       <h3>{`Table${table.table_type}`}</h3>
                       {table.is_running ? (
@@ -54,12 +57,16 @@ function Home() {
                         <TiTick className='card_icon' />
                       )}
                     </div>
+
+
                     <div className='price-container'>
                       {table.ac && (
                         <div className='ac'>
                           <h1>A/C</h1>
                         </div>
                       )}
+
+                      
                       <div className='price'>
                         <h1 className='frame-price'>Frame Price: {table.price}</h1>
                         <h1 className='time-price'>Time Price: {table.rate}</h1>

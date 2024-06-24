@@ -42,17 +42,24 @@ body {
     'sidebar header header header'
     'sidebar main main main';
   height: 100vh;
+  /* background-color: #263043; */
 }
 
 /* Header */
-.header {
+.header1 {
   grid-area: header;
-  height: 60px;
+  height: 70px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 0 30px;
   box-shadow: 0 6px 7px -3px rgba(0, 0, 0, 0.35);
+  /* background-color: #263043; */
+}
+
+.search-add {
+  display: flex;
+  align-items: center;
 }
 
 .menu-icon {
@@ -66,9 +73,26 @@ body {
   align-items: center;
 }
 
-.header-right .icon {
-  margin-left: 15px;
+.header-right {
+  margin-left: auto; /* Pushes .search-add to the right */
 }
+
+.back-btn-header{
+  margin-right: auto;
+}
+
+.back-btn-header button{
+  border: none;
+  background-color: transparent;
+  color: #fff;
+  cursor: pointer;
+  font-size: 20px;
+}
+.back-btn-header button:hover{
+  color: #66afe9;
+  transform: translateY(-2px);
+}
+
 
 /* Sidebar */
 #sidebar {
@@ -78,25 +102,45 @@ body {
   overflow-y: auto;
   transition: all 0.5s;
   -webkit-transition: all 0.5s;
+  box-shadow: 0 6px 7px 7px rgba(0, 0, 0, 0.35);
+
 }
 
 .sidebar-title {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 15px 30px 0px 30px;
-  margin-bottom: 30px;
+  padding: 8px 0px; /* Adjusted padding */
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.sidebar-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 20px; /* Adjusted spacing from left */
+  right: 20px; /* Adjusted spacing from right */
+  height: 2px; /* Thickness of the border */
+  background-color: #fff; /* Color of the solid line */
 }
 
 .sidebar-title > span {
-  display: none;
+  display: none; /* Hide any <span> directly inside .sidebar-title */
 }
 
 .sidebar-brand {
-  margin-top: 15px;
-  font-size: 20px;
-  font-weight: 700;
+  display: flex;
+  align-items: center;
 }
+
+.logo-image {
+  width: 250px; /* Adjust width as needed */
+  height: auto; /* Maintain aspect ratio */
+  /* margin-right: 10px; Adjust spacing between logo and text */
+}
+
+
 
 .sidebar-list {
   padding: 0;
@@ -136,6 +180,9 @@ body {
   position: absolute;
   z-index: 12 !important;
 }
+
+
+
 
 /* Main */
 .main-container {
@@ -354,6 +401,7 @@ h2 {
 
 .submit-btn button:hover {
   background-color: transparent; /* Darker green on hover */
+  transform: translateY(-2px);
 }
 
 

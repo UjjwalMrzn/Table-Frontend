@@ -12,6 +12,8 @@ import Register from './Register';
 import video from './video';
 import start from './start';
 import addTable from './addTable'
+import Dashboard from './Dashboard';
+
 
 
 
@@ -43,15 +45,14 @@ function App() {
       <main className='main-container'>
         <BrowserRouter>
           <Route path="/" component={Home} />
-          <Route path="/user/:id" component={User} />
+          <Route path="/User/:id" component={User} />
           <Route path="/details/:id" component={Details} />
           <Route path="/login" component={Login} />
           <Route path="/register" component={Register} />
           <Route path="/video/:id" component={video} />
           <Route path="/start/:id" component={start} />
 
-          <Route path="/addTable" component={addTable} />
-
+          <Route path="/dashboard" component={Dashboard} />
 
         </BrowserRouter>
       </main>

@@ -5,12 +5,12 @@ import { GiBallPyramid } from 'react-icons/gi';
 function Sidebar({ openSidebarToggle, OpenSidebar }) {
   return (
     <aside id="sidebar" className={openSidebarToggle ? 'sidebar-responsive' : ''}>
-      <div className='sidebar-title'>
-        <div className='sidebar-brand'>
-          <GiBallPyramid className='icon_header' /> SNOOKER
-        </div>
-        <span className='icon close_icon' onClick={OpenSidebar}>X</span>
+   <div className='sidebar-title'>
+      <div className='sidebar-brand'>
+        <img src="/snooker-logo.png" alt="Snooker Logo" className="logo-image" />
       </div>
+      <span className='icon close_icon' onClick={OpenSidebar}>X</span>
+    </div>
 
       <ul className='sidebar-list'>
         <li className='sidebar-list-item'>
@@ -19,13 +19,8 @@ function Sidebar({ openSidebarToggle, OpenSidebar }) {
           </a>
         </li>
         <li className='sidebar-list-item'>
-          <a href="/categories" className="sidebar-link">
-            <BsFillGrid3X3GapFill className='icon' /> Categories
-          </a>
-        </li>
-        <li className='sidebar-list-item'>
-          <a href="/customers" className="sidebar-link">
-            <BsPeopleFill className='icon' /> Customers
+          <a href="/dashboard" className="sidebar-link">
+            <BsPeopleFill className='icon' /> Manage Tables
           </a>
         </li>
         <li className='sidebar-list-item'>
@@ -34,6 +29,7 @@ function Sidebar({ openSidebarToggle, OpenSidebar }) {
           </a>
         </li>
       </ul>
+      
     </aside>
   );
 }
