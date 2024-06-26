@@ -152,11 +152,11 @@ useEffect(() => {
           </div>
           <div className='form-group'>
             <label>Rate</label>
-            <input type='number' name='Rate' value={rate} onChange={(e)=>setRate(e.target.value)}  />
+            <input type='number' name='Rate' value={detail.rate}  onChange={(e)=>setRate(e.target.value)}  />
           </div>
           <div className='form-group'>
             <label>Price</label>
-            <input type='number' name='Price' value={price} onChange={(e)=>setPrice(e.target.value)}  />
+            <input type='number' name='Price' value={detail.price} onChange={(e)=>setPrice(e.target.value)}  />
           </div>
           <div className='form-group'>
             <label>Frame</label>

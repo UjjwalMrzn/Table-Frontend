@@ -51,6 +51,7 @@ function App() {
           <Route path="/register" component={Register} />
           <Route path="/video/:id" component={video} />
           <Route path="/start/:id" component={start} />
+          <Route path="/addtable" component={addTable} />
 
           <Route path="/dashboard" component={Dashboard} />
 

@@ -100,7 +100,7 @@ export const ListUpadateTable=(Info)=>async(dispatch)=>{
 }
 
 
-export const TableRegister=(name,address,phonenumber,email,table_type,rate,price,frame,frame_time_limit,ac,is_running)=>async(dispatch)=>{
+export const TableRegister=(table_type,rate,price,frame,frame_time_limit,ac,is_running)=>async(dispatch)=>{
     try{
         dispatch({
             type:TABLE_LOGIN_REQUEST
@@ -112,15 +112,14 @@ export const TableRegister=(name,address,phonenumber,email,table_type,rate,price
             }   
         }
       
-        console.log(phonenumber)
 
         const{data}=await axios.post(
             '/api/registerTable/',
             {
-            'name':name,
-            'address':address,
-            'phonenumber':phonenumber,
-            'email':email,
+            // 'name':name,
+            // 'address':address,
+            // 'phonenumber':phonenumber,
+            // 'email':email,
             'table_type':table_type, 
             'rate':rate,
             'price':price,

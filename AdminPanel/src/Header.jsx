@@ -1,5 +1,5 @@
 import React from 'react';
-
+import { Link } from 'wouter'
 
 function Header({ OpenSidebar }) {
   return (
@@ -12,7 +12,9 @@ function Header({ OpenSidebar }) {
   </div> */}
           <div className="search-add">
             <input type="text" placeholder="Search" />
+            <Link to={'/addtable'}>
             <button className="add-btn">Add Table</button>
+            </Link>
           </div>
         </div>
   );

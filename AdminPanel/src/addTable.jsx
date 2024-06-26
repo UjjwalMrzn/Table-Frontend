@@ -13,10 +13,10 @@ function addTable() {
   const {error, loading ,Info}=tableRegisterstore
 
 
-  const [name,setName]=useState('')
-  const [address,setAddress]=useState('')
-  const [phonenumber,setPhonenumber]=useState('')
-  const [email,setEmail]=useState('')
+  // const [name,setName]=useState('')
+  // const [address,setAddress]=useState('')
+  // const [phonenumber,setPhonenumber]=useState('')
+  // const [email,setEmail]=useState('')
   const [table_type,setTable_type]=useState('')     
   const [rate,setRate]=useState('')
   const [price,setPrice]=useState('')
@@ -24,7 +24,7 @@ function addTable() {
   const [frame_time_limit,setFrame_time_limit]=useState('')
 
   // const [time,setTime]=useState('')
-  const [ac,setAc]=useState('')
+  const [ac,setAc]=useState(false)
   // const isValidEmail =(email)=>{
   //   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   //   return emailRegex.test(email);
@@ -37,7 +37,7 @@ function addTable() {
   useEffect(()=>{
   if (Info){
     
-        navigate('/')
+        navigate('/dashboard')
    
     // setShouldValidate(false);
   }
@@ -46,7 +46,7 @@ function addTable() {
 
 const submitHandler=(e)=>{
   e.preventDefault();  // Prevent default form submission
-  dispatch(TableRegister(name,address,phonenumber,email,table_type,rate,price,frame,frame_time_limit,ac))
+  dispatch(TableRegister(table_type,rate,price,frame,frame_time_limit,ac))
   
   // dispatch(TableRegister(Name,Address,Phonenumber,Email,Table_type,Rate,Price,Frame,Frame_time_limit,Ac))
   // setShouldValidate(true);
@@ -63,7 +63,7 @@ console.log('aaacccc value  ', checked)
         {error && <Errormsg varient='danger'>{ error }</Errormsg> }
         {loading && <Spinner/>}
         <Form onSubmit={submitHandler}>
-        <div className='form-group'>
+        {/* <div className='form-group'>
             <label>Name</label>
             <input type='text' name='name' value={name} onChange={(e)=>setName(e.target.value)} required />
           </div>
@@ -78,7 +78,7 @@ console.log('aaacccc value  ', checked)
           <div className='form-group'>
             <label>Email</label>
             <input type='email' name='email' value={email} onChange={(e)=>setEmail(e.target.value)}  />
-          </div>
+          </div> */}
           <div className='form-group'>
             <label>Table_type</label>
             <input type='Table_type' name='Table_type' value={table_type} onChange={(e)=>setTable_type(e.target.value)}  />
