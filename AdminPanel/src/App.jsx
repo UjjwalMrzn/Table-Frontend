@@ -13,6 +13,7 @@ import video from './video';
 import start from './start';
 import addTable from './addTable'
 import Dashboard from './Dashboard';
+import Booknow from './BookNow';
 
 
 
@@ -53,6 +54,8 @@ function App() {
           <Route path="/start/:id" component={start} />
 
           <Route path="/dashboard" component={Dashboard} />
+          <Route path="/BookNow" component={Booknow} />
+          <Route path="/addTable" component={addTable} />
 
         </BrowserRouter>
       </main>

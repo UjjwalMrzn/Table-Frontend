@@ -73,18 +73,20 @@
   }
   
 
+  
+
 .status {
   padding: 10px 15px;
   border-radius: 15px;
   font-size: 1rem;
 }
 
-.status.open {
+.status.true {
   background-color: #e0f7fa;
   color: #00796b;
 }
 
-.status.close {
+.status.false {
   background-color: #fff9c4;
   color: #f57f17;
 }
@@ -97,12 +99,12 @@
   font-size: 1rem;
 }
 
-.AC.Available {
+.AC.true {
   background-color: #e0f7fa;
-  color: #00796b;
+  color: #25a129;
 }
 
-.AC.Not-Available {
+.AC.false {
   background-color: #fff9c4;
   color: #f57f17;
 }
@@ -149,7 +151,7 @@
   }
 
 
-.book-btn.disabled {
+.book-btn.false {
   background-color: #9e9e9e;
   cursor: not-allowed;
   border: none;
@@ -271,11 +273,11 @@
   margin-left: 19px;
 }
 
-.status-dot.open {
+.status-dot.false {
   background-color: rgb(33, 202, 33);
 }
 
-.status-dot.close {
+.status-dot.true {
   background-color: rgb(255, 28, 28);
 }
 

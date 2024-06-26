@@ -11,7 +11,7 @@ function Header({ OpenSidebar }) {
     <button>&#171; Back</button>
   </div> */}
           <div className="search-add">
-            <input type="text" placeholder="Search" />
+            <input type="text" placeholder="Enter Table Number" />
             <button className="add-btn">Add Table</button>
           </div>
         </div>

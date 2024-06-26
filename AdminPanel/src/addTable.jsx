@@ -5,6 +5,8 @@ import Spinner from './components/Spinner'
 import { TableRegister,RemoveInfo } from './actions/tableAction'
 import { useNavigate, useLocation } from 'react-router-dom'
 import { Form ,Button, Row, Col } from 'react-bootstrap'
+import './App.css';
+
 
 function addTable() {
 
@@ -59,26 +61,10 @@ console.log('aaacccc value  ', checked)
   return (
     <div className='form-box'>
       <div className='form-container'>
-        <h2>New Booking Form</h2>
+        <h2>New Table</h2>
         {error && <Errormsg varient='danger'>{ error }</Errormsg> }
         {loading && <Spinner/>}
         <Form onSubmit={submitHandler}>
-        <div className='form-group'>
-            <label>Name</label>
-            <input type='text' name='name' value={name} onChange={(e)=>setName(e.target.value)} required />
-          </div>
-          <div className='form-group'>
-            <label>Phone</label>
-            <input type='tel' name='phone' value={phonenumber} onChange={(e)=>setPhonenumber(e.target.value)}  required />
-          </div>
-          <div className='form-group'>
-            <label>Address</label>
-            <input type='text' name='address' value={address} onChange={(e)=>setAddress(e.target.value)} required />
-          </div>
-          <div className='form-group'>
-            <label>Email</label>
-            <input type='email' name='email' value={email} onChange={(e)=>setEmail(e.target.value)}  />
-          </div>
           <div className='form-group'>
             <label>Table_type</label>
             <input type='Table_type' name='Table_type' value={table_type} onChange={(e)=>setTable_type(e.target.value)}  />
