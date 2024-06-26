@@ -54,7 +54,7 @@ function App() {
           <Route path="/start/:id" component={start} />
 
           <Route path="/dashboard" component={Dashboard} />
-          <Route path="/BookNow" component={Booknow} />
+          <Route path="/BookNow/:id" component={Booknow} />
           <Route path="/addTable" component={addTable} />
 
         </BrowserRouter>

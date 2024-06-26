@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { useParams } from 'wouter'
 import './BookNow.css';
 import { useDispatch, useSelector ,} from 'react-redux'; // Importing useDispatch and useSelector from react-redux
 
@@ -12,7 +13,7 @@ import { FiTriangle } from "react-icons/fi";
 
 
 const Booknow = () => {
-
+  const {id}=useParams()
   const tablelist =useSelector(state=>state.tablelist)
   const {error,loading ,table}=tablelist
   return (
@@ -22,7 +23,7 @@ const Booknow = () => {
       <h6>Choose an option.</h6>
     <div className="section">
         <div className="tile">
-          <Link to={`/user/${table.id}`}>
+          <Link to={`/user/${id}`}>
           <input type="checkbox" id="time"/>
           <label htmlFor="time">
           <FaRegClock  className="fas"/>
@@ -35,7 +36,7 @@ const Booknow = () => {
         
 
         <div className="tile">
-        <Link to={`/user/${table.id}`}>
+        <Link to={`/user/${id}`}>
           <input type="checkbox" id="frame" />
           <label htmlFor="frame">
           <FiTriangle  className="fas"/>

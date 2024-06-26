@@ -97,47 +97,47 @@ const Dashboard = () => {
               </tr>
             </thead>
             <tbody>
-              {currentTables.map((item, index) => (
+              {currentTables.map((table, index) => (
                 <tr key={index}>
                  <td>
-                    <span className={`tableno ${item.table_type}`}>{item.table_type}</span>
+                    <span className={`tableno ${table.table_type}`}>{table.table_type}</span>
                   </td>
-                  <td>{item.rate}</td>
-                  <td>{item.price}</td>
+                  <td>{table.rate}</td>
+                  <td>{table.price}</td>
                   <td>
-                    <span className={`status-dot ${item.is_running}`} />
+                    <span className={`status-dot ${table.is_running}`} />
                   </td>
                   <td>
-                    <span className={`AC ${item.ac}`}>
-                      {item.ac ? 'Available' : 'Not Available'}
+                    <span className={`AC ${table.ac}`}>
+                      {table.ac ? 'Available' : 'Not Available'}
                     </span>
                   </td>
                   <td>
-                    <Link to={`/details/${item.id}`}>
+                    <Link to={`/details/${table.id}`}>
                       <button className="pay-btn">View Details</button>
                     </Link>
-                    <Link to={`/BookNow`}>
+                    <Link to={`/BookNow/${table.id}`}>
                       <button
-                        className={`book-btn ${item.is_running === true ? false : ''}`}
-                        disabled={item.is_running}
+                        className={`book-btn ${table.is_running === true ? false : ''}`}
+                        disabled={table.is_running}
                       >
-                        {item.is_running === true ? 'Booked' : 'Book Now'}
+                        {table.is_running === true ? 'Booked' : 'Book Now'}
                       </button>
                     </Link>
-                    <Link to={`/user/${item.id}`}>
+                    <Link to={`/user/${table.id}`}>
                       <button
-                        className={`book-btn ${item.is_running === false ? false : ''}`}
-                        disabled={item.is_running}
+                        className={`book-btn ${table.is_running === false ? false : ''}`}
+                        disabled={table.is_running}
                       >
-                        {item.is_running === false ? 'Pay Now1' : 'Pay Now'}
+                        {table.is_running === false ? 'Pay Now1' : 'Pay Now'}
                       </button>
                     </Link>
                   </td>
                   <td>
-                    <button className="delete-btn" onClick={() => handleDeleteClick(item.id)}>
+                    <button className="delete-btn" onClick={() => handleDeleteClick(table.id)}>
                       <FontAwesomeIcon icon={faTrash} />
                     </button>
-                    <Link to={`/Video/${item.id}`}>
+                    <Link to={`/Video/${table.id}`}>
                       <button className="view-btn">
                         <FontAwesomeIcon icon={faVideo} />
                       </button>
