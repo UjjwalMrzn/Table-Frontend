@@ -3,6 +3,9 @@ import {
     TABLE_ADD_REQUEST ,
     TABLE_ADD_SUCCESS,
     TABLE_ADD_FAIL,
+    TABLE_UPDATE_REQUEST ,
+    TABLE_UPDATE_SUCCESS,
+    TABLE_UPDATE_FAIL,
     TABLE_DETAIL_REQUEST ,
     TABLE_DETAIL_SUCCESS ,
     TABLE_DETAIL_FAIL ,
@@ -14,7 +17,7 @@ import {
 
 } from '../constants/tableConstant'
 
-export const TableReducer=(state={table:[]},action)=>{
+export const TableReducer=(state={table:[]},action)=>{  //getalltable
     switch(action.type){
         case TABLE_ADD_REQUEST:
             return {loading:true, table:[]}
@@ -30,9 +33,27 @@ export const TableReducer=(state={table:[]},action)=>{
 
     }
 }
+export const TableUpdateReducer=(state={},action)=>{
+    switch(action.type){
+        case TABLE_UPDATE_REQUEST:
+            return {loading:true}
+
+            case TABLE_UPDATE_SUCCESS:
+                return {loading:false,success:true, Info:action.payload} 
+
+            case TABLE_UPDATE_FAIL:
+                return {loading:false, error:action.payload}    
+            case REMOVE_INFO:
+                return{}
+
+            default:
+                return state
+
+    }
+}
 
 
-export const TableRegisterReducer=(state={},action)=>{
+export const TableRegisterReducer=(state={},action)=>{ //post
     switch(action.type){
              case TABLE_LOGIN_REQUEST:
                 return {loading:true}
@@ -51,7 +72,7 @@ export const TableRegisterReducer=(state={},action)=>{
     }
 }
 
-export const TableDetailReducer=(state={detail:[]},action)=>{
+export const TableDetailReducer=(state={detail:[]},action)=>{ //gettable by id
     switch(action.type){
              case TABLE_DETAIL_REQUEST:
                 return {loading:true, detail:[]}

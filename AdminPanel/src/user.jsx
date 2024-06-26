@@ -3,21 +3,26 @@ import { useRoute } from 'wouter';
 import { useDispatch,useSelector } from 'react-redux'
 import Errormsg from './components/Errormsg'
 import Spinner from './components/Spinner'
-import { TableRegister ,ListTableDetail} from './actions/tableAction'
+import { TableRegister ,ListTableDetail,ListUpadateTable} from './actions/tableAction'
 import { useNavigate, useLocation } from 'react-router-dom'
 import Button from 'react-bootstrap/Button';
 import { Link ,useParams} from 'wouter'
 function User() {
   const{id}=useParams()
   const dispatch=useDispatch()
-  
-  const tableRegisterstore =useSelector(state=>state.tableRegisterstore)
-  const {error, loading , Info}=tableRegisterstore
+
+  // const tableRegisterstore =useSelector(state=>state.tableRegisterstore)
+  // const {error, loading , Info}=tableRegisterstore
+
+
+  const tableupdatestore =useSelector(state=>state.tableupdatestore)
+  const {error, loading , Info}=tableupdatestore
+
+
 
   const tabledetaillist =useSelector(state=>state.tabledetaillist)
   const {detail}=tabledetaillist
-
-
+  console.log(detail)
   const [name,setName]=useState('')
   const [address,setAddress]=useState('')
   const [phonenumber,setPhonenumber]=useState('')
@@ -27,9 +32,8 @@ function User() {
   const [frame_time_limit,setFrame_time_limit]=useState('')
   const [rate,setRate]=useState('')
   const [price,setPrice]=useState('')
-  // const [time,setTime]=useState('')
-  const [ac,setAc]=useState('')
-
+  const [ac,setAc]=useState(false)
+  const [is_running,setIsrunning]=useState(false)
 
   const navigate = useNavigate()
   useEffect(()=>{
@@ -45,12 +49,57 @@ function User() {
 
     }
 
+
+  
+
   },[navigate,Info,dispatch,id])
+
+
+
+useEffect(() => {
+  // Function to get current time in HH:mm format
+  const getCurrentTime = () => {
+    const now = new Date();
+    const hours = now.getHours().toString().padStart(2, '0');
+    const minutes = now.getMinutes().toString().padStart(2, '0');
+    return `${hours}:${minutes}`;
+  };
+
+  // Set initial value to current time
+  setFrame_time_limit(getCurrentTime());
+  }, []); // Empty dependency array ensures useEffect runs only once
+
+
+  useEffect(()=>{
+    if (detail){
+      setIsrunning(detail.is_running)
+    }
+  })
+  const handleTimeChange = (e) => {
+    setFrame_time_limit(e.target.value);
+    // Optionally, you can perform additional actions on time change here
+  };
+  console.log(id)
   const submitHandler=(e)=>{
     e.preventDefault();  // Prevent default form submission
-    dispatch(TableRegister(name,address,phonenumber,email,table_type,frame,frame_time_limit,rate,price,ac ))
-    
-    navigate("/start")
+    console.log('-----',detail.is_running)
+
+    dispatch(ListUpadateTable({
+      id,
+      name,
+      address,
+      phonenumber,
+      email,
+      table_type,
+      rate,
+      price,
+      frame,
+      frame_time_limit,
+      ac,
+      is_running:true
+    }))
+   
+
   }
 
   // const [formData, setFormData] = useState({
@@ -99,7 +148,7 @@ function User() {
           </div>
           <div className='form-group'>
             <label>Table_type</label>
-            <input type='Table_type' name='Table_type' value={detail.table_type} onChange={(e)=>setTable_type(e.target.value)}  />
+            <input type='Table_type' name='Table_type' value={detail.table_type} onChange={(e)=>setTable_type(e.target.value)} readOnly  />
           </div>
           <div className='form-group'>
             <label>Rate</label>
@@ -115,7 +164,7 @@ function User() {
           </div>
           <div className='form-group'>
             <label>Frame_time_limit</label>
-            <input type='time' name='Frame_time_limit' value={frame_time_limit} onChange={(e)=>setFrame_time_limit(e.target.value)}  />
+            <input type='time' name='Frame_time_limit' value={frame_time_limit} onChange={(e)=>handleTimeChange}  />
           </div>
           {/* <div className='form-group'>
             <label>Time</label>
@@ -124,9 +173,9 @@ function User() {
           */}
           <div className='form-group'>
             <label>Ac</label>
-            <input type='checkbox' name='Ac' checked={ac}  onChange={(e)=>setAc(e.target.checked)}  />
+            <input type='checkbox' name='ac' checked={ac}  onChange={(e)=>setAc(e.target.checked)}  />
           </div>
-    
+            
           {/* <div class="select-box">
             <select required>
               

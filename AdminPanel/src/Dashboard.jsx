@@ -96,7 +96,7 @@ return (
             <table className="appointments-table">
               <thead>
                 <tr>
-                  <th>Table Number</th>
+                  <th>Table No.</th>
                   <th>Frame Rate</th>
                   <th>Time Rate</th>
                   <th>Status</th>

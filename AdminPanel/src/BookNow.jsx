@@ -12,8 +12,8 @@ const Booknow = () => {
             <div className='section'> 
                 {/* <h5>Choose Game Type</h5> */}
             <div className='tile'>
+            <label for='time'>
                 <input type='checkbox'/>
-                <label for='time'>
                 <FontAwesomeIcon icon={faTrash} />
                 <h4>Time Based</h4>
                 </label>
@@ -23,19 +23,18 @@ const Booknow = () => {
 </div>
 
 <div className='tile'>
+<label for='frame'>
                 <input type='checkbox'/>
-                <label for='frame'>
                 <FontAwesomeIcon icon={faTrash} />
                 <h4>Frame Based</h4>
                 </label>
 
-</div>
-
-</div>
+</div></div>
            
                     
             
-     
+        {/* </div>
+        </div> */}
         
     
     </>
