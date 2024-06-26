@@ -24,6 +24,8 @@ const Dashboard = () => {
   const dispatch = useDispatch()
   const tablelist =useSelector(state=>state.tablelist)
   const {error,loading ,table}=tablelist
+ 
+  
   
   useEffect(()=>{
     dispatch(ListTable());
@@ -32,7 +34,7 @@ const Dashboard = () => {
       },[dispatch])
 
   const [isPopupVisible, setIsPopupVisible] = useState(false);
-  // const [tableToDelete, setTableToDelete] = useState(null);
+  const [tableToDelete, setTableToDelete] = useState(null);
   const [currentPage, setCurrentPage] = useState(0);
 
   const tablesPerPage = 6;
@@ -40,18 +42,18 @@ const Dashboard = () => {
 
  
 
-  // const handleDeleteClick = (id) => {
-  //   setTableToDelete(id);
-  //   setIsPopupVisible(true);
-  // };
+  const handleDeleteClick = (id) => {
+    setTableToDelete(id);
+    setIsPopupVisible(true);
+  };
 
-  // const handleConfirmDelete = () => {
-  //   const updatedTables = tables.filter(table => table.id !== tableToDelete);
-  //   setTables(updatedTables);
-  //   setIsPopupVisible(false);
-  //   setTableToDelete(null);
-  //   setCurrentPage(0); // Reset to first page in case of deletion
-  // };
+  const handleConfirmDelete = () => {
+    const updatedTables = tables.filter(table => table.id !== tableToDelete);
+    setTables(updatedTables);
+    setIsPopupVisible(false);
+    setTableToDelete(null);
+    setCurrentPage(0); // Reset to first page in case of deletion
+  };
 
   const handleCancelDelete = () => {
     setIsPopupVisible(false);
@@ -82,25 +84,27 @@ const gotouser =()=>{
 
 return (
     <div className="container-db">
+
       {loading ? <Spinner/>
                :error? <Errormsg>{error}</Errormsg>  
                :<main className='main-container'>
               
-               <h1>
+               {/* <h1>
                    List of Tables
-               </h1>
+               </h1> */}
       
       
           
             <table className="appointments-table">
               <thead>
                 <tr>
-                  <th>Table Number</th>
+                  <th>Table No.</th>
                   <th>Frame Rate</th>
                   <th>Time Rate</th>
                   <th>Status</th>
                   <th>A/C</th>
                   <th>Action</th>
+                  <th></th>
                 </tr>
               </thead>
               <tbody>
@@ -110,9 +114,11 @@ return (
                     <td>{table.rate}</td>
                     <td>{table.price}</td>
                     <td>
-                      <span className={`status ${table.is_running}`}>
-                        {table.is_running?'Not-Available':'Available'}
-                      </span>
+                     
+                        
+                        <span className={`status-dot  ${table.is_running}`} />
+                    
+                    
                     </td>
                         <td>
                       <span className={`AC ${table.ac}`}>
@@ -131,10 +137,12 @@ return (
                         className={`book-btn ${table.is_running === true ? false : ''}`}
                         disabled={table.is_running}
                       >
-                        {table.is_running === 'Close' ? 'Booked' : 'Book Now'}
+                        {table.is_running === true ? 'Booked' : 'Book Now'}
                       </button>
                       </Link>
-                      <button className="delete-btn" onClick={() => handleDeleteClick(table.id)}>
+                    </td>
+                    <td>
+                    <button className="delete-btn" onClick={() => handleDeleteClick(table.id)}>
                         <FontAwesomeIcon icon={faTrash} />
                       </button>
                       <Link to={`/Video/${table.id}`}> 
@@ -142,13 +150,16 @@ return (
                           <FontAwesomeIcon icon={faVideo} />
                         </button> 
                       </Link>
+
                     </td>
+                   
                   </tr>
                 ))}
               </tbody>
             </table>
         </main>
       }
+
 
         {isPopupVisible && (
           <Popup 

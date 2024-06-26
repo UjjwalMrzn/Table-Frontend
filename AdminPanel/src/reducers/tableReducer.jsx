@@ -3,6 +3,9 @@ import {
     TABLE_ADD_REQUEST ,
     TABLE_ADD_SUCCESS,
     TABLE_ADD_FAIL,
+    USER_ADD_REQUEST,
+    USER_ADD_SUCCESS,
+    USER_ADD_FAIL,
     TABLE_UPDATE_REQUEST ,
     TABLE_UPDATE_SUCCESS,
     TABLE_UPDATE_FAIL,
@@ -27,6 +30,7 @@ export const TableReducer=(state={table:[]},action)=>{  //getalltable
 
             case TABLE_ADD_FAIL:
                 return {loading:false, error:action.payload}    
+                
 
             default:
                 return state
@@ -53,6 +57,25 @@ export const TableUpdateReducer=(state={},action)=>{
 }
 
 
+export const UserRegisterReducer=(state={},action)=>{ //post
+    switch(action.type){
+             case USER_ADD_REQUEST:
+                return {loading:true}
+
+            case USER_ADD_SUCCESS:
+                return {loading:false, User:action.payload} 
+
+            case USER_ADD_FAIL:
+                return {loading:false, error:action.payload}    
+            case REMOVE_INFO:
+                return{}
+                
+            default:
+                return state
+
+    }
+}
+
 export const TableRegisterReducer=(state={},action)=>{ //post
     switch(action.type){
              case TABLE_LOGIN_REQUEST:
@@ -71,6 +94,7 @@ export const TableRegisterReducer=(state={},action)=>{ //post
 
     }
 }
+
 
 export const TableDetailReducer=(state={detail:[]},action)=>{ //gettable by id
     switch(action.type){

@@ -3,7 +3,7 @@ import { useRoute } from 'wouter';
 import { useDispatch,useSelector } from 'react-redux'
 import Errormsg from './components/Errormsg'
 import Spinner from './components/Spinner'
-import { TableRegister ,ListTableDetail,ListUpadateTable} from './actions/tableAction'
+import { TableRegister ,ListTableDetail,ListUpadateTable,UserRegister} from './actions/tableAction'
 import { useNavigate, useLocation } from 'react-router-dom'
 import Button from 'react-bootstrap/Button';
 import { Link ,useParams} from 'wouter'
@@ -15,31 +15,31 @@ function User() {
   // const {error, loading , Info}=tableRegisterstore
 
 
-  const tableupdatestore =useSelector(state=>state.tableupdatestore)
-  const {error, loading , Info}=tableupdatestore
+  const Userstore =useSelector(state=>state.Userstore)
+  const {error, loading , User}=Userstore
 
 
 
   const tabledetaillist =useSelector(state=>state.tabledetaillist)
   const {detail}=tabledetaillist
-  console.log(detail)
+
   const [name,setName]=useState('')
   const [address,setAddress]=useState('')
   const [phonenumber,setPhonenumber]=useState('')
   const [email,setEmail]=useState('')
-  const [table_type,setTable_type]=useState(detail.table_type)
+  const [tabletype,setTable_type]=useState(id)
   const [frame,setFrame]=useState('')
-  const [frame_time_limit,setFrame_time_limit]=useState('')
-  const [rate,setRate]=useState('')
-  const [price,setPrice]=useState('')
-  const [ac,setAc]=useState(false)
+  // const [frame_time_limit,setFrame_time_limit]=useState('')
+  // const [rate,setRate]=useState('')
+  // const [price,setPrice]=useState('')
+  // const [ac,setAc]=useState(false)
   const [is_running,setIsrunning]=useState(false)
-
+ 
   const navigate = useNavigate()
   useEffect(()=>{
-    if (Info){
+    if (User){
       
-          navigate('/')
+          navigate('/dashboard')
      
       // setShouldValidate(false);
     }
@@ -52,54 +52,53 @@ function User() {
 
   
 
-  },[navigate,Info,dispatch,id])
+  },[navigate,User,dispatch,id])
 
 
 
-useEffect(() => {
-  // Function to get current time in HH:mm format
-  const getCurrentTime = () => {
-    const now = new Date();
-    const hours = now.getHours().toString().padStart(2, '0');
-    const minutes = now.getMinutes().toString().padStart(2, '0');
-    return `${hours}:${minutes}`;
-  };
+// useEffect(() => {
+//   // Function to get current time in HH:mm format
+//   const getCurrentTime = () => {
+//     const now = new Date();
+//     const hours = now.getHours().toString().padStart(2, '0');
+//     const minutes = now.getMinutes().toString().padStart(2, '0');
+//     return `${hours}:${minutes}`;
+//   };
 
-  // Set initial value to current time
-  setFrame_time_limit(getCurrentTime());
-  }, []); // Empty dependency array ensures useEffect runs only once
+//   // Set initial value to current time
+//   setFrame_time_limit(getCurrentTime());
+//   }, []); // Empty dependency array ensures useEffect runs only once
 
 
   useEffect(()=>{
     if (detail){
-      setIsrunning(detail.is_running)
+      setIsrunning(false)
+      setTable_type(id);
     }
-  })
-  const handleTimeChange = (e) => {
-    setFrame_time_limit(e.target.value);
-    // Optionally, you can perform additional actions on time change here
-  };
-  console.log(id)
+  },[id])
+  // const handleTimeChange = (e) => {
+  //   setFrame_time_limit(e.target.value);
+  //   // Optionally, you can perform additional actions on time change here
+  // };
+
   const submitHandler=(e)=>{
     e.preventDefault();  // Prevent default form submission
-    console.log('-----',detail.is_running)
+   
 
-    dispatch(ListUpadateTable({
-      id,
+    dispatch(UserRegister(
       name,
       address,
       phonenumber,
       email,
-      table_type,
-      rate,
-      price,
+      tabletype,
       frame,
-      frame_time_limit,
-      ac,
-      is_running:true
-    }))
-   
-
+    ))
+     dispatch(TableRegister(
+      
+      
+        is_running
+      
+     ))
   }
 
   // const [formData, setFormData] = useState({
@@ -147,16 +146,20 @@ useEffect(() => {
             <input type='email' name='email' value={email} onChange={(e)=>setEmail(e.target.value)}  />
           </div>
           <div className='form-group'>
-            <label>Table_type</label>
-            <input type='Table_type' name='Table_type' value={detail.table_type} onChange={(e)=>setTable_type(e.target.value)} readOnly  />
+            <label>Tabletype</label>
+            <input type='number' name='tabletype' value={detail.table_type}   />
           </div>
+          {/* <div className='form-group'>
+            <label>Tabletype_id</label>
+            <input type='number' name='tabletype' value={tabletype} onChange={(e)=>setTable_type(e.target.value)}   />
+          </div> */}
           <div className='form-group'>
             <label>Rate</label>
-            <input type='number' name='Rate' value={detail.rate}  onChange={(e)=>setRate(e.target.value)}  />
+            <input type='number' name='Rate' value={detail.rate}  />
           </div>
           <div className='form-group'>
             <label>Price</label>
-            <input type='number' name='Price' value={detail.price} onChange={(e)=>setPrice(e.target.value)}  />
+            <input type='number' name='Price' value={detail.price}  />
           </div>
           <div className='form-group'>
             <label>Frame</label>
@@ -164,26 +167,18 @@ useEffect(() => {
           </div>
           <div className='form-group'>
             <label>Frame_time_limit</label>
-            <input type='time' name='Frame_time_limit' value={frame_time_limit} onChange={(e)=>handleTimeChange}  />
-          </div>
-          {/* <div className='form-group'>
-            <label>Time</label>
-            <input type='time' name='time' value={time}  onChange={(e)=>setTime(e.target.value)}  />
-          </div>
-          */}
+            <input type='time' name='Frame_time_limit' value={detail.frame_time_limit}   />
+          </div> 
+          
           <div className='form-group'>
             <label>Ac</label>
-            <input type='checkbox' name='ac' checked={ac}  onChange={(e)=>setAc(e.target.checked)}  />
+            <input type='checkbox' name='ac' checked={detail.ac}   />
           </div>
             
-          {/* <div class="select-box">
-            <select required>
-              
-            <option disabled selected hidden>Select an option</option>
-            <option value="Frame">Frame-Based</option>
-              <option value="Time">Time-Based</option>
-            </select>
-          </div> */}
+
+
+             
+        
           <div className='submit-btn'>
             
             <button type='submit'   >

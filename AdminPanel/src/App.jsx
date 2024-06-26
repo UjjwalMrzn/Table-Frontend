@@ -13,6 +13,7 @@ import video from './video';
 import start from './start';
 import addTable from './addTable'
 import Dashboard from './Dashboard';
+import Booknow from './BookNow';
 
 
 
@@ -45,7 +46,7 @@ function App() {
       <main className='main-container'>
         <BrowserRouter>
           <Route path="/" component={Home} />
-          <Route path="/User/:id" component={User} />
+          <Route path="/user/:id" component={User} />
           <Route path="/details/:id" component={Details} />
           <Route path="/login" component={Login} />
           <Route path="/register" component={Register} />
@@ -54,6 +55,8 @@ function App() {
           <Route path="/addtable" component={addTable} />
 
           <Route path="/dashboard" component={Dashboard} />
+          <Route path="/BookNow" component={Booknow} />
+          <Route path="/addTable" component={addTable} />
 
         </BrowserRouter>
       </main>
