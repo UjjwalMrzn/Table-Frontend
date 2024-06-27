@@ -53,7 +53,7 @@ export const ListTableDetail = (id) => async (dispatch) => {
         });
     }
 }
-export const ListUpadateTable=(Info)=>async(dispatch)=>{
+export const ListUpadateTable=(User)=>async(dispatch)=>{
     try{
         dispatch({
             type:TABLE_UPDATE_REQUEST
@@ -65,8 +65,8 @@ export const ListUpadateTable=(Info)=>async(dispatch)=>{
         }
         
         const {data}=await axios.put(
-            `/api/updatetable/${Info.id}/`,
-            Info,
+            `/api/updatetable/${User.tabletype}/`,
+            User,
             config)
         dispatch({
             type:TABLE_UPDATE_SUCCESS,    
@@ -97,6 +97,13 @@ export const TableRegister=(table_type,rate,price,frame_time_limit,ac,is_running
                 'Content-type': 'application/json',
             },
         };
+        // const payload = {};
+        // if (table_type !== undefined) payload.table_type = table_type;
+        // if (rate !== undefined) payload.rate = rate;
+        // if (price !== undefined) payload.price = price;
+        // if (frame_time_limit !== undefined) payload.frame_time_limit = frame_time_limit;
+        // if (ac !== undefined) payload.ac = ac;
+        // if (is_running !== undefined) payload.is_running = is_running;
 
         const { data } = await axios.post(
             '/api/registerTable/',
@@ -112,6 +119,7 @@ export const TableRegister=(table_type,rate,price,frame_time_limit,ac,is_running
             'ac':ac,
             'is_running':is_running,
         },
+            // payload,
             config)
             console.log(data),
 
@@ -131,6 +139,7 @@ export const TableRegister=(table_type,rate,price,frame_time_limit,ac,is_running
         });
     }
 };
+
 
 
 export const UserRegister=(name,address,phonenumber,email,tabletype,frame)=>async(dispatch)=>{
@@ -164,7 +173,6 @@ export const UserRegister=(name,address,phonenumber,email,tabletype,frame)=>asyn
             // 'is_running':is_running
         },
             config)
-            console.log(data),
 
 
         dispatch({
