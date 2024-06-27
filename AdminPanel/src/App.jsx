@@ -57,10 +57,8 @@ function App() {
           <Route path="/video/:id" component={video} />
           <Route path="/start/:id" component={start} />
           <Route path="/addtable" component={addTable} />
-
           <Route path="/dashboard" component={Dashboard} />
           <Route path="/BookNow/:id" component={Booknow} />
-          <Route path="/addTable" component={addTable} />
 
         </BrowserRouter>
       </main>
