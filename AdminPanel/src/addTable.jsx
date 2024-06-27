@@ -72,24 +72,24 @@ const checked =Boolean
         {loading && <Spinner/>}
         <Form onSubmit={submitHandler}>
           <div className='form-group'>
-            <label>Table_type</label>
+            <label>Table Number</label>
             <input type='Table_type' name='Table_type' value={table_type} onChange={(e)=>setTable_type(e.target.value)}  />
           </div>
           <div className='form-group'>
-            <label>Rate</label>
+            <label>Time Rate</label>
             <input type='number' name='Rate' value={rate} onChange={(e)=>setRate(e.target.value)}  />
           </div>
           <div className='form-group'>
-            <label>Price</label>
+            <label>Frame Price</label>
             <input type='number' name='Price' value={price} onChange={(e)=>setPrice(e.target.value)}  />
           </div>
           
           <div className='form-group'>
-            <label>Frame_time_limit</label>
+            <label>Frame Time Limit</label>
             <input type='time' name='Frame_time_limit' value={frame_time_limit} onChange={(e)=>setFrame_time_limit(e.target.value)}  />
           </div>
           <div className='form-group'>
-            <label>Ac</label>
+            <label>A/C</label>
             <input type='checkbox' name='Ac' checked={ac}  onChange={(e)=>setAc(e.target.checked)}  />
           </div>
           
