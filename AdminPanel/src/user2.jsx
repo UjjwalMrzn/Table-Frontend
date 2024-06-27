@@ -1,5 +1,6 @@
 
-//frame based//
+
+//Time Based//
 
 import React, { useState,useEffect } from 'react';
 import { useRoute } from 'wouter';
@@ -43,7 +44,7 @@ function User() {
   useEffect(()=>{
     if (User){
       
-          navigate(`/start/${id}`)
+          navigate('/dashboard')
      
       // setShouldValidate(false);
     }
@@ -159,22 +160,22 @@ console.log('oooo',User)
             <label>Tabletype_id</label>
             <input type='number' name='tabletype' value={tabletype} onChange={(e)=>setTable_type(e.target.value)}   />
           </div> */}
-          {/* <div className='form-group'>
+          <div className='form-group'>
             <label>Rate</label>
             <input type='number' name='Rate' value={detail.rate}  />
-          </div> */}
-          <div className='form-group'>
+          </div>
+          {/* <div className='form-group'>
             <label>Price</label>
             <input type='number' name='Price' value={detail.price}  />
-          </div>
-          <div className='form-group'>
+          </div> */}
+          {/* <div className='form-group'>
             <label>Frame</label>
             <input type='Frame' name='Frame' value={frame} onChange={(e)=>setFrame(e.target.value)}  />
-          </div>
-          <div className='form-group'>
+          </div> */}
+          {/* <div className='form-group'>
             <label>Frame_time_limit</label>
             <input type='time' name='Frame_time_limit' value={detail.frame_time_limit}   />
-          </div> 
+          </div>  */}
           
           <div className='form-group'>
             <label>Ac</label>

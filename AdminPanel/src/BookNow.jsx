@@ -23,7 +23,7 @@ const Booknow = () => {
       <h6>Choose an option.</h6>
     <div className="section">
         <div className="tile">
-          <Link to={`/user/${id}`}>
+          <Link to={`/user2/${id}`}>
           <input type="checkbox" id="time"/>
           <label htmlFor="time">
           <FaRegClock  className="fas"/>

@@ -3,6 +3,8 @@ import './App.css';
 import { Switch, Route, Redirect } from 'wouter';
 import { BrowserRouter } from 'react-router-dom';
 import User from './user';
+import User2 from './user2';
+
 import Header from './Header';
 import Sidebar from './Sidebar';
 import Home from './Home';
@@ -47,6 +49,8 @@ function App() {
         <BrowserRouter>
           <Route path="/" component={Home} />
           <Route path="/user/:id" component={User} />
+          <Route path="/user2/:id" component={User2} />
+
           <Route path="/details/:id" component={Details} />
           <Route path="/login" component={Login} />
           <Route path="/register" component={Register} />
