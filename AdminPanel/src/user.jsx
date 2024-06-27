@@ -103,7 +103,7 @@ console.log('oooo',User)
      { 
     
       tabletype:id ,
-      is_running:true
+      is_running:true,
     }
     ))  
   }
