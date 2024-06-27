@@ -51,7 +51,8 @@ const submitHandler=(e)=>{
   e.preventDefault();  // Prevent default form submission
   dispatch(TableRegister(
     table_type,
-    rate,price,
+    rate,
+    price,
     frame_time_limit,
     ac,
     false
