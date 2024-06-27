@@ -59,7 +59,7 @@
 }
 
 .table-btn button{
-  background-color: transparent;
+  background-color: #45a049;
   font-size: 15px;
   color: white;
   padding: 8px 12px;
@@ -71,5 +71,5 @@
 }
 
 .table-btn button:hover{
-  background-color: #45a049;
+  background-color: transparent;
 }

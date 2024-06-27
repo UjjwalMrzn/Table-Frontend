@@ -14,6 +14,7 @@ import start from './start';
 import addTable from './addTable'
 import Dashboard from './Dashboard';
 import Booknow from './BookNow';
+// import PayNow from './PayNow';
 
 
 
@@ -55,6 +56,7 @@ function App() {
           <Route path="/addtable" component={addTable} />
           <Route path="/dashboard" component={Dashboard} />
           <Route path="/BookNow/:id" component={Booknow} />
+          {/* <Route path="/PayNow/:id" component={PayNow} /> */}
 
         </BrowserRouter>
       </main>

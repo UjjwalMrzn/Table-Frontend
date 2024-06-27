@@ -18,8 +18,7 @@ function User() {
   const Userstore =useSelector(state=>state.Userstore)
   const {error, loading , User}=Userstore
 
-  const tableRegisterstore =useSelector(state=>state.tableRegisterstore)
-  const {Info}=tableRegisterstore
+
 
   const tabledetaillist =useSelector(state=>state.tabledetaillist)
   const {detail}=tabledetaillist
@@ -34,7 +33,7 @@ function User() {
   // const [rate,setRate]=useState('')
   // const [price,setPrice]=useState('')
   // const [ac,setAc]=useState(false)
-  // const [is_running,setIsrunning]=useState(false)
+  const [is_running,setIsrunning]=useState(false)
  
   const navigate = useNavigate()
   useEffect(()=>{
@@ -46,7 +45,7 @@ function User() {
     }
     else{
       dispatch(ListTableDetail(id))
-     
+
 
     }
 
@@ -73,6 +72,7 @@ function User() {
 
   useEffect(()=>{
     if (detail){
+      setIsrunning(false)
       setTable_type(id);
     }
   },[id])
@@ -80,9 +80,8 @@ function User() {
   //   setFrame_time_limit(e.target.value);
   //   // Optionally, you can perform additional actions on time change here
   // };
-console.log('oooo',User)
+
   const submitHandler=(e)=>{
-    const is_running=true
     e.preventDefault();  // Prevent default form submission
    
 
@@ -94,16 +93,14 @@ console.log('oooo',User)
       tabletype,
       frame,
     ))
-    
-
-    dispatch(ListUpadateTable(
-     { 
-    
-      tabletype:id ,
-      is_running:true
-    }
-    ))  
+     dispatch(TableRegister(
+      
+      
+        is_running
+      
+     ))
   }
+
   // const [formData, setFormData] = useState({
   //   name: '',
   //   phone: '',
