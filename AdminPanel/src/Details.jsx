@@ -33,27 +33,32 @@ function Details() {
          
                  <table>
                    <tbody>      
-                      {detail.persondetail ?(
+                      {detail.person ?(
                         <>
                         <tr>
                         <td>Table</td>
-                        <td colspan="3">{detail.table_type}</td> 
+                        <td colspan="3">{detail.tableno}</td> 
                         </tr>
                         <tr>
                           <td>Name</td>
-                          <td colspan="3">{detail.persondetail.Name}</td>
+                          <td colspan="3">{detail.person.Name}</td>
                         </tr>
                         <tr>
                           <td>PhoneNO</td>
-                          <td colspan="3">{detail.persondetail.Phonenumber}</td>
+                          <td colspan="3">{detail.person.Phonenumber}</td>
                         </tr>
                         <tr>
                           <td>Email</td>
-                          <td colspan="3">{detail.persondetail.email}</td>
+                          <td colspan="3">{detail.person.email}</td>
                         </tr>
+                        
                         <tr>
                           <td>Address</td>
-                          <td colspan="3">{detail.persondetail.Address}</td>
+                          <td colspan="3">{detail.person.Address}</td>
+                        </tr>
+                        <tr>
+                          <td>Frame</td>
+                          <td colspan="3">{detail.person.frame}</td>
                         </tr>
                         <tr>
                           <td>Frame_Time_Limit</td>

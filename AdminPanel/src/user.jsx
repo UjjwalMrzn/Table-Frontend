@@ -31,7 +31,7 @@ function User() {
   const [address,setAddress]=useState('')
   const [phonenumber,setPhonenumber]=useState('')
   const [email,setEmail]=useState('')
-  const [tabletype,setTable_type]=useState(id)
+  const [tableno,setTable_type]=useState('')
   const [frame,setFrame]=useState('')
   // const [frame_time_limit,setFrame_time_limit]=useState('')
   // const [rate,setRate]=useState('')
@@ -78,31 +78,31 @@ function User() {
     if (detail){
       setTable_type(id);
     }
-  },[id])
+  },[id,detail])
   // const handleTimeChange = (e) => {
   //   setFrame_time_limit(e.target.value);
   //   // Optionally, you can perform additional actions on time change here
   // };
-console.log('oooo',User)
-  const submitHandler=(e)=>{
-    const is_running=true
+  console.log('oooo',User)
+  const submitHandler=async(e)=>{
+
     e.preventDefault();  // Prevent default form submission
    
 
-    dispatch(UserRegister(
+    await dispatch(UserRegister(
       name,
       address,
       phonenumber,
       email,
-      tabletype,
+      tableno,
       frame,
     ))
     
-
+    
     dispatch(ListUpadateTable(
      { 
     
-      tabletype:id ,
+      tableno:id ,
       is_running:true,
     }
     ))  
@@ -152,8 +152,8 @@ console.log('oooo',User)
             <input type='email' name='email' value={email} onChange={(e)=>setEmail(e.target.value)}  />
           </div>
           <div className='form-group'>
-            <label>Tabletype</label>
-            <input type='number' name='tabletype' value={detail.table_type}   />
+            <label>Tableno</label>
+            <input type='number' name='tableno' value={detail.tableno}   />
           </div>
           {/* <div className='form-group'>
             <label>Tabletype_id</label>

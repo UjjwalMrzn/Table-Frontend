@@ -65,7 +65,7 @@ export const ListUpadateTable=(User)=>async(dispatch)=>{
         }
         
         const {data}=await axios.put(
-            `/api/updatetable/${User.tabletype}/`,
+            `/api/updatetable/${User.tableno}/`,
             User,
             config)
         dispatch({
@@ -86,7 +86,7 @@ export const ListUpadateTable=(User)=>async(dispatch)=>{
 }
 
 
-export const TableRegister=(table_type,rate,price,frame_time_limit,ac,is_running)=>async(dispatch)=>{
+export const TableRegister=(tableno,rate,price,frame_time_limit,ac,is_running)=>async(dispatch)=>{
     try{
         dispatch({
             type:TABLE_LOGIN_REQUEST
@@ -112,12 +112,13 @@ export const TableRegister=(table_type,rate,price,frame_time_limit,ac,is_running
             // 'address':address,
             // 'phonenumber':phonenumber,
             // 'email':email,
-            'table_type':table_type, 
+            'tableno':tableno, 
             'rate':rate,
             'price':price,
             'frame_time_limit':frame_time_limit,
             'ac':ac,
-            'is_running':is_running,
+            'is_running':is_running
+            
         },
             // payload,
             config)
@@ -142,7 +143,7 @@ export const TableRegister=(table_type,rate,price,frame_time_limit,ac,is_running
 
 
 
-export const UserRegister=(name,address,phonenumber,email,tabletype,frame)=>async(dispatch)=>{
+export const UserRegister=(name,address,phonenumber,email,tableno,frame)=>async(dispatch)=>{
     try{
         dispatch({
             type:USER_ADD_REQUEST
@@ -161,7 +162,7 @@ export const UserRegister=(name,address,phonenumber,email,tabletype,frame)=>asyn
             'address':address,
             'phonenumber':phonenumber,
             'email':email,
-            'tabletype':tabletype,
+            'tableno':tableno,
             'frame':frame,
             
             // 'table_type':table_type, 

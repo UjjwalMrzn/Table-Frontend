@@ -14,6 +14,7 @@ import { FiTriangle } from "react-icons/fi";
 
 const Booknow = () => {
   const {id}=useParams()
+  console.log('====',id)
   const tablelist =useSelector(state=>state.tablelist)
   const {error,loading ,table}=tablelist
   return (

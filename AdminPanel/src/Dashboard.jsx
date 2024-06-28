@@ -102,7 +102,7 @@ const Dashboard = () => {
               {currentTables.map((table, index) => (
                 <tr key={index}>
                  <td>
-                    <span className={`tableno ${table.table_type}`}>{table.table_type}</span>
+                    <span className={`tableno ${table.tableno}`}>{table.tableno}</span>
                   </td>
                   <td>{table.rate}</td>
                   <td>{table.price}</td>
@@ -115,23 +115,23 @@ const Dashboard = () => {
                     </span>
                   </td>
                   <td>
-                    <Link to={`/details/${table.id}`}>
+                    <Link to={`/details/${table.tableno}`}>
                       <button className="pay-btn">View Details</button>
                     </Link>
-                    <Link to={`/BookNow/${table.id}`}>
+                    <Link to={`/BookNow/${table.tableno}`}>
                       <button
-                        className={`book-btn ${table.is_running === true ? false : ''}`}
+                        className={`book-btn ${table.is_running  ? false : ''}`}
                         disabled={table.is_running}
                       >
-                        {table.is_running === true ? 'Booked' : 'Book Now'}
+                        {table.is_running  ? 'Booked' : 'Book Now'}
                       </button>
                     </Link>
-                    <Link to={`/user/${table.id}`}>
+                    <Link to={`/user/${table.tableno}`}>
                       <button
-                        className={`book-btn ${table.is_running === false ? false : ''}`}
+                        className={`book-btn ${table.is_running  ? false : ''}`}
                         disabled={table.is_running}
                       >
-                        {table.is_running === false ? 'Pay Now1' : 'Pay Now'}
+                        {table.is_running  ? 'Pay Now1' : 'Pay Now'}
                       </button>
                     </Link>
                   </td>
@@ -139,7 +139,7 @@ const Dashboard = () => {
                     <button className="delete-btn" onClick={() => handleDeleteClick(table.id)}>
                       <FontAwesomeIcon icon={faTrash} />
                     </button>
-                    <Link to={`/Video/${table.id}`}>
+                    <Link to={`/Video/${table.tableno}`}>
                       <button className="view-btn">
                         <FontAwesomeIcon icon={faVideo} />
                       </button>
