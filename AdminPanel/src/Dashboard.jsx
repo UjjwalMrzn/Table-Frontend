@@ -126,13 +126,13 @@ const Dashboard = () => {
                         {table.is_running === true ? 'Booked' : 'Book Now'}
                       </button>
                     </Link>
-                    <Link to={`/PayNow/${table.id}`}>
+                    {/* <Link to={`/PayNow/${table.id}`}>
                       <button
                         className={`pay-btn ${!table.is_running ? 'false' : ''}`}
                         disabled={!table.is_running}>
                         {table.is_running ? 'Pay Now' : 'Pay Now'}
                       </button>
-                    </Link>
+                    </Link> */}
 
                   </td>
                   <td>

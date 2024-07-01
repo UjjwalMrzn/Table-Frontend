@@ -1,5 +1,6 @@
 
-//frame based//
+
+//Time Based//
 
 import React, { useState,useEffect } from 'react';
 import { useRoute } from 'wouter';
@@ -12,17 +13,17 @@ import Button from 'react-bootstrap/Button';
 import { Link ,useParams} from 'wouter'
 function User() {
   const{id}=useParams()
-
   const dispatch=useDispatch()
 
-  // const tableRegisterstore =useSelctor(state=>state.tableRegisterstore)
+  // const tableRegisterstore =useSelector(state=>state.tableRegisterstore)
   // const {error, loading , Info}=tableRegisterstore
 
 
   const Userstore =useSelector(state=>state.Userstore)
   const {error, loading , User}=Userstore
 
-
+  const tableRegisterstore =useSelector(state=>state.tableRegisterstore)
+  const {Info}=tableRegisterstore
 
   const tabledetaillist =useSelector(state=>state.tabledetaillist)
   const {detail}=tabledetaillist
@@ -31,25 +32,25 @@ function User() {
   const [address,setAddress]=useState('')
   const [phonenumber,setPhonenumber]=useState('')
   const [email,setEmail]=useState('')
-  const [tabletype,setTable_type]=useState('')
+  const [tabletype,setTable_type]=useState(id)
   const [frame,setFrame]=useState('')
   // const [frame_time_limit,setFrame_time_limit]=useState('')
   // const [rate,setRate]=useState('')
   // const [price,setPrice]=useState('')
   // const [ac,setAc]=useState(false)
+  // const [is_running,setIsrunning]=useState(false)
  
   const navigate = useNavigate()
   useEffect(()=>{
     if (User){
       
-          // navigate(`/start/${id}`)
-          navigate(`/dashboard`)
+          navigate('/dashboard')
      
       // setShouldValidate(false);
     }
     else{
       dispatch(ListTableDetail(id))
-
+     
 
     }
 
@@ -75,7 +76,7 @@ function User() {
 
 
   useEffect(()=>{
-    if(detail){
+    if (detail){
       setTable_type(id);
     }
   },[id])
@@ -83,13 +84,12 @@ function User() {
   //   setFrame_time_limit(e.target.value);
   //   // Optionally, you can perform additional actions on time change here
   // };
-console.log(tabletype)
-console.log('-----',User)
-
+console.log('oooo',User)
   const submitHandler=(e)=>{
+    const is_running=true
     e.preventDefault();  // Prevent default form submission
    
-    console.log(tabletype)
+
     dispatch(UserRegister(
       name,
       address,
@@ -103,12 +103,11 @@ console.log('-----',User)
     dispatch(ListUpadateTable(
      { 
     
-      tabletype:id,
+      tabletype:id ,
       is_running:true
     }
     ))  
   }
-
   // const [formData, setFormData] = useState({
   //   name: '',
   //   phone: '',
@@ -161,22 +160,22 @@ console.log('-----',User)
             <label>Tabletype_id</label>
             <input type='number' name='tabletype' value={tabletype} onChange={(e)=>setTable_type(e.target.value)}   />
           </div> */}
-          {/* <div className='form-group'>
+          <div className='form-group'>
             <label>Rate</label>
             <input type='number' name='Rate' value={detail.rate}  />
-          </div> */}
-          <div className='form-group'>
+          </div>
+          {/* <div className='form-group'>
             <label>Price</label>
             <input type='number' name='Price' value={detail.price}  />
-          </div>
-          <div className='form-group'>
+          </div> */}
+          {/* <div className='form-group'>
             <label>Frame</label>
             <input type='Frame' name='Frame' value={frame} onChange={(e)=>setFrame(e.target.value)}  />
-          </div>
-          <div className='form-group'>
+          </div> */}
+          {/* <div className='form-group'>
             <label>Frame_time_limit</label>
             <input type='time' name='Frame_time_limit' value={detail.frame_time_limit}   />
-          </div> 
+          </div>  */}
           
           <div className='form-group'>
             <label>Ac</label>

@@ -382,14 +382,14 @@ h2 {
   border: 1px solid white; /* White border for input */
   color: white; /* Input text color */
   border-radius: 10px;
-  text-transform: capitalize; /* capital letter*/
+  /* text-transform: capitalize; capital letter */
 
 
 }
 
-.form-group input.no-capitalize {
+/* .form-group input.no-capitalize {
   text-transform: none; /* Override capitalize */
-}
+
 
 .submit-btn button {
   width: 100%;
