@@ -88,7 +88,7 @@ function User() {
 
     e.preventDefault();  // Prevent default form submission
    
-
+  try{
     await dispatch(UserRegister(
       name,
       address,
@@ -105,8 +105,12 @@ function User() {
       tableno:id ,
       is_running:true,
     }
-    ))  
+    )) ;
+  }catch (error) {
+    console.error("Error during form submission:", error);
+    // Handle error appropriately, e.g., show an error message to the user
   }
+};
   // const [formData, setFormData] = useState({
   //   name: '',
   //   phone: '',
