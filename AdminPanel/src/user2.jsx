@@ -1,6 +1,5 @@
 
-
-//Time Based//
+//time based//
 
 import React, { useState,useEffect } from 'react';
 import { useRoute } from 'wouter';
@@ -11,7 +10,7 @@ import { TableRegister ,ListTableDetail,ListUpadateTable,UserRegister} from './a
 import { useNavigate, useLocation } from 'react-router-dom'
 import Button from 'react-bootstrap/Button';
 import { Link ,useParams} from 'wouter'
-function User() {
+function User2() {
   const{id}=useParams()
   const dispatch=useDispatch()
 
@@ -32,7 +31,7 @@ function User() {
   const [address,setAddress]=useState('')
   const [phonenumber,setPhonenumber]=useState('')
   const [email,setEmail]=useState('')
-  const [tabletype,setTable_type]=useState(id)
+  const [tableno,setTable_type]=useState('')
   const [frame,setFrame]=useState('')
   // const [frame_time_limit,setFrame_time_limit]=useState('')
   // const [rate,setRate]=useState('')
@@ -44,7 +43,7 @@ function User() {
   useEffect(()=>{
     if (User){
       
-          navigate('/dashboard')
+          navigate(`/start/${id}`)
      
       // setShouldValidate(false);
     }
@@ -79,35 +78,39 @@ function User() {
     if (detail){
       setTable_type(id);
     }
-  },[id])
+  },[id,detail])
   // const handleTimeChange = (e) => {
   //   setFrame_time_limit(e.target.value);
   //   // Optionally, you can perform additional actions on time change here
   // };
-console.log('oooo',User)
-  const submitHandler=(e)=>{
-    const is_running=true
+  console.log('oooo',User)
+  const submitHandler=async(e)=>{
+
     e.preventDefault();  // Prevent default form submission
    
-
-    dispatch(UserRegister(
+  try{
+    await dispatch(UserRegister(
       name,
       address,
       phonenumber,
       email,
-      tabletype,
+      tableno,
       frame,
     ))
     
-
+    
     dispatch(ListUpadateTable(
      { 
     
-      tabletype:id ,
-      is_running:true
+      tableno:id ,
+      is_running:true,
     }
-    ))  
+    )) ;
+  }catch (error) {
+    console.error("Error during form submission:", error);
+    // Handle error appropriately, e.g., show an error message to the user
   }
+};
   // const [formData, setFormData] = useState({
   //   name: '',
   //   phone: '',
@@ -153,29 +156,29 @@ console.log('oooo',User)
             <input type='email' name='email' value={email} onChange={(e)=>setEmail(e.target.value)}  />
           </div>
           <div className='form-group'>
-            <label>Tabletype</label>
-            <input type='number' name='tabletype' value={detail.table_type}   />
+            <label>Tableno</label>
+            <input type='number' name='tableno' value={detail.tableno}   />
           </div>
           {/* <div className='form-group'>
             <label>Tabletype_id</label>
             <input type='number' name='tabletype' value={tabletype} onChange={(e)=>setTable_type(e.target.value)}   />
           </div> */}
-          <div className='form-group'>
+          {/* <div className='form-group'>
             <label>Rate</label>
             <input type='number' name='Rate' value={detail.rate}  />
-          </div>
-          {/* <div className='form-group'>
+          </div> */}
+          <div className='form-group'>
             <label>Price</label>
             <input type='number' name='Price' value={detail.price}  />
-          </div> */}
-          {/* <div className='form-group'>
+          </div>
+          <div className='form-group'>
             <label>Frame</label>
             <input type='Frame' name='Frame' value={frame} onChange={(e)=>setFrame(e.target.value)}  />
-          </div> */}
-          {/* <div className='form-group'>
+          </div>
+          <div className='form-group'>
             <label>Frame_time_limit</label>
             <input type='time' name='Frame_time_limit' value={detail.frame_time_limit}   />
-          </div>  */}
+          </div> 
           
           <div className='form-group'>
             <label>Ac</label>
@@ -213,4 +216,4 @@ console.log('oooo',User)
 
 
 
-export default User;
+export default User2;

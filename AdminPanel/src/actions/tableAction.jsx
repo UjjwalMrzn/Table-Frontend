@@ -64,13 +64,21 @@ export const ListUpadateTable=(User)=>async(dispatch)=>{
             }   
         }
         
-        const {data}=await axios.put(
+        const {data:data1}=await axios.put(
             `/api/updatetable/${User.tableno}/`,
             User,
-            config)
+            config);
+        
+
+
+        const { data: data2 } = await axios.put(
+            `/api/chooseGame/${User.tableno}/`,
+            User,
+            config
+        );
         dispatch({
             type:TABLE_UPDATE_SUCCESS,    
-            payload:data
+            payload: { data1, data2 }
         })
         
     }catch(error){
