@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
-import { Switch, Route, Redirect } from 'wouter';
+import { Switch, Route, Redirect, useLocation } from 'wouter';
 import { BrowserRouter } from 'react-router-dom';
 import User from './user';
 import User2 from './user2';
@@ -18,11 +18,9 @@ import Dashboard from './Dashboard';
 import Booknow from './BookNow';
 // import PayNow from './PayNow';
 
-
-
-
 function App() {
   const [openSidebarToggle, setOpenSidebarToggle] = useState(false);
+  const [location] = useLocation(); // Get the current path
 
   const OpenSidebar = () => {
     setOpenSidebarToggle(!openSidebarToggle);
@@ -43,12 +41,13 @@ function App() {
 
   return (
     <div className='grid-container'>
-      <Header OpenSidebar={OpenSidebar} />
+      {/* Render Header only when on the dashboard */}
+      {location === '/' || location === '/dashboard' ? <Header OpenSidebar={OpenSidebar} /> : null}
       <Sidebar openSidebarToggle={openSidebarToggle} OpenSidebar={OpenSidebar} />
 
       <main className='main-container'>
         <BrowserRouter>
-          <Route path="/" component={Home} />
+          <Route path="/" component={Dashboard} />
           <Route path="/user/:id" component={User} />
           <Route path="/user2/:id" component={User2} />
 

@@ -1,0 +1,131 @@
+
+
+/* Form Styling */
+/* Main */
+.main-container {
+  grid-area: main;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; /* Align items to start of the container */
+  padding: 20px;
+  color: rgba(255, 255, 255, 0.95);
+}
+
+.form-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%; /* Ensure form-box takes full width */
+}
+
+.form-container {
+  width: 450px;
+  padding: 28px;
+  border-radius: 10px;
+  overflow: hidden;
+  background: transparent;
+  border: 1px solid white; /* White border */
+  margin-top: 10px; /* Spacing from the top */
+  backdrop-filter: blur(5px) saturate(90%);
+}
+
+h2 {
+  font-size: 26px;
+  font-weight: bold;
+  text-align: center;
+  color: floralwhite;
+  padding-bottom: 8px;
+  border-bottom: 1px solid silver;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  color: white; /* Label color */
+}
+
+.form-group input {
+  width: 100%;
+  padding: 8px;
+  box-sizing: border-box;
+  background: rgba(255, 255, 255, 0.1); /* Input background with transparency */
+  border: 1px solid white; /* White border for input */
+  color: white; /* Input text color */
+  border-radius: 10px;
+}
+
+.submit-btn button {
+  width: 100%;
+  padding: 10px;
+  background-color: #5fa7d5; /* Green submit button */
+  border: 2px solid #5fa7d5;
+  border-radius: 10px;
+  color: white;
+  cursor: pointer;
+  margin-top: 10px;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.submit-btn button:hover {
+  background-color: transparent; /* Darker green on hover */
+  transform: translateY(-2px);
+}
+
+/* Select Box Styling */
+.select-box {
+  position: relative; /* Ensure relative positioning for dropdown arrow */
+  width: 100%; /* Full width */
+  max-width: 300px; /* Adjust max-width as per your design */
+}
+
+.select-box select {
+  width: 100%; /* Full width of parent */
+  padding: 10px; /* Padding for select box */
+  font-size: 16px; /* Font size for select box */
+  border: 1px solid #ccc; /* Border style */
+  border-radius: 5px; /* Rounded corners */
+  appearance: none; /* Remove default arrow */
+  -webkit-appearance: none; /* Remove default arrow for WebKit browsers */
+  -moz-appearance: none; /* Remove default arrow for Firefox */
+  background-color: transparent; /* Transparent background */
+  color: #fff; /* Text color */
+}
+
+.select-box select:focus {
+  outline: none; /* Remove outline on focus */
+  border-color: #66afe9; /* Border color on focus (optional) */
+  background-color: #3a3939; /* Background color on focus */
+}
+
+/* Styling the arrow */
+.select-box::after {
+  content: '\25BC'; /* Unicode character for down arrow */
+  font-size: 14px; /* Adjust arrow size */
+  color: #fff; /* Arrow color */
+  position: absolute; /* Position relative to parent */
+  top: 50%; /* Adjust vertical alignment */
+  right: 10px; /* Adjust horizontal alignment */
+  transform: translateY(-50%); /* Center vertically */
+  pointer-events: none; /* Ensure the arrow does not intercept clicks */
+}
+
+/* Styling the dropdown options */
+.select-box select option {
+  background-color: transparent; /* Transparent background */
+  color: #fff; /* Text color */
+}
+
+/* When an option is hovered */
+.select-box select option:hover {
+  background-color: rgba(255, 255, 255, 0.2); /* Lighter transparent background when hovered */
+}
+
+/* When an option is selected */
+.select-box select option:checked {
+  background-color: #3a3939; /* Darker background color when selected */
+}

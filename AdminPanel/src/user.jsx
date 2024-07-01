@@ -4,6 +4,8 @@
 import React, { useState,useEffect } from 'react';
 import { useRoute } from 'wouter';
 import { useDispatch,useSelector } from 'react-redux'
+import './User.css'; // Import CSS file
+
 import Errormsg from './components/Errormsg'
 import Spinner from './components/Spinner'
 import { TableRegister ,ListTableDetail,ListUpadateTable,UserRegister} from './actions/tableAction'
@@ -31,7 +33,7 @@ function User() {
   const [address,setAddress]=useState('')
   const [phonenumber,setPhonenumber]=useState('')
   const [email,setEmail]=useState('')
-  const [tabletype,setTable_type]=useState('')
+  const [tableno,setTable_type]=useState('')
   const [frame,setFrame]=useState('')
   // const [frame_time_limit,setFrame_time_limit]=useState('')
   // const [rate,setRate]=useState('')
@@ -78,33 +80,32 @@ function User() {
     if(detail){
       setTable_type(id);
     }
-  },[id])
+  },[id,detail])
   // const handleTimeChange = (e) => {
   //   setFrame_time_limit(e.target.value);
   //   // Optionally, you can perform additional actions on time change here
   // };
-console.log(tabletype)
-console.log('-----',User)
+  console.log('oooo',User)
+  const submitHandler=async(e)=>{
 
-  const submitHandler=(e)=>{
     e.preventDefault();  // Prevent default form submission
    
-    console.log(tabletype)
-    dispatch(UserRegister(
+
+    await dispatch(UserRegister(
       name,
       address,
       phonenumber,
       email,
-      tabletype,
+      tableno,
       frame,
     ))
     
-
+    
     dispatch(ListUpadateTable(
      { 
     
-      tabletype:id,
-      is_running:true
+      tableno:id ,
+      is_running:true,
     }
     ))  
   }
@@ -154,8 +155,8 @@ console.log('-----',User)
             <input type='email' name='email' value={email} onChange={(e)=>setEmail(e.target.value)}  />
           </div>
           <div className='form-group'>
-            <label>Tabletype</label>
-            <input type='number' name='tabletype' value={detail.table_type}   />
+            <label>Tableno</label>
+            <input type='number' name='tableno' value={detail.tableno}   />
           </div>
           {/* <div className='form-group'>
             <label>Tabletype_id</label>

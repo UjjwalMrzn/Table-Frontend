@@ -19,11 +19,6 @@ function Sidebar({ openSidebarToggle, OpenSidebar }) {
           </a>
         </li>
         <li className='sidebar-list-item'>
-          <a href="/dashboard" className="sidebar-link">
-            <BsPeopleFill className='icon' /> Manage Tables
-          </a>
-        </li>
-        <li className='sidebar-list-item'>
           <a href="/settings" className="sidebar-link">
             <BsFillGearFill className='icon' /> Settings
           </a>

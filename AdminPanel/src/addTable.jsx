@@ -19,15 +19,16 @@ function addTable() {
   // const [address,setAddress]=useState('')
   // const [phonenumber,setPhonenumber]=useState('')
   // const [email,setEmail]=useState('')
-  const [table_type,setTable_type]=useState('')     
+  const [tableno,setTable_type]=useState('')     
   const [rate,setRate]=useState('')
   const [price,setPrice]=useState('')
   const [frame_time_limit,setFrame_time_limit]=useState('')
-  const [is_running,setis_running]=useState(false)
 
 
   // const [time,setTime]=useState('')
   const [ac,setAc]=useState(false)
+  const [is_running,setIsrunning]=useState('')
+
   // const isValidEmail =(email)=>{
   //   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   //   return emailRegex.test(email);
@@ -47,15 +48,21 @@ function addTable() {
 
 },[navigate,Info])
 
+
+useEffect(()=>{
+ 
+    setIsrunning(false);
+  
+})
 const submitHandler=(e)=>{
   e.preventDefault();  // Prevent default form submission
   dispatch(TableRegister(
-    table_type,
+    tableno,
     rate,
     price,
     frame_time_limit,
     ac,
-    false
+    is_running
   ))
   
   // dispatch(TableRegister(Name,Address,Phonenumber,Email,Table_type,Rate,Price,Frame,Frame_time_limit,Ac))
@@ -74,7 +81,7 @@ const checked =Boolean
         <Form onSubmit={submitHandler}>
           <div className='form-group'>
             <label>Table Number</label>
-            <input type='Table_type' name='Table_type' value={table_type} onChange={(e)=>setTable_type(e.target.value)}  />
+            <input type='number' name='tableno' value={tableno} onChange={(e)=>setTable_type(e.target.value)}  />
           </div>
           <div className='form-group'>
             <label>Time Rate</label>
