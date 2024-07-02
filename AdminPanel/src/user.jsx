@@ -45,7 +45,7 @@ function User() {
     if (User){
       
           // navigate(`/start/${id}`)
-          navigate(`/dashboard`)
+          navigate(`/start/${id}`)
      
       // setShouldValidate(false);
     }
@@ -169,17 +169,21 @@ function User() {
             <label>Rate</label>
             <input type='number' name='Rate' value={detail.rate}  />
           </div> */}
-          <div className='form-group'>
+          {/* <div className='form-group'>
             <label>Price</label>
-            <input type='number' name='Price' value={detail.price}  />
-          </div>
+            <input type='number' name='Price' value={}  />
+          </div> */}
           <div className='form-group'>
             <label>Frame</label>
             <input type='Frame' name='Frame' value={frame} onChange={(e)=>setFrame(e.target.value)}  />
           </div>
           <div className='form-group'>
-            <label>Frame_time_limit</label>
-            <input type='time' name='Frame_time_limit' value={detail.frame_time_limit}   />
+            <label>Frame_limit</label>
+            <input type='timer' name='Frame_limit' value={detail.frame_limit}   />
+          </div> 
+          <div className='form-group'>
+            <label>Per Frame</label>
+            <input type='number' name='Per_Frame' value={detail.per_frame}   />
           </div> 
           
           <div className='form-group'>

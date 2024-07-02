@@ -32,7 +32,7 @@ function User2() {
   const [phonenumber,setPhonenumber]=useState('')
   const [email,setEmail]=useState('')
   const [tableno,setTable_type]=useState('')
-  const [frame,setFrame]=useState('')
+  const [frame]=useState(0)
   // const [frame_time_limit,setFrame_time_limit]=useState('')
   // const [rate,setRate]=useState('')
   // const [price,setPrice]=useState('')
@@ -90,12 +90,14 @@ function User2() {
    
   try{
     await dispatch(UserRegister(
+      
       name,
       address,
       phonenumber,
       email,
       tableno,
       frame,
+      
     ))
     
     
@@ -168,17 +170,17 @@ function User2() {
             <input type='number' name='Rate' value={detail.rate}  />
           </div> */}
           <div className='form-group'>
-            <label>Price</label>
-            <input type='number' name='Price' value={detail.price}  />
+            <label>Rate</label>
+            <input type='number' name='rate' value={detail.rate}  />
           </div>
-          <div className='form-group'>
+          {/* <div className='form-group'>
             <label>Frame</label>
             <input type='Frame' name='Frame' value={frame} onChange={(e)=>setFrame(e.target.value)}  />
-          </div>
-          <div className='form-group'>
+          </div> */}
+          {/* <div className='form-group'>
             <label>Frame_time_limit</label>
             <input type='time' name='Frame_time_limit' value={detail.frame_time_limit}   />
-          </div> 
+          </div>  */}
           
           <div className='form-group'>
             <label>Ac</label>

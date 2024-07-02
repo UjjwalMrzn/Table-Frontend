@@ -29,74 +29,7 @@ const Start = () => {
     <div >
       Game Started
         <img src={`/api/game_start/${id}/`} alt={`Game start ${id}`}/>
-         {loading ? <Spinner/>
-               :error? <Errormsg>{error}</Errormsg>  
-               :
-         
-                 <table>
-                   <tbody>      
-                      {detail.persondetail ?(
-                        <>
-                        <tr>
-                        <td>Table</td>
-                        <td colspan="3">{detail.table_type}</td> 
-                        </tr>
-                        <tr>
-                          <td>Name</td>
-                          <td colspan="3">{detail.persondetail.Name}</td>
-                        </tr>
-                        <tr>
-                          <td>PhoneNO</td>
-                          <td colspan="3">{detail.persondetail.Phonenumber}</td>
-                        </tr>
-                        <tr>
-                          <td>Email</td>
-                          <td colspan="3">{detail.persondetail.email}</td>
-                        </tr>
-                        <tr>
-                          <td>Address</td>
-                          <td colspan="3">{detail.persondetail.Address}</td>
-                        </tr>
-                        <tr>
-                          <td>Frame_Time_Limit</td>
-                          <td colspan="3">{detail.frame_time_limit}</td>
-                        </tr>
-                    
-                        <tr>
-                          <td>Start</td>
-                          <td>{detail.start_time}</td>
-                          
-                        </tr>
-                        <tr>
-                          <td>Time</td>
-                          <td>{detail.time}</td>
-                          
-                        </tr> 
-                        </>
-                      ):(
-                        <tr>
-                          <td colSpan="2">No person details available</td>
-                        </tr>
-                      )}
-                       <div className='table-btn'>
-                       <Link to ={'/dashboard'}> 
-                        <Button variant="outline-success" className='my-2'>View Table</Button>
-                      </Link>
-                       </div>
-                      {/* <div className='main-cards'>
-                      {detail.map(item=>(
-                        <div key={item.id}>
-                          {item.persondetail.Name}
-
-                        </div>
-                      ))}
-                    </div> */}
-                      
-                  
-                  </tbody>
-                </table>
-              
-      }
+        
        
 
     </div>

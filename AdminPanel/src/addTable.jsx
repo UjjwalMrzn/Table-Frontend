@@ -21,8 +21,8 @@ function addTable() {
   // const [email,setEmail]=useState('')
   const [tableno,setTable_type]=useState('')     
   const [rate,setRate]=useState('')
-  const [price,setPrice]=useState('')
-  const [frame_time_limit,setFrame_time_limit]=useState('')
+  const [per_frame,setper_frame]=useState('')
+  const [frame_limit,setFrame_limit]=useState('')
 
 
   // const [time,setTime]=useState('')
@@ -59,8 +59,9 @@ const submitHandler=(e)=>{
   dispatch(TableRegister(
     tableno,
     rate,
-    price,
-    frame_time_limit,
+    per_frame,
+   
+    frame_limit,
     ac,
     is_running
   ))
@@ -88,13 +89,13 @@ const checked =Boolean
             <input type='number' name='Rate' value={rate} onChange={(e)=>setRate(e.target.value)}  />
           </div>
           <div className='form-group'>
-            <label>Frame Price</label>
-            <input type='number' name='Price' value={price} onChange={(e)=>setPrice(e.target.value)}  />
+            <label>Per frame</label>
+            <input type='number' name='per_frame' value={per_frame} onChange={(e)=>setper_frame(e.target.value)}  />
           </div>
-          
+
           <div className='form-group'>
             <label>Frame Time Limit</label>
-            <input type='time' name='Frame_time_limit' value={frame_time_limit} onChange={(e)=>setFrame_time_limit(e.target.value)}  />
+            <input type='timer' name='Frame_limit' value={frame_limit} onChange={(e)=>setFrame_limit(e.target.value)}  />
           </div>
           <div className='form-group'>
             <label>A/C</label>

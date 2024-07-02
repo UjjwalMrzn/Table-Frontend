@@ -105,7 +105,7 @@ const Dashboard = () => {
                     <span className={`tableno ${table.tableno}`}>{table.tableno}</span>
                   </td>
                   <td>{table.rate}</td>
-                  <td>{table.price}</td>
+                  <td>{table.per_frame}</td>
                   <td>
                     <span className={`status-dot ${table.is_running}`} />
                   </td>
