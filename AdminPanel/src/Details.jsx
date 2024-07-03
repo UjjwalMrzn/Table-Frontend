@@ -61,8 +61,8 @@ function Details() {
                           <td colspan="3">{detail.person.frame}</td>
                         </tr>
                         <tr>
-                          <td>Frame_Time_Limit</td>
-                          <td colspan="3">{detail.frame_time_limit}</td>
+                          <td>Frame_Limit</td>
+                          <td colspan="3">{detail.frame_limit}</td>
                         </tr>
                     
                         <tr>

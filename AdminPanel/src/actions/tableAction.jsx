@@ -94,7 +94,7 @@ export const ListUpadateTable=(User)=>async(dispatch)=>{
 }
 
 
-export const TableRegister=(tableno,rate,price,frame_time_limit,ac,is_running)=>async(dispatch)=>{
+export const TableRegister=(tableno,rate,per_frame,frame_limit,ac,is_running)=>async(dispatch)=>{
     try{
         dispatch({
             type:TABLE_LOGIN_REQUEST
@@ -122,8 +122,8 @@ export const TableRegister=(tableno,rate,price,frame_time_limit,ac,is_running)=>
             // 'email':email,
             'tableno':tableno, 
             'rate':rate,
-            'price':price,
-            'frame_time_limit':frame_time_limit,
+            'per_frame':per_frame,
+            'frame_limit':frame_limit,
             'ac':ac,
             'is_running':is_running
             

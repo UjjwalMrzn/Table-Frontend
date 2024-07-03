@@ -5,19 +5,31 @@ import Spinner from './components/Spinner';
 import { TableRegister, RemoveInfo } from './actions/tableAction';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { Form, Button, Row, Col } from 'react-bootstrap';
-import './App.css';
+import './AddTable.css';
 
 function AddTable() {
   const dispatch = useDispatch();
   const tableRegisterstore = useSelector((state) => state.tableRegisterstore);
   const { error, loading, Info } = tableRegisterstore;
 
-  const [tableno, setTable_type] = useState('');
-  const [rate, setRate] = useState('');
-  const [price, setPrice] = useState('');
-  const [frame_time_limit, setFrame_time_limit] = useState('');
-  const [ac, setAc] = useState(false);
-  const [is_running, setIsrunning] = useState('');
+  // const [name,setName]=useState('')
+  // const [address,setAddress]=useState('')
+  // const [phonenumber,setPhonenumber]=useState('')
+  // const [email,setEmail]=useState('')
+  const [tableno,setTable_type]=useState('')     
+  const [rate,setRate]=useState('')
+  const [per_frame,setper_frame]=useState('')
+  const [frame_limit,setFrame_limit]=useState('')
+
+
+  // const [time,setTime]=useState('')
+  const [ac,setAc]=useState(false)
+  const [is_running,setIsrunning]=useState('')
+
+  // const isValidEmail =(email)=>{
+  //   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  //   return emailRegex.test(email);
+  // }
 
   const navigate = useNavigate();
 
@@ -29,14 +41,26 @@ function AddTable() {
 
   useEffect(() => {
     setIsrunning(false);
-  }, []);
+  
+})
+const submitHandler=(e)=>{
+  e.preventDefault();  // Prevent default form submission
+  dispatch(TableRegister(
+    tableno,
+    rate,
+    per_frame,
+   
+    frame_limit,
+    ac,
+    is_running
+  ))
+  
+  // dispatch(TableRegister(Name,Address,Phonenumber,Email,Table_type,Rate,Price,Frame,Frame_time_limit,Ac))
+  // setShouldValidate(true);
 
-  const submitHandler = (e) => {
-    e.preventDefault(); // Prevent default form submission
-    dispatch(
-      TableRegister(tableno, rate, price, frame_time_limit, ac, is_running)
-    );
-  };
+}
+const checked =Boolean
+
 
   return (
     <div className="form-box">
@@ -70,28 +94,20 @@ function AddTable() {
               <span className="unit">/ min.</span>
             </div>
           </div>
-          <div className="form-group">
-            <label>Frame Price :</label>
-            <div className="input-with-unit">
-            <span className="unit">Rs.</span>
+          <div className='form-group'>
+            <label>Per frame :</label>
+            <div className='input-with-unit'>
+            <input type='number' name='per_frame' value={per_frame} onChange={(e)=>setper_frame(e.target.value)}  />
+            <span className="unit">/ frame</span>
 
-              <input
-                type="number"
-                name="Price"
-                value={price}
-                onChange={(e) => setPrice(e.target.value)}
-              />
-              <span className="unit">/ frame</span>
-            </div>
           </div>
-          <div className="form-group">
+          </div>
+
+          <div className='form-group'>
             <label>Frame Time - Limit :</label>
-            <div className='input-with-unit'> <input
-              type="time"
-              name="Frame_time_limit"
-              value={frame_time_limit}
-              onChange={(e) => setFrame_time_limit(e.target.value)}
-            /></div>
+            <div className='input-with-unit'>
+            <input type='timer' name='Frame_limit' value={frame_limit} onChange={(e)=>setFrame_limit(e.target.value)}  />
+          </div>
           </div>
           <div className="form-group">
             <label>A/C :</label>

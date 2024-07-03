@@ -21,9 +21,20 @@
   padding: 28px;
   border-radius: 10px;
   overflow: hidden;
-  background: rgba(255, 255, 255, 0.1); /* Use rgba for transparency */
+  background: transparent; /* Use rgba for transparency */
   border: 1px solid white; /* White border */
   margin-top: 10px; /* Spacing from the top */
+  backdrop-filter: blur(5px) saturate(90%);
+}
+
+.user-form-container {
+  width: 550px;
+  padding: 28px;
+  border-radius: 10px;
+  overflow: hidden;
+  background: transparent; /* Use rgba for transparency */
+  border: 1px solid white; /* White border */
+  /* margin-top: 10px; Spacing from the top */
   backdrop-filter: blur(5px) saturate(90%);
 }
 
@@ -48,106 +59,15 @@ h2 {
   flex: 1; /* Allow label to take as much space as needed */
 }
 
+
+
 .input-with-unit {
   position: relative; /* Ensure relative positioning for unit text */
   flex: 2; /* Allow input to take more space */
 }
 
-.input-with-unitt {
-  position: relative; /* Ensure relative positioning for unit text */
-  flex: 2; /* Allow input to take more space */
-}
-
-.input-with-unit input {.input-with-unit {
-  position: relative; /* Ensure relative positioning for unit text */
-  display: flex;
-  align-items: center;
-}
-
-.input-with-unit .unit {
-  position: absolute; /* Position unit text absolutely */
-  left: 0; /* Adjust as needed */
-  padding: 0 5px; /* Optional padding */
-  color: #555; /* Text color */
-}.input-with-unit {
-  position: relative; /* Ensure relative positioning for unit text */
-  display: flex;
-  align-items: center;
-}
-
-.input-with-unit .unit {
-  position: absolute; /* Position unit text absolutely */
-  left: 0; /* Adjust as needed */
-  padding: 0 5px; /* Optional padding */
-  color: #555; /* Text color */
-}.input-with-unit {
-  position: relative; /* Ensure relative positioning for unit text */
-  display: flex;
-  align-items: center;
-}
-
-.input-with-unit .unit {
-  position: absolute; /* Position unit text absolutely */
-  left: 0; /* Adjust as needed */
-  padding: 0 5px; /* Optional padding */
-  color: #555; /* Text color */
-}.input-with-unit {
-  position: relative; /* Ensure relative positioning for unit text */
-  display: flex;
-  align-items: center;
-}
-
-.input-with-unit .unit {
-  position: absolute; /* Position unit text absolutely */
-  left: 0; /* Adjust as needed */
-  padding: 0 5px; /* Optional padding */
-  color: #555; /* Text color */
-}.input-with-unit {
-  position: relative; /* Ensure relative positioning for unit text */
-  display: flex;
-  align-items: center;
-}
-
-.input-with-unit .unit {
-  position: absolute; /* Position unit text absolutely */
-  left: 0; /* Adjust as needed */
-  padding: 0 5px; /* Optional padding */
-  color: #555; /* Text color */
-}.input-with-unit {
-  position: relative; /* Ensure relative positioning for unit text */
-  display: flex;
-  align-items: center;
-}
-
-.input-with-unit .unit {
-  position: absolute; /* Position unit text absolutely */
-  left: 0; /* Adjust as needed */
-  padding: 0 5px; /* Optional padding */
-  color: #555; /* Text color */
-}.input-with-unit {
-  position: relative; /* Ensure relative positioning for unit text */
-  display: flex;
-  align-items: center;
-}
-
-.input-with-unitt .unit {
-  position: absolute; /* Position unit text absolutely */
-  left: 0; /* Adjust as needed */
-  padding: 0 5px; /* Optional padding */
-  color: #555; /* Text color */
-}.input-with-unit {
-  position: relative; /* Ensure relative positioning for unit text */
-  display: flex;
-  align-items: center;
-}
-
-.input-with-unitt .unit {
-  position: absolute; /* Position unit text absolutely */
-  left: 0; /* Adjust as needed */
-  padding: 0 5px; /* Optional padding */
-  color: #555; /* Text color */
-}
-  width: 100%;
+.form-group input {
+  flex: 4; /* Allow input to take more space */
   padding: 8px;
   box-sizing: border-box;
   background: rgba(255, 255, 255, 0.1); /* Input background with transparency */
@@ -156,32 +76,27 @@ h2 {
   border-radius: 10px;
 }
 
-.input-with-unitt input {
-  width: 50%;
-  padding: 8px;
-  box-sizing: border-box;
-  background: rgba(255, 255, 255, 0.1); /* Input background with transparency */
-  border: 1px solid white; /* White border for input */
-  color: white; /* Input text color */
-  border-radius: 10px;
+
+.form-group-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
-.input-with-unit .unit {
-  position: absolute; /* Position unit text absolutely */
-  right: 10px; /* Position to the right of the input */
-  top: 50%;
-  transform: translateY(-50%);
+.form-group-row label {
+  margin-right: 10px;
   color: white;
 }
 
-.form-group input {
-  flex: 2; /* Allow input to take more space */
+.form-group-row input {
+  flex: 1;
   padding: 8px;
   box-sizing: border-box;
-  background: rgba(255, 255, 255, 0.1); /* Input background with transparency */
-  border: 1px solid white; /* White border for input */
-  color: white; /* Input text color */
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid white;
+  color: white;
   border-radius: 10px;
+  margin-right: 10px;
 }
 
 .submit-btn button {
@@ -297,7 +212,7 @@ h2 {
 
 /* When checked */
 input:checked + .slider {
-  background-color: #2196F3;
+  background-color: #5fa7d5;
 }
 
 /* Move the slider when checked */
@@ -313,3 +228,17 @@ input:checked + .slider:before {
 .slider.round:before {
   border-radius: 50%;
 }
+
+/*remove number changing default option*/
+input[type=number]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number] {
+  -moz-appearance: textfield; /* Firefox */
+}
+
+
+
