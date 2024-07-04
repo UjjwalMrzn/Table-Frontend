@@ -73,6 +73,7 @@ const checked =Boolean
             <label>Table Number :</label>
             <div className='input-with-unitt'>
             <input
+              placeholder='Enter a number'
               type="number"
               name="tableno"
               value={tableno}
@@ -81,11 +82,12 @@ const checked =Boolean
             </div>
           </div>
           <div className="form-group">
-            <label>Time Rate :</label>
-            <div className="input-with-unit">
+            <label>Per Minutes:</label>
+            <div className="table-input-with-unit">
             {/* <span className="unit">Rs.</span> */}
 
               <input
+                placeholder='Enter a price'
                 type="number"
                 name="Rate"
                 value={rate}
@@ -95,9 +97,9 @@ const checked =Boolean
             </div>
           </div>
           <div className='form-group'>
-            <label>Per frame :</label>
-            <div className='input-with-unit'>
-            <input type='number' name='per_frame' value={per_frame} onChange={(e)=>setper_frame(e.target.value)}  />
+            <label>Per Frame :</label>
+            <div className='table-input-with-unit'>
+            <input type='number' placeholder='Enter a price' name='per_frame' value={per_frame} onChange={(e)=>setper_frame(e.target.value)}  />
             <span className="unit">/ frame</span>
 
           </div>
@@ -105,13 +107,13 @@ const checked =Boolean
 
           <div className='form-group'>
             <label>Frame Time - Limit :</label>
-            <div className='input-with-unit'>
+            <div className='table-input-with-unit'>
             <input type='timer' name='Frame_limit' value={frame_limit} onChange={(e)=>setFrame_limit(e.target.value)}  />
           </div>
           </div>
           <div className="form-group">
             <label>A/C :</label>
-              <div className='input-with-unit'>
+              <div className='table-input-with-unit'>
               <label className='switch'>
               <input
                 type="checkbox"

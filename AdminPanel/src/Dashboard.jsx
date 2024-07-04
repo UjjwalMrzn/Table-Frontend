@@ -12,6 +12,13 @@ import Errormsg from './components/Errormsg';
 import Spinner from './components/Spinner';
 import Button from 'react-bootstrap/Button';
 import { useNavigate } from 'react-router-dom';
+import { HiVideoCameraSlash } from "react-icons/hi2";
+import { HiVideoCamera } from "react-icons/hi2";
+import { MdEdit } from "react-icons/md";
+
+
+
+
 
 const Dashboard = () => {
   const navigate = useNavigate();
@@ -28,6 +35,14 @@ const Dashboard = () => {
   }, [dispatch]);
 
   const [isPopupVisible, setIsPopupVisible] = useState(false);
+
+  const handleEditClick = (id) => {
+    // Redirect to edit page or handle edit logic here
+    console.log(`Editing table with ID: ${table.tableno}`);
+    navigate(`/addtable/${id}`);
+  };
+
+
   // const [tableToDelete, setTableToDelete] = useState(null);
 
   // const handleDeleteClick = (id) => {
@@ -122,6 +137,7 @@ const Dashboard = () => {
                     <Link to={`/details/${table.tableno}`}>
                       <button className="pay-btn">View Details</button>
                     </Link>
+
                     <Link to={`/BookNow/${table.tableno}`}>
                       <button
                         className={`book-btn ${table.is_running  ? false : ''}`}
@@ -147,14 +163,26 @@ const Dashboard = () => {
 
                   </td>
                   <td>
-                    <button className="delete-btn" onClick={() => handleDeleteClick(table.id)}>
-                      <FontAwesomeIcon icon={faTrash} />
-                    </button>
-                    <Link to={`/Video/${table.tableno}`}>
-                      <button className="view-btn">
-                        <FontAwesomeIcon icon={faVideo} />
+                    <Link to={`/addtable/${table.tableno}`}>
+                      <button className="delete-btn" onClick={() => handleEditClick(table.tableno)}>
+                        <MdEdit />
                       </button>
                     </Link>
+
+
+                    <Link to={`/Video/${table.tableno}`}>
+                          <button 
+                            className={`view-btn ${table.is_running ? 'disabled' : ''}`} 
+                            disabled={table.is_running}
+                            style={{ cursor: table.is_running ? 'not-allowed' : 'pointer' }}
+                          >
+                            {table.is_running ? (
+                              <HiVideoCameraSlash />
+                            ) : (
+                              <HiVideoCamera />
+                            )}
+                          </button>
+                        </Link>
                   </td>
                 </tr>
               ))}

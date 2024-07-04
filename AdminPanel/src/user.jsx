@@ -54,43 +54,58 @@ function User() {
         {error && <Errormsg varient='danger'>{error}</Errormsg>}
         {loading && <Spinner />}
         <form onSubmit={submitHandler}>
-          <div className='form-group'>
+          <div className='form-group2'>
             <label>Name :</label>
-            <input type='text' name='name' value={name} onChange={(e) => setName(e.target.value)} required />
+            <input type='text' name='name' placeholder='Enter a name' value={name} onChange={(e) => setName(e.target.value)} required />
           </div>
-          <div className='form-group'>
+          <div className='form-group2'>
             <label>Phone :</label>
-            <input type='tel' name='phone' value={phonenumber} onChange={(e) => setPhonenumber(e.target.value)} required />
+            <input type='tel' name='phone' placeholder='Enter a phone number' value={phonenumber} onChange={(e) => setPhonenumber(e.target.value)} required />
           </div>
-          <div className='form-group'>
+          <div className='form-group2'>
             <label>Address :</label>
-            <input type='text' name='address' value={address} onChange={(e) => setAddress(e.target.value)} required />
+            <input type='text' name='address' placeholder='Enter an address' value={address} onChange={(e) => setAddress(e.target.value)} required />
           </div>
-          <div className='form-group'>
+          <div className='form-group2'>
             <label>Email :</label>
-            <input type='email' name='email' value={email} onChange={(e) => setEmail(e.target.value)} />
+            <input type='email' name='email' placeholder='Enter an email' value={email} onChange={(e) => setEmail(e.target.value)} />
           </div>
-          <div className='form-group'>
-            <label>Table No. :</label>
-            <input type='number' name='tableno' value={tableno} readOnly />
-          </div>
+
+
           <div className='form-group-row'>
-            <label>Frame :</label>
-            <input type='text' name='Frame' value={frame} onChange={(e) => setFrame(e.target.value)} />
+            <label1>Table No. :</label1>
+            <div className='row-input'>
+            <input  type='number' name='tableno' value={tableno} readOnly />
+
+            </div>
           
-            <label>Per Frame :</label>
+       
+          <label2>Per Frame :</label2>
+          <div className='row-input'>
             <input type='number' name='Per_Frame' value={detail.per_frame} />
+            
+          </div>
+           
+          </div>
+
+
+          <div className='form-group-row'>
+
+            <label1>Frame :</label1>
+            <div className='row-input'>
+            <input className='row-input' placeholder='Enter a frame number' type='text' name='Frame' value={frame} onChange={(e) => setFrame(e.target.value)} />
+            </div>
+
+            <label2>Frame Limit :</label2>
+            <div className='row-input'>
+            <input className='row-input' type='text' name='Frame_limit' value={detail.frame_limit} readOnly />
+            </div>
           </div>
           
-          <div className='form-group'>
-            <label>Frame Limit :</label>
-            <input type='text' name='Frame_limit' value={detail.frame_limit} readOnly />
+          <div className='form-group2'>
+           
           </div>
-          <div className='form-group'>
-            <label>Per Frame :</label>
-            <input type='number' name='Per_Frame' value={detail.per_frame} readOnly />
-          </div>
-          <div className='form-group'>
+          <div className='form-group2'>
             <label>A/C :</label>
             <div className='input-with-unit'>
               <label className='switch'>
