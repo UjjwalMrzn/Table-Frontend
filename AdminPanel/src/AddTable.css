@@ -49,11 +49,6 @@
   }
   
   
-  .input-with-unit {
-    position: relative; /* Ensure relative positioning for unit text */
-    flex: 2; /* Allow input to take more space */
-  }
-  
   .form-group input {
     flex: 4; /* Allow input to take more space */
     padding: 8px;
@@ -66,14 +61,14 @@
   
   .submit-btn button {
     width: 100%;
-    padding: 10px;
+    padding: 6px;
     background-color: #5fa7d5; /* Green submit button */
     border: 2px solid #5fa7d5;
     border-radius: 10px;
     color: white;
     cursor: pointer;
     margin-top: 10px;
-    font-size: 16px;
+    font-size: 20px;
     font-weight: 600;
   }
   
@@ -212,7 +207,13 @@
     flex: 2; /* Allow input to take more space */
   }
   
-  .input-with-unit input {
+.table-input-with-unit {
+  position: relative; /* Ensure relative positioning for unit text */
+  flex: 2; /* Allow input to take more space */
+}
+
+  
+  .table-input-with-unit input {
     width: 100%;
     padding: 8px;
     box-sizing: border-box;
@@ -232,7 +233,7 @@
     border-radius: 10px;
   }
   
-  .input-with-unit .unit {
+  .table-input-with-unit .unit {
     position: absolute; /* Position unit text absolutely */
     right: 10px; /* Position to the right of the input */
     top: 50%;

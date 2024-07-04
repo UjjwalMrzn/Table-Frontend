@@ -17,7 +17,7 @@
 }
 
 .form-container {
-  width: 450px;
+  width: 50px;
   padding: 28px;
   border-radius: 10px;
   overflow: hidden;
@@ -28,7 +28,7 @@
 }
 
 .user-form-container {
-  width: 550px;
+  width: 630px;
   padding: 28px;
   border-radius: 10px;
   overflow: hidden;
@@ -47,13 +47,13 @@ h2 {
   border-bottom: 1px solid silver;
 }
 
-.form-group {
+.form-group2 {
   display: flex; /* Use flexbox layout */
   align-items: center; /* Align items centrally */
   margin-bottom: 15px;
 }
 
-.form-group label {
+.form-group2 label {
   margin-right: 10px; /* Spacing between label and input */
   color: white; /* Label color */
   flex: 1; /* Allow label to take as much space as needed */
@@ -63,11 +63,12 @@ h2 {
 
 .input-with-unit {
   position: relative; /* Ensure relative positioning for unit text */
-  flex: 2; /* Allow input to take more space */
+  flex: 5; /* Allow input to take more space */
 }
 
-.form-group input {
-  flex: 4; /* Allow input to take more space */
+
+.form-group2 input {
+  flex: 5; /* Allow input to take more space */
   padding: 8px;
   box-sizing: border-box;
   background: rgba(255, 255, 255, 0.1); /* Input background with transparency */
@@ -81,23 +82,40 @@ h2 {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  margin-bottom: 15px;
+  gap: 9px;
+  
+}
+.form-group-row label1 {
+  /* margin-right: 31px; Spacing between label and input */
+  color: white; /* Label color */
+  flex: 4; /* Allow label to take as much space as needed */
 }
 
-.form-group-row label {
-  margin-right: 10px;
-  color: white;
+.form-group-row label2 {
+  /* margin-right: 10px; Spacing between label and input */
+  color: white; /* Label color */
+  flex: 4; /* Allow label to take as much space as needed */
+  /* margin-left: 10px; */
+
 }
 
-.form-group-row input {
-  flex: 1;
+
+.row-input {
+  position: relative; /* Ensure relative positioning for unit text */
+  flex: 7.5; /* Allow input to take more space */
+}
+
+.row-input input {
+  width: 100%;
   padding: 8px;
   box-sizing: border-box;
-  background: rgba(255, 255, 255, 0.1);
-  border: 1px solid white;
-  color: white;
+  background: rgba(255, 255, 255, 0.1); /* Input background with transparency */
+  border: 1px solid white; /* White border for input */
+  color: white; /* Input text color */
   border-radius: 10px;
-  margin-right: 10px;
 }
+
 
 .submit-btn button {
   width: 100%;
