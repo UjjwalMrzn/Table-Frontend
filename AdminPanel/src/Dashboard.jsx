@@ -163,26 +163,32 @@ const Dashboard = () => {
 
                   </td>
                   <td>
-                    <Link to={`/addtable/${table.tableno}`}>
+                    <Link to={`/edittable/${table.tableno}`}>
                       <button className="delete-btn" onClick={() => handleEditClick(table.tableno)}>
                         <MdEdit />
                       </button>
                     </Link>
 
+                    {table.is_running ? (
+                      <Link to={`/video/${table.tableno}`}>
+                        <button 
+                          className="view-btn"
+                          style={{ cursor: 'pointer' }}
+                        >
+                          <HiVideoCamera />
+                        </button>
+                      </Link>
 
-                    <Link to={`/Video/${table.tableno}`}>
-                          <button 
-                            className={`view-btn ${table.is_running ? 'disabled' : ''}`} 
-                            disabled={table.is_running}
-                            style={{ cursor: table.is_running ? 'not-allowed' : 'pointer' }}
-                          >
-                            {table.is_running ? (
-                              <HiVideoCameraSlash />
-                            ) : (
-                              <HiVideoCamera />
-                            )}
-                          </button>
-                        </Link>
+                    ) : (
+
+                      <button 
+                        className="view-btn disabled"
+                        disabled
+                        style={{ cursor: 'not-allowed' }}
+                      >
+                        <HiVideoCameraSlash />
+                      </button>
+                    )}
                   </td>
                 </tr>
               ))}

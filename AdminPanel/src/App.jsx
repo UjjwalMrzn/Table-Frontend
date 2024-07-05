@@ -16,6 +16,7 @@ import start from './start';
 import addTable from './addTable'
 import Dashboard from './Dashboard';
 import Booknow from './BookNow';
+import EditTable from './EditTable';
 // import PayNow from './PayNow';
 
 function App() {
@@ -59,6 +60,7 @@ function App() {
           <Route path="/addtable" component={addTable} />
           <Route path="/dashboard" component={Dashboard} />
           <Route path="/BookNow/:id" component={Booknow} />
+          <Route path="/EditTable/:id" component={EditTable} />
           {/* <Route path="/PayNow/:id" component={PayNow} /> */}
 
         </BrowserRouter>

@@ -1,3 +1,8 @@
+
+
+//time
+
+
 import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'wouter';
@@ -17,7 +22,7 @@ function User() {
   const [phonenumber, setPhonenumber] = useState('');
   const [email, setEmail] = useState('');
   const [tableno, setTableNo] = useState('');
-  const [frame, setFrame] = useState('');
+  const [frame] = useState(0);
 
   const { error, loading, User } = useSelector(state => state.Userstore);
   const { detail } = useSelector(state => state.tabledetaillist);
@@ -33,7 +38,15 @@ function User() {
   const submitHandler = async (e) => {
     e.preventDefault();
     try {
-      await dispatch(UserRegister(name, address, phonenumber, email, tableno, frame));
+      await dispatch(UserRegister(
+        name, 
+        address,
+        phonenumber, 
+        email, 
+        tableno, 
+        frame
+      
+      ));
       dispatch(ListUpadateTable({ tableno: id, is_running: true }));
     } catch (error) {
       console.error("Error during form submission:", error);
@@ -80,9 +93,9 @@ function User() {
             </div>
           
        
-          <label2>Per Minutes :</label2>
-          <div className='row-input'>
-            <input type='number' name='Per_Frame' value={detail.rate} />
+          <label2>Price Per Minutes :</label2>
+          <div className='row-input2'>
+            <input className='row-input2' type='number' name='Per_Frame' value={detail.rate} />
             
           </div>
            
