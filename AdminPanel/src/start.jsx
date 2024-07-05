@@ -13,7 +13,7 @@ import Spinner from './components/Spinner'
 const Start = () => {
   const Userstore =useSelector(state=>state.Userstore)
   const {User}=Userstore
-    const{id}=useParams()
+    const{id,id1}=useParams()
     const dispatch = useDispatch()
     const tabledetaillist =useSelector(state=>state.tabledetaillist)
     const { error, loading , detail}=tabledetaillist
@@ -28,7 +28,7 @@ const Start = () => {
   return (
     <div >
       Game Started
-        <img src={`/api/game_start/${id}/`} alt={`Game start ${id}`}/>
+        <img src={`/api/background_run/${id}/${id1}`} alt={`Game start ${id}${id1}`}/>
         
        
 

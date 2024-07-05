@@ -28,7 +28,7 @@ function User() {
 
   useEffect(() => {
     if (User) {
-      navigate(`/start/${id}`);
+      navigate(`/start/${id}/${User.id}`);
     } else {
       dispatch(ListTableDetail(id));
     }
