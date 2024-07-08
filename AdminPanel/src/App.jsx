@@ -17,7 +17,8 @@ import addTable from './addTable'
 import Dashboard from './Dashboard';
 import Booknow from './BookNow';
 import EditTable from './EditTable';
-// import PayNow from './PayNow';
+import PayNow from './PayNow';
+import FrameBill from './FrameBill';
 
 function App() {
   const [openSidebarToggle, setOpenSidebarToggle] = useState(false);
@@ -61,7 +62,8 @@ function App() {
           <Route path="/dashboard" component={Dashboard} />
           <Route path="/BookNow/:id" component={Booknow} />
           <Route path="/EditTable/:id" component={EditTable} />
-          {/* <Route path="/PayNow/:id" component={PayNow} /> */}
+          <Route path="/PayNow/:id" component={PayNow} />
+          <Route path="/FrameBill/:id" component={FrameBill} />
 
         </BrowserRouter>
       </main>

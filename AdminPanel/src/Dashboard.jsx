@@ -146,22 +146,25 @@ const Dashboard = () => {
                         {table.is_running  ? 'Booked' : 'Book Now'}
                       </button>
                     </Link>
-                    {/* <Link to={`/PayNow/${table.id}`}>
+
+
+                    <Link to={`/PayNow/${table.id}`}>
                       <button
                         className={`pay-btn ${!table.is_running ? 'false' : ''}`}
                         disabled={!table.is_running}>
-                        {table.is_running ? 'Pay Now' : 'Pay Now'}
+                        {table.is_running ? 'Bill Now' : 'Bill Now'}
 
-                    <Link to={`/user/${table.tableno}`}>
+                    {/* <Link to={`/user/${table.tableno}`}>
                       <button
                         className={`book-btn ${table.is_running  ? false : ''}`}
                         disabled={table.is_running}
                       >
-                        {table.is_running  ? 'Pay Now1' : 'Pay Now'}
+                        {table.is_running  ? 'Pay Now1' : 'Pay Now'} */}
                       </button>
-                    </Link> */}
+                    </Link>
 
                   </td>
+
                   <td>
                     <Link to={`/edittable/${table.tableno}`}>
                       <button className="delete-btn" onClick={() => handleEditClick(table.tableno)}>
