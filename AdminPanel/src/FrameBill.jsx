@@ -6,7 +6,7 @@ const FrameBill = () => {
   return (
     <div className='container-bill1'>
 
-    <h1>SNOOKER Pvt. Ltd.</h1><br/>
+    <h1>SNOOKER Pvt. Ltd.</h1>
     <h2>Kathmandu, Nepal</h2>
     <div className='bill-header'><br/>
     

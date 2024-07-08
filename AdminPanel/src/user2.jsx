@@ -1,18 +1,16 @@
 
-
 //time
-
 
 import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'wouter';
-import { ListTableDetail, ListUpadateTable, UserRegister } from './actions/tableAction';
+import { ListTableDetail, ListUpadateTable, UserRegister,timer } from './actions/tableAction';
 import Errormsg from './components/Errormsg';
 import Spinner from './components/Spinner';
 import { useNavigate } from 'react-router-dom';
 import './User.css'; // Import CSS file
 
-function User() {
+function User2() {
   const { id } = useParams();
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -29,7 +27,7 @@ function User() {
 
   useEffect(() => {
     if (User) {
-      navigate(`/start/${id}`);
+      navigate(`/dashboard/`);
     } else {
       dispatch(ListTableDetail(id));
     }
@@ -48,6 +46,7 @@ function User() {
       
       ));
       dispatch(ListUpadateTable({ tableno: id, is_running: true }));
+      dispatch(timer(id))
     } catch (error) {
       console.error("Error during form submission:", error);
       // Handle error appropriately, e.g., show an error message to the user
@@ -135,4 +134,4 @@ function User() {
   );
 }
 
-export default User;
+export default User2;

@@ -206,3 +206,22 @@ export const RemoveInfo = () => async (dispatch) => {
         type: REMOVE_INFO,
     });
 };
+
+
+export const timer = (id) => async (dispatch) => {
+    try {
+        
+        const { data } = await axios.get(`/api/arduino/${id}`);
+        dispatch({
+            
+            payload: data,
+        });
+    } catch (error) {
+        dispatch({
+            type: TABLE_DETAIL_FAIL,
+            payload: error.response && error.response.data.detail
+                ? error.response.data.detail
+                : error.message,
+        });
+    }
+}
