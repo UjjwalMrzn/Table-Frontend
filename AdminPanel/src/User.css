@@ -83,7 +83,7 @@ h2 {
   align-items: center;
   justify-content: space-between;
   margin-bottom: 15px;
-  gap: 9px;
+  /* gap: 9px; */
   
 }
 .form-group-row label1 {
@@ -95,7 +95,7 @@ h2 {
 .form-group-row label2 {
   /* margin-right: 10px; Spacing between label and input */
   color: white; /* Label color */
-  flex: 4; /* Allow label to take as much space as needed */
+  flex: 7; /* Allow label to take as much space as needed */
   /* margin-left: 10px; */
 
 }
@@ -103,10 +103,26 @@ h2 {
 
 .row-input {
   position: relative; /* Ensure relative positioning for unit text */
-  flex: 7.5; /* Allow input to take more space */
+  flex: 7; /* Allow input to take more space */
+  /* margin-right: 90px; */
 }
 
 .row-input input {
+  width: 80%;
+  padding: 8px;
+  box-sizing: border-box;
+  background: rgba(255, 255, 255, 0.1); /* Input background with transparency */
+  border: 1px solid white; /* White border for input */
+  color: white; /* Input text color */
+  border-radius: 10px;
+}
+
+.row-input2 {
+  position: relative; /* Ensure relative positioning for unit text */
+  flex: 5; /* Allow input to take more space */
+}
+
+.row-input2 input {
   width: 100%;
   padding: 8px;
   box-sizing: border-box;

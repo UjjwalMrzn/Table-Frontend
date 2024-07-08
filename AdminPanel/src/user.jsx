@@ -84,9 +84,9 @@ function User() {
             </div>
           
        
-          <label2>Per Frame :</label2>
-          <div className='row-input'>
-            <input type='number' name='Per_Frame' value={detail.per_frame} />
+          <label2>Price Per Frame :</label2>
+          <div className='row-input2'>
+            <input className='row-input2' type='number' name='Per_Frame' value={detail.per_frame} />
             
           </div>
            
@@ -100,9 +100,9 @@ function User() {
             <input className='row-input' placeholder='Enter a frame number' type='text' name='Frame' value={frame} onChange={(e) => setFrame(e.target.value)} />
             </div>
 
-            <label2>Frame Limit :</label2>
-            <div className='row-input'>
-            <input className='row-input' type='text' name='Frame_limit' value={detail.frame_limit} readOnly />
+            <label2>Frame Time Limit :</label2>
+            <div className='row-input2'>
+            <input className='row-input2' type='text' name='Frame_limit' value={detail.frame_limit} readOnly />
             </div>
           </div>
           
