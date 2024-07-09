@@ -80,7 +80,7 @@ const checked =Boolean
   return (
     <div className="form-box">
       <div className="form-container">
-        <h2>New Table</h2>
+        <h2>Edit Table</h2>
         {error && <Errormsg variant="danger">{error}</Errormsg>}
         {loading && <Spinner />}
         <Form onSubmit={submitHandler}>
@@ -142,7 +142,7 @@ const checked =Boolean
               </div>
           </div>
           <div className="submit-btn">
-            <button type="submit">Add Table</button>
+            <button type="submit">Edit Table</button>
           </div>
         </Form>
       </div>

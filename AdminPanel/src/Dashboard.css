@@ -1,3 +1,18 @@
+/* 
+:root {
+  --primary-color-50: #EEECF8
+  ;
+  --primary-color-10: #C9C4EA;
+  --primary-color-200: #3498db;
+  --primary-color-50: #3498db;
+  --primary-color-50: #3498db;
+
+  --primary-color-50: #3498db;
+  --secondary-color: #2ecc71;
+  --background-color: #ecf0f1;
+  --text-color: #2c3e50;
+} */
+
 .container-db {
   position: relative;
   width: 100%;
