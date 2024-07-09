@@ -9,6 +9,7 @@ import {
     TABLE_UPDATE_REQUEST ,
     TABLE_UPDATE_SUCCESS,
     TABLE_UPDATE_FAIL,
+
     TABLE_DETAIL_REQUEST ,
     TABLE_DETAIL_SUCCESS ,
     TABLE_DETAIL_FAIL ,
@@ -79,6 +80,42 @@ export const ListUpadateTable=(User)=>async(dispatch)=>{
         dispatch({
             type:TABLE_UPDATE_SUCCESS,    
             payload: { data1, data2 }
+        })
+        
+    }catch(error){
+        dispatch({
+            type:TABLE_UPDATE_FAIL,
+            payload:error.response && error.response.data.detail
+                ?error.response.data.detail
+                :error.message
+    
+        })
+      
+    }
+}
+
+export const ListUpadateTables=(User)=>async(dispatch)=>{
+    try{
+        dispatch({
+            type:TABLE_UPDATE_REQUEST
+        });
+        const config ={
+            headers:{
+                'Content-type':'application/json'
+            }   
+        }
+        
+        const {data}=await axios.put(
+            `/api/updatewholetable/${User.tableno}/`,
+            User,
+            config);
+        
+
+
+      
+        dispatch({
+            type:TABLE_UPDATE_SUCCESS,    
+            payload: { data }
         })
         
     }catch(error){

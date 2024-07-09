@@ -1,6 +1,6 @@
 import {combineReducers} from 'redux'
 import {configureStore} from '@reduxjs/toolkit'
-import { TableReducer,TableDetailReducer,TableRegisterReducer,TableUpdateReducer,UserRegisterReducer } from './reducers/tableReducer'
+import { TableReducer,TableDetailReducer,TablesUpdateReducer,   TableRegisterReducer,TableUpdateReducer,UserRegisterReducer } from './reducers/tableReducer'
 
 
 const reducer=combineReducers({
@@ -10,6 +10,7 @@ const reducer=combineReducers({
     tableRegisterstore:TableRegisterReducer,
     tableupdatestore:TableUpdateReducer,
     Userstore:UserRegisterReducer,
+    tablesupdatestore:TablesUpdateReducer,
 })
 
 

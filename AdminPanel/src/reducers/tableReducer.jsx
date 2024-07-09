@@ -55,6 +55,26 @@ export const TableUpdateReducer=(state={},action)=>{
 
     }
 }
+export const TablesUpdateReducer=(state={},action)=>{
+    switch(action.type){
+        case TABLE_UPDATE_REQUEST:
+            return {loading:true}
+
+            case TABLE_UPDATE_SUCCESS:
+                return {loading:false,success:true, TableInfo:action.payload} 
+
+            case TABLE_UPDATE_FAIL:
+                return {loading:false, error:action.payload}    
+            case REMOVE_INFO:
+                return{}
+
+            default:
+                return state
+
+    }
+}
+
+
 
 
 export const UserRegisterReducer=(state={},action)=>{ //post
