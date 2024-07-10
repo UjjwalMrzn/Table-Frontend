@@ -24,24 +24,29 @@ const SnookerVideoStream = () => {
   return (
     <div>
       <h1>Snooker Video Stream</h1>
-      {detail.frame_based && (
+      {detail.frame_based && detail.is_running? (
       <img  
       id="video" 
       src={`/api/video_feed/${id}/`} 
       width="1000" 
       height="500" 
       alt="Snooker Video Stream" />
-      )}
+      )
 
 
-      {detail.time_based && (
+      :detail.time_based && detail.is_running? (
       <img  
       id="video" 
       src={`/api/timer_video_feed/${id}/`} 
       width="1000" 
       height="500" 
       alt="Snooker Video Stream" />
-      )}
+      )
+      :(
+        <h3>no video</h3>
+      )
+      
+    }
     </div>
   );
 };

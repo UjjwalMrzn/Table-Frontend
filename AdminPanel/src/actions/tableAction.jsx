@@ -16,6 +16,9 @@ import {
     TABLE_LOGIN_REQUEST,
     TABLE_LOGIN_SUCCESS,
     TABLE_LOGIN_FAIL,
+    TABLE_DELETE_REQUEST,
+    TABLE_DELETE_SUCCESS,
+    TABLE_DELETE_FAIL,
     REMOVE_INFO
 } from '../constants/tableConstant';
 
@@ -260,5 +263,43 @@ export const timer = (id) => async (dispatch) => {
                 ? error.response.data.detail
                 : error.message,
         });
+    }
+}
+
+
+
+export const DeleteTable=(User)=>async(dispatch)=>{
+    try{
+        dispatch({
+            type:TABLE_DELETE_REQUEST
+        });
+        const config ={
+            headers:{
+                'Content-type':'application/json'
+            }   
+        }
+        
+        const {data}=await axios.put(
+            `/api/deletetable/${User.tableno}/`,
+            User,
+            config);
+        
+
+
+      
+        dispatch({
+            type:TABLE_DELETE_SUCCESS,    
+            payload: { data }
+        })
+        
+    }catch(error){
+        dispatch({
+            type:TABLE_DELETE_FAIL,
+            payload:error.response && error.response.data.detail
+                ?error.response.data.detail
+                :error.message
+    
+        })
+      
     }
 }

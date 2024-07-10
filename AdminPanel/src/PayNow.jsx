@@ -4,9 +4,10 @@ import Button from 'react-bootstrap/Button';
 
 import './Details.css'; // Import CSS file
 import { useDispatch,useSelector } from 'react-redux'
-import { ListTableDetail } from './actions/tableAction'
+import { ListTableDetail,DeleteTable } from './actions/tableAction'
 import Errormsg from './components/Errormsg'
 import Spinner from './components/Spinner'
+import { useNavigate, useLocation } from 'react-router-dom';
 
 
 
@@ -15,13 +16,20 @@ function PayNow() {
   const dispatch = useDispatch()
   const tabledetaillist =useSelector(state=>state.tabledetaillist)
   const { error, loading , detail}=tabledetaillist
+  const navigate = useNavigate();
 
   useEffect(()=>{
     dispatch(ListTableDetail(id))
 
 
-  },[dispatch,id])
-
+  },[dispatch,id])  
+  const submitHandler=(e)=>{
+    dispatch(DeleteTable({
+      tableno:id
+  }))
+    console.log('delete')
+    navigate('/dashboard',{ replace: true })
+  }
  
 
   return (
@@ -29,77 +37,128 @@ function PayNow() {
      
       {loading ? <Spinner/>
                :error? <Errormsg>{error}</Errormsg>  
-               :
-         
-                 <table>
-                   <tbody>      
-                      {detail.person ?(
-                        <>
-                        <tr>
-                        <td>Table</td>
-                        <td colspan="3">{detail.tableno}</td> 
-                        </tr>
-                        <tr>
-                          <td>Name</td>
-                          <td colspan="3">{detail.person.Name}</td>
-                        </tr>
-                        <tr>
-                          <td>PhoneNO</td>
-                          <td colspan="3">{detail.person.Phonenumber}</td>
-                        </tr>
-                        <tr>
-                          <td>Email</td>
-                          <td colspan="3">{detail.person.email}</td>
-                        </tr>
-                        
-                        <tr>
-                          <td>Address</td>
-                          <td colspan="3">{detail.person.Address}</td>
-                        </tr>
-                        <tr>
-                          <td>Frame</td>
-                          <td colspan="3">{detail.person.frame}</td>
-                        </tr>
-                        <tr>
-                          <td>Frame_Limit</td>
-                          <td colspan="3">{detail.frame_limit}</td>
-                        </tr>
-                    
-                        <tr>
-                          <td>Start</td>
-                          <td>{detail.start_time}</td>
+               : 
+                  <form onSubmit={submitHandler}>
+                  <table >
+                    <tbody>      
+                        {detail.person ?(
                           
-                        </tr>
-                        <tr>
-                          <td>Time</td>
-                          <td>{detail.time}</td>
+                          (detail.time_based ?(
+                          <>
+                          <tr>
+                          <td>Table</td>
+                          <td colspan="3">{detail.tableno}</td> 
+                          </tr>
+                          <tr>
+                            <td>Name</td>
+                            <td colspan="3">{detail.person.Name}</td>
+                          </tr>
+                          <tr>
+                            <td>PhoneNO</td>
+                            <td colspan="3">{detail.person.Phonenumber}</td>
+                          </tr>
+                          <tr>
+                            <td>Email</td>
+                            <td colspan="3">{detail.person.email}</td>
+                          </tr>
                           
-                        </tr> 
-                        </>
-                      ):(
-                        <tr>
-                          <td colSpan="2">No person details available</td>
-                        </tr>
-                      )}
-                      {/* <div className='main-cards'>
-                      {detail.map(item=>(
-                        <div key={item.id}>
-                          {item.person.Name}
-
-                        </div>
-                      ))}
-                    </div> */}
+                          <tr>
+                            <td>Address</td>
+                            <td colspan="3">{detail.person.Address}</td>
+                          </tr>
+                          <tr>
+                            <td>Played time</td>
+                            <td colspan="3">{detail.played_time}</td>
+                          </tr>
+                         
                       
-                  
-                  </tbody>
-                </table>
+                          <tr>
+                            <td>Price</td>
+                            <td>{detail.price}</td>
+                            
+                          </tr>
+                          
+                          </>
+                        ):
+                        
+                        detail.frame_based ?(
+                          <>
+                          <tr>
+                          <td>Table</td>
+                          <td colspan="3">{detail.tableno}</td> 
+                          </tr>
+                          <tr>
+                            <td>Name</td>
+                            <td colspan="3">{detail.person.Name}</td>
+                          </tr>
+                          <tr>
+                            <td>PhoneNO</td>
+                            <td colspan="3">{detail.person.Phonenumber}</td>
+                          </tr>
+                          <tr>
+                            <td>Email</td>
+                            <td colspan="3">{detail.person.email}</td>
+                          </tr>
+                          
+                          <tr>
+                            <td>Address</td>
+                            <td colspan="3">{detail.person.Address}</td>
+                          </tr>
+                          <tr>
+                            <td>Frame</td>
+                            <td colspan="3">{detail.person.frame}</td>
+                          </tr>
+                          <tr>
+                            <td>Frame_Limit</td>
+                            <td colspan="3">{detail.frame_limit}</td>
+                          </tr>
+                          <tr>
+                            <td>Played time</td>
+                            <td colspan="3">{detail.played_time}</td>
+                          </tr>
+                         
+                          <tr>
+                            <td>Price</td>
+                            <td>{detail.price}</td>
+                            
+                          </tr>
+                          
+                          </>
+                        ):(
+                          <tr>
+                          <td colSpan="2">No details available</td>
+                          </tr>
+                        )
+                      
+                      )
+                      
+                      
+                      ):(
+                          <tr>
+                            <td colSpan="2">No person details available</td>
+                          </tr>
+                        )}
+                        {/* <div className='main-cards'>
+                        {detail.map(item=>(
+                          <div key={item.id}>
+                            {item.person.Name}
+
+                          </div>
+                        ))}
+                      </div> */}
+                        
+                        <div className='table-btn'>
+                        
+                          <button variant="outline-success" className='my-2' type="submit">Done Payment</button>
+                          
+                      </div>
+                    </tbody>
+                  </table>
+                </form>
+               
               
       }
-        <div className='table-btn'>
-             <Link to ={ `/video/${id}`}> 
-             <Button variant="outline-success" className='my-2'>View Table</Button>
-             </Link>
-        </div>
+        
     </div>
        
 

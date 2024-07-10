@@ -39,7 +39,7 @@ const Dashboard = () => {
   const handleEditClick = (id) => {
     // Redirect to edit page or handle edit logic here
     console.log(`Editing table with ID: ${table.tableno}`);
-    navigate(`/addtable/${id}`);
+    navigate(`/edittable/${id}`);
   };
 
 
@@ -148,7 +148,7 @@ const Dashboard = () => {
                     </Link>
 
 
-                    <Link to={`/PayNow/${table.id}`}>
+                    <Link to={`/PayNow/${table.tableno}`}>
                       <button
                         className={`pay-btn ${!table.is_running ? 'false' : ''}`}
                         disabled={!table.is_running}>

@@ -61,7 +61,7 @@ function App() {
           <Route path="/addtable" component={addTable} />
           <Route path="/dashboard" component={Dashboard} />
           <Route path="/BookNow/:id" component={Booknow} />
-          <Route path="/EditTable/:id" component={EditTable} />
+          <Route path="/edittable/:id" component={EditTable} />
           <Route path="/PayNow/:id" component={PayNow} />
           <Route path="/FrameBill/:id" component={FrameBill} />
 

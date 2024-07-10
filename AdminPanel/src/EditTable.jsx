@@ -142,7 +142,7 @@ const checked =Boolean
               </div>
           </div>
           <div className="submit-btn">
-            <button type="submit">Edit Table</button>
+            <button type="submit">Done</button>
           </div>
         </Form>
       </div>
