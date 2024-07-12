@@ -1,19 +1,20 @@
 .container-bill1 {
     position: relative;
     width: 100%;
-    height: 100%;
+    height: 90%;
     font-family: Arial, sans-serif;
     overflow-x: hidden; /* Prevent horizontal overflow */
     border: 2px solid #fff;
     border-radius: 10px;
     background-color: transparent; /* Optional: to match the dark background in the image */
+    
   }
   
   .container-bill1 h1,
   .container-bill1 h2,
   .container-bill1 h3 {
     margin: 0;
-    padding: 10px; /* Optional: add padding for spacing */
+    padding: 5px; /* Optional: add padding for spacing */
     text-align: center;
     color: white; /* Optional: text color to match the image */
     border: none; /* Ensure no border is applied */
@@ -25,6 +26,7 @@
     justify-content: center;
     font-size: 35px;
     font-weight: bold;
+    margin-bottom: 0px; /* Add margin below h2 for spacing */
   }
   
   .container-bill1 h2 {
@@ -32,7 +34,7 @@
     align-items: center;
     justify-content: center;
     font-size: 25px;
-    margin-bottom: 20px; /* Add margin below h2 for spacing */
+    margin-bottom: 0px; /* Add margin below h2 for spacing */
   }
   
   .container-bill1 h3 {
@@ -42,9 +44,82 @@
     font-size: 20px;
     margin-bottom: 40px;
     /* text-decoration: dotted; */
+    margin-bottom: 10px;
+
   }
   
   .bill-details{
     margin-left: 40px;
+    font-size: 17px;
+    
+  }
+
+  .subtotal {
+    position: absolute;
+    bottom: 20px; /* Adjust distance from bottom */
+    right: 50px; /* Adjust distance from right */
+    text-align: right; /* Align text to the right within .subtotal */
+    color: white; /* Adjust text color as needed */
     font-size: 18px;
   }
+  
+
+  .inwords {
+    position: absolute;
+    bottom: 20px; /* Adjust distance from bottom */
+    left: 20px; /* Adjust distance from left */
+    color: white; /* Adjust text color as needed */
+    font-size: 18px;
+  }
+  
+.bill-btn {
+position: absolute;
+bottom: 20px;
+}
+
+.bill-btn button {
+
+  background-color: #4caf50;
+  border-color: #4caf50;
+  font-size: 1.1rem;
+  color: white;
+  padding: 7px 8px;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: background-color 0.3s, border-color 0.3s, color 0.3s;
+  border: 2px solid transparent;
+}
+
+.bill-btn button:hover {
+  background-color: transparent;
+  border-color: #4caf50;
+}
+
+  .bill-table {
+    width: 100%;
+    border-collapse: collapse;
+    overflow-x: auto; /* Enable horizontal scrolling if needed */
+  }
+  
+  .bill-table th, .bill-table td {
+    padding: 22px;
+    font-size: 1.2rem;
+    text-align: left;
+    border-bottom: 2px solid #fff;
+  
+  }
+  
+  .bill-table th {
+    background-color: transparent;
+    
+  }
+  
+  /* Alternating row colors */
+  .bill-table tbody tr:nth-child(even) {
+      background-color: #3f485a; /* Background color using #1d2634 */
+      color: white; /* Text color for contrast */
+    }
+  
+  
+
+  

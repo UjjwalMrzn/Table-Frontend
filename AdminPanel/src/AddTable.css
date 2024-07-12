@@ -11,21 +11,23 @@
   
   .form-box {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%; /* Ensure form-box takes full width */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    height: 80vh; /* Ensure full viewport height */
   }
   
-  .form-container {
-    width: 450px;
-    padding: 28px;
-    border-radius: 10px;
-    overflow: hidden;
-    background: transparent; /* Use rgba for transparency */
-    border: 1px solid white; /* White border */
-    margin-top: 10px; /* Spacing from the top */
-    backdrop-filter: blur(5px) saturate(90%);
-  }
+.form-container {
+  width: 450px; /* Adjust width as needed */
+  max-width: 100%; /* Ensure it doesn't exceed viewport width */
+  padding: 28px;
+  border-radius: 10px;
+  overflow: hidden;
+  background: transparent;
+  border: 1px solid white;
+  margin-top: 10px;
+  backdrop-filter: blur(5px) saturate(90%);
+}
+
   
   h2 {
     font-size: 26px;
