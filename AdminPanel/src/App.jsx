@@ -18,7 +18,9 @@ import Dashboard from './Dashboard';
 import Booknow from './BookNow';
 import EditTable from './EditTable';
 import PayNow from './PayNow';
-import FrameBill from './FrameBill';
+import Bill from './Bill';
+// import TimeBill from './TimeBill';
+// import Details2 from './Details2';
 
 function App() {
   const [openSidebarToggle, setOpenSidebarToggle] = useState(false);
@@ -54,6 +56,7 @@ function App() {
           <Route path="/user2/:id" component={User2} />
 
           <Route path="/details/:id" component={Details} />
+          {/* <Route path="/details2/:id" component={Details2} /> */}
           <Route path="/login" component={Login} />
           <Route path="/register" component={Register} />
           <Route path="/video/:id" component={video} />
@@ -63,7 +66,8 @@ function App() {
           <Route path="/BookNow/:id" component={Booknow} />
           <Route path="/edittable/:id" component={EditTable} />
           <Route path="/PayNow/:id" component={PayNow} />
-          <Route path="/FrameBill/:id" component={FrameBill} />
+          <Route path="/bill/:id" component={Bill} />
+          {/* <Route path="/TimeBill/:id" component={TimeBill} /> */}
 
         </BrowserRouter>
       </main>

@@ -119,8 +119,8 @@ const Dashboard = () => {
                  <td>
                     <span className={`tableno ${table.tableno}`}>{table.tableno}</span>
                   </td>
-                  <td>{table.rate}</td>
                   <td>{table.per_frame}</td>
+                  <td>{table.rate}</td>
                   <td>
                     <span className={`status-dot ${table.is_running}`} />
                   </td>
@@ -148,7 +148,7 @@ const Dashboard = () => {
                     </Link>
 
 
-                    <Link to={`/PayNow/${table.tableno}`}>
+                    <Link to={`/bill/${table.tableno}`}>
                       <button
                         className={`pay-btn ${!table.is_running ? 'false' : ''}`}
                         disabled={!table.is_running}>

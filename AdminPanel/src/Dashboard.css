@@ -136,7 +136,7 @@
   color: #d32f2f;
 } */
 
-.detail-btn, .pay-btn, .book-btn, .delete-btn, .view-btn {
+.detail-btn, .pay-btn, .book-btn, .delete-btn, .view-btn { /*main btn size*/
   margin-right: 5px;
   padding: 7px 8px;
   font-size: 1rem;

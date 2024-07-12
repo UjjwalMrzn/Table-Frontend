@@ -149,7 +149,7 @@ function PayNow() {
                         
                         <div className='table-btn'>
                         
-                          <button variant="outline-success" className='my-2' type="submit">Done Payment</button>
+                          <button variant="outline-success" className='tbl-btn2' type="submit">Done Payment</button>
                           
                       </div>
                     </tbody>
