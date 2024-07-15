@@ -30,7 +30,8 @@ const Start = () => {
   return ( 
     
     <div>
-    
+    <img src={`/api/background_run/${id}/${id1}`} alt={`Game start ${id}${id1}`} />
+
     <img src={`/api/background_run/${id}/${id1}`} alt={`Game start ${id}${id1}`} />
     
   

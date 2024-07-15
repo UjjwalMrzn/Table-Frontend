@@ -23,7 +23,7 @@ function Sidebar({ openSidebarToggle, OpenSidebar }) {
           <Link to="/settings" className="sidebar-link">
             <BsFillGearFill className='icon' /> Settings
           </Link>
-        </li>
+        </li> 
       </ul>
 
       <div className='profile-container'>
