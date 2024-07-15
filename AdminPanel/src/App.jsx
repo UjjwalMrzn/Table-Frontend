@@ -18,7 +18,8 @@ import Dashboard from './Dashboard';
 import Booknow from './BookNow';
 import EditTable from './EditTable';
 import PayNow from './PayNow';
-import Bill from './Bill';
+import  Bill from './Bill';
+import AccessPage from './AccessPage';
 // import TimeBill from './TimeBill';
 // import Details2 from './Details2';
 
@@ -67,6 +68,7 @@ function App() {
           <Route path="/edittable/:id" component={EditTable} />
           <Route path="/PayNow/:id" component={PayNow} />
           <Route path="/bill/:id" component={Bill} />
+          <Route path="/accesspage" component={AccessPage} />
           {/* <Route path="/TimeBill/:id" component={TimeBill} /> */}
 
         </BrowserRouter>

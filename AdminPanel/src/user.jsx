@@ -97,7 +97,7 @@ function User() {
 
             <label1>Frame :</label1>
             <div className='row-input'>
-            <input className='row-input' placeholder='Enter a frame number' type='text' name='Frame' value={frame} onChange={(e) => setFrame(e.target.value)} />
+            <input className='row-input' placeholder='Enter a frame no.' type='text' name='Frame' value={frame} onChange={(e) => setFrame(e.target.value)} />
             </div>
 
             <label2>Frame Time Limit :</label2>

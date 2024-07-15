@@ -25,6 +25,24 @@ function Sidebar({ openSidebarToggle, OpenSidebar }) {
           </Link>
         </li>
       </ul>
+
+      <div className='profile-container'>
+  <h5>Profile</h5>
+  <div className='profile'>
+    <img src='ppp.png' className='profile-picture' alt='Profile'/>
+    <div className='profile-details'>
+      <p className='profile-name'>Kritish</p>
+      <p className='profile-email'>kritish@example.com</p>
+    </div>
+  </div>
+  <div className='logout'>
+    <button className='logout-button'>Log out
+      {/* <span>&#x21A9;</span>  */}
+    </button>
+  </div>
+</div>
+
+
       
     </aside>
   );

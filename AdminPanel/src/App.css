@@ -158,6 +158,7 @@ body {
 .sidebar-list-item:hover {
   background-color: rgba(255, 255, 255, 0.2);
   cursor: pointer;
+  font-weight: bold;
 }
 
 .sidebar-list-item > a {
@@ -180,7 +181,88 @@ body {
   position: absolute;
   z-index: 12 !important;
 }
+.profile-container {
+  position: absolute;
+  bottom: 10px; /* Adjust distance from bottom */
+  left: 0px; /* Adjust distance from left */
+  padding: 20px;
+  border-radius: 10px;
+  color: white;
+  /* width: 250px; Adjust width as needed */
+}
 
+.profile-container h5 {
+  font-size: 1.5rem;
+  border-bottom: 2px solid #fff;
+  padding-bottom: 10px;
+  margin: 0 0 10px 0; /* Add margin below the header */
+  font-weight: bold;
+  /* margin-bottom: 20px; */
+
+}
+
+.profile {
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+}
+
+
+.profile-picture {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  background-color: #ccc; /* Placeholder background color */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 10px; /* Add margin to the right of the image */
+}
+
+.profile-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.profile-name,
+.profile-email {
+  margin: 0; /* Remove margin for tighter layout */
+}
+
+.profile-name {
+  font-weight: bold;
+  margin-bottom: 5px; /* Add margin below the name */
+}
+
+.profile-container .logout {
+  margin-top: 20px; /* Add margin above the logout button */
+  display: flex;
+  justify-content: center; /* Center the logout button */
+}
+
+.logout-button {
+  background-color: rgb(230, 230, 230);
+  border: 2px solid transparent; /* Set initial border to 2px solid transparent */
+  font-size: 1.3rem;
+  color: #1d2634;
+  padding: 1px 75px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s, border-color 0.3s, color 0.3s;
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Space between icon and text */
+}
+
+.profile-container .logout-button:hover {
+  background-color: transparent;
+  border: 2px solid #ccc; /* Maintain 2px border */
+  color: #fff;
+}
+
+.logout-button span {
+  font-size: 1.2rem; /* Adjust icon size */
+}
 
 
 
