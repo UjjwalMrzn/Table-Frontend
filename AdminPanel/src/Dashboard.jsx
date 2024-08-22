@@ -100,7 +100,8 @@ const Dashboard = () => {
       ) : error ? (
         <Errormsg>{error}</Errormsg>
       ) : (
-        <main className='main-container'>
+        <main className='main-container1'> 
+         {/* main className changed added 1 */}
           <table className="appointments-table">
             <thead>
               <tr>
