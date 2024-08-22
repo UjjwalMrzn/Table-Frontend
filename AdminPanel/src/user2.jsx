@@ -27,7 +27,8 @@ function User2() {
 
   useEffect(() => {
     if (User) {
-      navigate(`/dashboard/`);
+      navigate(`/dashboard/`)
+
     } else {
       dispatch(ListTableDetail(id));
     }

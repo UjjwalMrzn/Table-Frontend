@@ -54,12 +54,16 @@
 .add-btn {
   background-color: #4B3A8D;
   color: white;
-  border: none;
+  border: 2px solid #4B3A8D ;
   padding: 10px;
   font-size: 1rem;
   cursor: pointer;
   border-radius: 15px;
 
+}
+
+.add-btn:hover{
+  background-color: transparent;
 }
 
 .appointments-table {
@@ -71,13 +75,14 @@
 .appointments-table th, .appointments-table td {
   padding: 22px;
   font-size: 1.2rem;
-  text-align: left;
+  text-align: center;
   border-bottom: 2px solid #fff;
 
 }
 
 .appointments-table th {
   background-color: transparent;
+  text-align: center;
   
 }
 
@@ -87,11 +92,11 @@
     color: white; /* Text color for contrast */
   }
 
-
+/* 
 .tableno{
   margin-left: 30px;
 }
-  
+   */
 
   
 
@@ -135,6 +140,7 @@
   background-color: #ffebee;
   color: #d32f2f;
 } */
+
 
 .detail-btn, .pay-btn, .book-btn, .delete-btn, .view-btn { /*main btn size*/
   margin-right: 5px;
@@ -220,7 +226,7 @@
 
 .delete-btn:hover{
   /* transform: translateY(-3px); */
-  color: rgb(128, 62, 62);
+  color: rgb(160, 190, 168);
 
 
 }
@@ -321,7 +327,7 @@
   border-radius: 50%;
   display: inline-block;
   /* margin-right: 5px; */
-  margin-left: 19px;
+  /* margin-left: 19px; */
 }
 
 .status-dot.false {

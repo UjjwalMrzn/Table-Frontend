@@ -20,7 +20,7 @@
   width: 100%;
   max-width: 380px; /* Set max-width */
   padding: 40px;
-  background: rgba(255, 255, 255, 0.1); /* Use rgba for transparency */
+  background: transparent; /* Use rgba for transparency */
   border: 1px solid white;
   backdrop-filter: blur(3px);
   border-radius: 10px;

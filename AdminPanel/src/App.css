@@ -238,7 +238,12 @@ body {
   margin-top: 20px; /* Add margin above the logout button */
   display: flex;
   justify-content: center; /* Center the logout button */
+  
 }
+.logout-link {
+  text-decoration: none; /* Remove underline from link */
+}
+
 
 .logout-button {
   background-color: rgb(230, 230, 230);
@@ -252,6 +257,7 @@ body {
   display: flex;
   align-items: center;
   gap: 10px; /* Space between icon and text */
+  
 }
 
 .profile-container .logout-button:hover {

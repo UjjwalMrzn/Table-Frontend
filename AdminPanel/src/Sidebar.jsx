@@ -29,21 +29,24 @@ function Sidebar({ openSidebarToggle, OpenSidebar }) {
       <div className='profile-container'>
   <h5>Profile</h5>
   <div className='profile'>
-    <img src='ppp.png' className='profile-picture' alt='Profile'/>
+    <img src='/ppp.png' className='profile-picture' alt='Profile'/>
     <div className='profile-details'>
       <p className='profile-name'>Kritish</p>
       <p className='profile-email'>kritish@example.com</p>
     </div>
   </div>
   <div className='logout'>
+    <Link to={`/login`} className='logout-link'>
     <button className='logout-button'>Log out
       {/* <span>&#x21A9;</span>  */}
     </button>
+    </Link>
+  
   </div>
 </div>
 
 
-      
+       
     </aside>
   );
 }
