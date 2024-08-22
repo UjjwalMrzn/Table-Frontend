@@ -1,8 +1,8 @@
 .booking-details {
   margin: 20px auto;
   padding: 20px;
-  width: 90%; /* Ensures it takes up full width up to max-width */
-  height: 91%;
+  width: 100%; /* Ensures it takes up full width up to max-width */
+  height: 100%;
   background-color: transparent;
   /* border: 1px solid #ddd;
   border-radius: 4px;
