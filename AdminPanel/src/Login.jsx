@@ -30,7 +30,8 @@ const Login = () => {
           </div>
 
           <div className='remember-forget'>
-            <label><input type='checkbox' />Remember me</label>
+            <label><input type='checkbox' />
+            <span style={{ marginLeft: '8px' }}>Remember me</span></label>
             {/* <a href=''>Forget Password?</a> */}
           </div>
 

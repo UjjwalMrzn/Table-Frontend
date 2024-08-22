@@ -50,7 +50,8 @@ const Register = () => {
           </div>
   
           <div className='remember-forget'>
-            <label><input type='checkbox' required />I agree to the terms & conditions</label>
+            <label><input type='checkbox' required />
+            <span style={{ marginLeft: '8px' }}>I agree to the terms & conditions</span></label>
           </div>
 
           <div className='btn_container'>
