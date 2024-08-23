@@ -139,3 +139,11 @@ input[type="password"]::-webkit-reveal {
   text-decoration: underline;
 }
 
+.logo-image1 {
+  position: absolute;
+  top: 15px; /* Position the logo 20px from the top */
+  left: 0px; /* Position the logo 20px from the left */
+  width: 250px; /* Adjust width as needed */
+  height: auto; /* Maintain aspect ratio */
+}
+

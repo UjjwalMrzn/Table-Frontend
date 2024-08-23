@@ -10,6 +10,8 @@ const Login = () => {
   };
 
   return (
+    <div className='sidebar-brand'>
+    <img src="/snooker-logo.png" alt="Snooker Logo" className="logo-image1" />
     <div className='wrapper'>
       <div className='container1'>
         <form action=''>
@@ -44,6 +46,7 @@ const Login = () => {
           </div>
         </form>
       </div>
+    </div>
     </div>
   );
 };

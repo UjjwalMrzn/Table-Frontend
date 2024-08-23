@@ -15,7 +15,8 @@ const Register = () => {
   };
 
   return (
-    
+    <div className='sidebar-brand'>
+    <img src="/snooker-logo.png" alt="Snooker Logo" className="logo-image1" />
     <div className='wrapper1'>
       <div className='container1'>
         <form action=''>
@@ -64,6 +65,7 @@ const Register = () => {
           </div>
         </form>
       </div>
+    </div>
     </div>
   );
 };
