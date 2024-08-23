@@ -15,6 +15,7 @@ const Register = () => {
   };
 
   return (
+    
     <div className='wrapper1'>
       <div className='container1'>
         <form action=''>

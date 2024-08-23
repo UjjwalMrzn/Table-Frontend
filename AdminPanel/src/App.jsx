@@ -44,11 +44,22 @@ function App() {
     };
   }, []);
 
+   // Define routes where the Sidebar and Header should not be displayed
+     // Determine if Sidebar and Header should be hidden
+   const hideSidebarAndHeader =
+   location === '/login' || location === '/register' || location === '/accesspage';   
   return (
-    <div className='grid-container'>
-      {/* Render Header only when on the dashboard */}
-      {location === '/' || location === '/dashboard' ? <Header OpenSidebar={OpenSidebar} /> : null}
-      <Sidebar openSidebarToggle={openSidebarToggle} OpenSidebar={OpenSidebar} />
+    <div className={`grid-container ${hideSidebarAndHeader ? 'no-sidebar-no-header' : ''}`}>
+      {/* Render Header only when not hidden */}
+      {!hideSidebarAndHeader && (location === '/' || location === '/dashboard') && (
+        <Header OpenSidebar={OpenSidebar} />
+      )}
+      
+      {/* Render Sidebar only when not hidden */}
+      {!hideSidebarAndHeader && (
+        <Sidebar openSidebarToggle={openSidebarToggle} OpenSidebar={OpenSidebar} />
+      )}
+
 
       <main className='main-container'>
         <BrowserRouter>

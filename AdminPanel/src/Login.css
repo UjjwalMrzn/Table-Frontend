@@ -1,8 +1,9 @@
+
 .wrapper {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 10%;
+  margin: 0%;
   /* height: 100vh; Ensure full viewport height */
   /* background-color: #222; Example background color */
 }
@@ -11,7 +12,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 7%;
+  margin: 0%;
   /* height: 100vh; Ensure full viewport height */
   /* background-color: #222; Example background color */
 }
@@ -22,7 +23,7 @@
   padding: 40px;
   background: transparent; /* Use rgba for transparency */
   border: 1px solid white;
-  backdrop-filter: blur(3px);
+  backdrop-filter: blur(50px);
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Optional: Add shadow for better visibility */
 }
@@ -137,3 +138,4 @@ input[type="password"]::-webkit-reveal {
 .register-link p a:hover {
   text-decoration: underline;
 }
+

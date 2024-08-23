@@ -422,3 +422,17 @@ body {
 }
 
 
+/* App.css */
+
+.no-sidebar-no-header {
+  grid-template-columns: 1fr; /* No sidebar column */
+  grid-template-rows: 1fr;    /* No header row */
+  display: flex;
+  justify-content: center;
+  align-items: center;}
+
+.main-container {
+  /* Adjustments when the header and sidebar are hidden */
+  padding: 20px;
+  grid-area: main;
+}
