@@ -57,7 +57,8 @@ const FrameBill = () => {
         <div className='bill-details'>
           <b>Bill No.: #1234</b><br/>
           <b>{currentTime.toLocaleString()}</b><br/>
-          <b>Employee: Mr.Kritish</b><br/>
+          <b>Bill To : {detail?.person?.Name}</b><br/>
+          <b>Cashier : Mr.Kritish</b><br/>
         </div>
 
         <main className='main-container'>
@@ -126,14 +127,16 @@ const FrameBill = () => {
 
         
         <div className='subtotal'>
-          <p>Sub Total : Rs. {detail.price}</p>
+          <p>Sub Total : Rs. {detail?.price}</p>
           <p>Discount : Rs. 0</p>
-          <p>Net Amount : Rs. {detail.price}</p>
+          <p>Net Amount : Rs. {detail?.price}</p>
         </div>
-
         <div className='inwords'>
-        <p>In Words : {amountInWords} rupees only /-</p>       
-         </div>
+  <p>
+    In Words : {amountInWords ? `${amountInWords} rupees only` : null}
+  </p>
+</div>
+
       </div>
 
       <div className='bill-btn'>
