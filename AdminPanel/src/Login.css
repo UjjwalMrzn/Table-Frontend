@@ -1,37 +1,34 @@
-body {
-  background-image: url('snooker.jpg');
-  background-size: cover; /* Adjust the background to cover the entire area */
-  background-position: center; /* Center the image */
-  background-repeat: no-repeat; /* Prevent the image from repeating */
-}
 
+
+/* Other styles specific to login */
+
+/* Ensure that the main container is centered */
 .wrapper {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 0%;
-  /* height: 100vh; Ensure full viewport height */
-  /* background-color: #222; Example background color */
+  height: 100vh; /* Full viewport height */
+  margin: 0;
 }
+
 
 .wrapper1 {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 0%;
-  /* height: 100vh; Ensure full viewport height */
-  /* background-color: #222; Example background color */
+  height: 100vh; /* Full viewport height */
+  margin: 0;
 }
 
 .container1 {
   width: 100%;
   max-width: 380px; /* Set max-width */
   padding: 40px;
-  background: transparent; /* Use rgba for transparency */
+  background: rgba(255, 255, 255, 0.1); /* Semi-transparent background */
   border: 1px solid white;
   backdrop-filter: blur(50px);
   border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Optional: Add shadow for better visibility */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .container1 h2 {
@@ -129,6 +126,68 @@ input[type="password"]::-webkit-reveal {
   backdrop-filter: blur(1px);
 }
 
+
+/*accesspage*/
+/* Access Page Styles */
+.forms-container {
+  display: flex;
+  flex-direction: row;   /* Arrange forms vertically */
+  align-items: center; /* Center forms horizontally */
+  gap: 15px; /* Space between forms */
+  /* margin-bottom: 50px; */
+  position: absolute;
+  right: 50px;
+  top: 20px
+}
+
+.btn_container1 {
+  margin-top: 15px;
+  text-align: center;
+}
+
+.btn_container1 button {
+  background-color: #4caf50;
+  font-size: 18px;
+  font-weight: 500;
+  color: white;
+  padding: 6px 10px;
+  border: 2px solid #4caf50;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.btn_container1 button:hover {
+  background-color: transparent;
+  backdrop-filter: blur(1px);
+}
+
+/*center text*/
+.centered-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 70vh; 
+      }
+  
+      .text {
+        color: white; /* Change the text color as needed */
+        font-size: 3em; /* Adjust the font size as needed */
+        font-weight: bold;
+      
+    }
+
+.text2 {
+        color: white; /* Change the text color as needed */
+        font-size: 1.5em; /* Adjust the font size as needed */
+        margin-top: 10px;
+      
+    }
+
+
+
+
 .register-link {
   font-size: 14px;
   text-align: center;
@@ -152,4 +211,14 @@ input[type="password"]::-webkit-reveal {
   width: 250px; /* Adjust width as needed */
   height: auto; /* Maintain aspect ratio */
 }
+
+.logo-image2 {
+  position: absolute;
+  top: 15px; /* Position the logo 20px from the top */
+  left: 0px; /* Position the logo 20px from the left */
+  width: 250px; /* Adjust width as needed */
+  height: auto; /* Maintain aspect ratio */
+}
+
+
 

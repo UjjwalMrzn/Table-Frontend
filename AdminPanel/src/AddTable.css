@@ -1,5 +1,6 @@
 /* Form Styling */
 /* Main */
+
 .main-container {
     grid-area: main;
     display: flex;
