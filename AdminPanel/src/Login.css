@@ -1,3 +1,26 @@
+/* Reset margin and padding */
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  overflow: hidden; /* Prevent scrolling */
+  box-sizing: border-box;
+}
+
+/* Ensure the background image covers the entire page */
+.login-background {
+  background-image: url('snooker.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh; /* Full height of the viewport */
+  width: 100vw;  /* Full width of the viewport */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
 
 
 /* Other styles specific to login */
