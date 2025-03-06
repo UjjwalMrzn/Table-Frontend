@@ -1,25 +1,25 @@
 import React, { useState, useEffect } from 'react';
-import './App.css';
+import './styles/global/App.css';
 import { Switch, Route, Redirect, useLocation } from 'wouter';
 import { BrowserRouter } from 'react-router-dom';
-import User from './user';
-import User2 from './user2';
+import User from './components/users/user';
+import User2 from './components/users/user2';
 
-import Header from './Header';
-import Sidebar from './Sidebar';
-import Home from './Home';
-import Details from './Details';
-import Login from './Login';
-import Register from './Register';
-import video from './video';
-import start from './start';
-import addTable from './addTable'
-import Dashboard from './Dashboard';
-import Booknow from './BookNow';
-import EditTable from './EditTable';
-import PayNow from './PayNow';
-import  Bill from './Bill';
-import AccessPage from './AccessPage';
+import Header from './components/common/Header';
+import Sidebar from './components/common/Sidebar';
+import Home from './pages/Home';
+import Details from './pages/Details';
+import Login from './pages/Login';
+import Register from './pages/Register';
+import video from './components/media/video';
+import start from './pages/start';
+import addTable from './components/tables/addTable'
+import Dashboard from './pages//Dashboard';
+import Booknow from './pages/BookNow';
+import EditTable from './components/tables/EditTable';
+import PayNow from './pages/PayNow';
+import  Bill from './pages/Bill';
+import AccessPage from './pages/AccessPage';
 // import TimeBill from './TimeBill';
 // import Details2 from './Details2';
 
